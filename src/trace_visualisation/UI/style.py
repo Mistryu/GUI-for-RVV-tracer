@@ -63,7 +63,10 @@ LAYOUT_STYLES = {
         'margin': 0,
         'padding': 0,
         'fontFamily': 'Arial, sans-serif',
-        'position': 'relative'
+        'position': 'fixed',
+        'width': '100%',
+        'height': '100vh',
+        'overflow': 'hidden'
     },
     'button_container': {
         'position': 'absolute',
@@ -90,11 +93,11 @@ LAYOUT_STYLES = {
     },
     'flex_wrapper': {
         'display': 'flex',
-        'width': '100%'
+        'width': '100%',
+        'height': '100vh'
     },
     'graph_panel': {
         'width': '70%',
-        'display': 'inline-block',
         'height': '100vh',
         'borderRight': '1px solid #ddd'
     },
@@ -104,13 +107,12 @@ LAYOUT_STYLES = {
     },
     'details_panel': {
         'width': '30%',
-        'display': 'inline-block',
-        'verticalAlign': 'top',
-        'backgroundColor': '#f9f9f9'
+        'height': '100vh',
+        'backgroundColor': '#f9f9f9',
+        'overflowY': 'auto',
+        'overflowX': 'hidden'
     },
     'details_content': {
-        'padding': '20px',
-        'overflowY': 'auto',
-        'height': '100vh'
+        'padding': '20px'
     }
 }

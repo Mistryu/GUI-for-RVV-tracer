@@ -28,7 +28,7 @@ def create_app(graph_files: dict, start: int = 0, end: Optional[int] = None, fil
             break
     
     try:
-        initial_elements = build_elements(valid_files[initial_graph], start=start, end=end, filter_types=filter_types)
+        initial_elements = build_elements(valid_files[initial_graph], start=start, end=end, filter_types=filter_types, is_execution_graph=(initial_graph == 'execution'))
         print(f"Loaded {len(initial_elements)} elements from {initial_graph} graph")
         print()
     except Exception as e:
@@ -80,6 +80,12 @@ def create_app(graph_files: dict, start: int = 0, end: Optional[int] = None, fil
     #     'spacingFactor': 1.5,
     #     'avoidOverlap': True
     # },
+    #TODO comparison between these different program types:
+    # Long big program 
+    # Maybe a big loop with compuataions
+    # Setup a benchmark 
+    # Fix load/store instructions
+    # Get ratio of rvv vs non rvv instructions 
 
     app.layout = html.Div([
         # Graph type selector buttons
@@ -131,6 +137,8 @@ def create_app(graph_files: dict, start: int = 0, end: Optional[int] = None, fil
             ], style=LAYOUT_STYLES['details_panel'])
         ], style=LAYOUT_STYLES['flex_wrapper'])
     ], style=LAYOUT_STYLES['container'])
+    
+    # TODO Expandable dropdown menu  
  
     # I added dynamic object at runtime which is valid python so the errors are just a typecheck
     app.graph_files = valid_files
@@ -170,9 +178,11 @@ def create_app(graph_files: dict, start: int = 0, end: Optional[int] = None, fil
                 app.graph_files[selected_graph],
                 start=app.filter_params['start'],
                 end=app.filter_params['end'],
-                filter_types=app.filter_params['filter_types']
+                filter_types=app.filter_params['filter_types'],
+                is_execution_graph=(selected_graph == 'execution')
             )
             print(f"Switched to {selected_graph} graph ({len(elements)} elements)")
+            
         except Exception as e:
             print(f"Error loading {selected_graph} graph: {e}")
             raise dash.exceptions.PreventUpdate
@@ -212,7 +222,8 @@ def create_app(graph_files: dict, start: int = 0, end: Optional[int] = None, fil
         
         instr_type = display_instr.get('type')
         instruction = node.get('label', display_instr.get('instruction', 'N/A')).splitlines()[1].strip() 
-
+        lmul = display_instr.get('lmul', 1)
+        
         details = []
         details.append(html.H3(instruction, style={'marginTop': 0, 'fontFamily': 'monospace', 'fontSize': '16px'}))
 
@@ -233,44 +244,41 @@ def create_app(graph_files: dict, start: int = 0, end: Optional[int] = None, fil
                 html.P([html.Strong('Number: '), str(display_instr.get('number', 'N/A'))]),
                 html.P([html.Strong('PC: '), display_instr.get('pc', 'N/A')]),
                 html.P([html.Strong('Instruction: '), display_instr.get('instruction', 'N/A')]),
+                html.P([html.Strong('LMUL: '), str(lmul)]),
             ]),
             html.Hr(),
         ])
         
         scalar_section = []
+        scalar_section.append(html.H4('Scalar Registers', style={'marginBottom': '10px'}))
         
-        # For CSR instructions (type 2)
-        if instr_type == 2:
-            scalar_section.append(html.H4('Scalar Registers', style={'marginBottom': '10px'}))
-            
-            if display_instr.get('rd') is not None:
-                scalar_section.append(format_register_data(f"x{display_instr.get('rd')}", 'rd destination', display_instr.get('rd_value', 'N/A')))
-            
-            if display_instr.get('rs1') is not None:
-                scalar_section.append(format_register_data(f"x{display_instr.get('rs1')}", 'rs1 source', display_instr.get('rs1_value', 'N/A')))
-            
-            if display_instr.get('rs2') is not None:
-                scalar_section.append(format_register_data(f"x{display_instr.get('rs2')}", 'rs2 source', display_instr.get('rs2_value', 'N/A')))
+        if display_instr.get('rd') is not None:
+            scalar_section.append(format_register_data(f"x{display_instr.get('rd')}", 'rd destination', display_instr.get('rd_value', 'N/A')))
         
-        # For load/store instructions (type 3)
-        elif instr_type == 3:
-            if display_instr.get('rs1') is not None:
-                scalar_section.append(html.H4('Scalar Registers', style={'marginBottom': '10px'}))
-                scalar_section.append(format_register_data(f"x{display_instr.get('rs1')}", 'rs1 source addr', display_instr.get('rs1_value', 'N/A')))
+        if display_instr.get('rs1') is not None:
+            scalar_section.append(format_register_data(f"x{display_instr.get('rs1')}", 'rs1 source', display_instr.get('rs1_value', 'N/A')))
         
-        if scalar_section:
+        if display_instr.get('rs2') is not None:
+            scalar_section.append(format_register_data(f"x{display_instr.get('rs2')}", 'rs2 source', display_instr.get('rs2_value', 'N/A')))
+    
+        if len(scalar_section) > 1:
             details.extend(scalar_section)
         
+        # Vector registers
         vec_section = []
         vec_section.append(html.H4('Vector Registers', style={'marginBottom': '10px'}))
 
+        
         if 'vd' in display_instr and display_instr.get('vd') is not None:
+            vec_section.append(html.H4('Destination vd:', style={'marginBottom': '10px'}))
             vec_section.append(format_register_data(f"v{display_instr.get('vd')}", 'vd destination', display_instr.get('vd_data', 'N/A')))
         
         if 'vs1' in display_instr and display_instr.get('vs1') is not None:
+            vec_section.append(html.H4('Source vs1:', style={'marginBottom': '10px'}))
             vec_section.append(format_register_data(f"v{display_instr.get('vs1')}", 'vs1 source 1', display_instr.get('vs1_data', 'N/A')))
 
         if 'vs2' in display_instr and display_instr.get('vs2') is not None:
+            vec_section.append(html.H4('Source vs2:', style={'marginBottom': '10px'}))
             vec_section.append(format_register_data(f"v{display_instr.get('vs2')}", 'vs2 source 2', display_instr.get('vs2_data', 'N/A')))  
         
         if len(vec_section) > 1:
@@ -320,7 +328,7 @@ def create_app(graph_files: dict, start: int = 0, end: Optional[int] = None, fil
                 # VLENB
                 html.P([html.Strong('VLENB (Vector register length in bytes): '), 
                        str(rvv_state.get('vlenb', 'N/A'))],
-                       style={'marginBottom': '8px'}),
+                       style={'marginBottom': '100px'}),
             ]
             
             rvv_section = [item for item in rvv_section if item is not None]
@@ -389,8 +397,8 @@ Instruction types:
         '-t', '--types',
         nargs='+',
         choices=['reg', 'csr', 'ls'],
-        default=None,
-        help='Filter by instruction types (default: show all types)'
+        default=['csr'],
+        help='Filter by instruction types (default: show only reg and ls instructions)'
     )
     
     args = parser.parse_args()

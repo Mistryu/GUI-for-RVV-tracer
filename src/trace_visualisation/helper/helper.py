@@ -29,16 +29,21 @@ def load_graph_from_json(json_file: str) -> nx.DiGraph:
 
 
 def build_elements(json_file: str, start: int = 0, end: Optional[int] = None, 
-                  max_elements: int = 3000, filter_types: Optional[List[str]] = None) -> List[Dict]:
+                  max_elements: int = 3000, filter_types: Optional[List[str]] = None,
+                  is_execution_graph: bool = False) -> List[Dict]:
     
     graph = load_graph_from_json(json_file)
     
-    type_map = {'reg': 1, 'csr': 2, 'ls': 3}
-    allowed_types = {type_map[ft] for ft in filter_types if ft in type_map} if filter_types else None
+    # In order to correctly display execution graphs, we need to include all instruction types.
+    if is_execution_graph:
+        excluded_types = None
+    else:
+        type_map = {'reg': 1, 'csr': 2, 'ls': 3}
+        excluded_types = {type_map[ft] for ft in filter_types if ft in type_map} if filter_types else None
     
     filtered_nodes = []
     for node_id, data in graph.nodes(data=True):
-        if should_include_node(data['instruction'], start, end, allowed_types):
+        if should_include_node(data['instruction'], start, end, excluded_types):
             filtered_nodes.append(node_id)
             if len(filtered_nodes) >= max_elements:
                 break
@@ -86,7 +91,7 @@ def build_elements(json_file: str, start: int = 0, end: Optional[int] = None,
 
 
 def should_include_node(instr: Dict, start: int, end: Optional[int], 
-                       allowed_types: Optional[set]) -> bool:
+                       excluded_types: Optional[set]) -> bool:
     executions = instr.get('iterations', [instr])
     
     for exec_instr in executions:
@@ -96,7 +101,7 @@ def should_include_node(instr: Dict, start: int, end: Optional[int],
         if end is not None and not (start <= exec_num < end):
             continue
         
-        if allowed_types is not None and exec_type not in allowed_types:
+        if excluded_types is not None and exec_type in excluded_types:
             continue
         
         return True
@@ -127,10 +132,24 @@ def format_hex_data(data: str, bytes_per_group: int = 2):
     
 
 def format_register_data(register: str, reg_type: str, reg_value):
-    return html.Div([
+    if 'x' in register:
+        return html.Div([
                     html.P([html.Strong(f"{register} ({reg_type}):")], style={'marginBottom': '5px'}),
-                    format_hex_data(reg_value, bytes_per_group= 2 if 'v' in register else 1)
+                    format_hex_data(reg_value, bytes_per_group=1)
                 ], style={'marginBottom': '15px'})
+        
+    base_reg = int(register.replace('v', ''))
+    elements = []
+    for index, value in enumerate(reg_value):
+        elements.append(html.Div([
+                    html.P([html.Strong(f"v{base_reg + index}:")], 
+                    style={'marginBottom': '2px', 'marginTop': '5px'}),
+                    format_hex_data(value, bytes_per_group=1)
+]))
+    return html.Div(elements, style={'marginBottom': '15px'})
+    
+    # TODO bytes per group should be determined by sew
+    # Add converting to hex, int, unsigned int, float get element sie from sew and 
 
 
 def decode_vtype(vtype) -> Dict[str, str]:

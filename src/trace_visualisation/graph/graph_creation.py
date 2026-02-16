@@ -21,12 +21,25 @@ class ComputationGraphBuilder:
         destinations = set()
         
         if 'vd' in instr and instr['vd'] is not None:
-            destinations.add(instr['vd'])
+            vd = instr['vd']
+            vd_data = instr.get('vd_data', [])
+            num_dest_regs = len(vd_data) if isinstance(vd_data, list) else 1
+            for i in range(num_dest_regs):
+                destinations.add(vd + i)
         
         if 'vs1' in instr and instr['vs1'] is not None:
-            sources.add(instr['vs1'])
+            vs1 = instr['vs1']
+            vs1_data = instr.get('vs1_data', [])
+            num_vs1_regs = len(vs1_data) if isinstance(vs1_data, list) else 1
+            for i in range(num_vs1_regs):
+                sources.add(vs1 + i)
+        
         if 'vs2' in instr and instr['vs2'] is not None:
-            sources.add(instr['vs2'])
+            vs2 = instr['vs2']
+            vs2_data = instr.get('vs2_data', [])
+            num_vs2_regs = len(vs2_data) if isinstance(vs2_data, list) else 1
+            for i in range(num_vs2_regs):
+                sources.add(vs2 + i)
         
         return sources, destinations
     

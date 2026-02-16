@@ -567,16 +567,14 @@ def get_load_store_mnemonic(opcode: int, width: int, mop: int, mew: int, nf: int
     
     if not (is_load or is_store):
         return None
-        
+    
     eew_map = {
         0b000: "8",
         0b101: "16",
         0b110: "32",
         0b111: "64",
     }
-    
     eew = eew_map.get(width)
-    
     if eew is None:
         return None
     #     # Scalar FP loads/stores are not supported since they are not vector instructions but for some reason are mentioned in the spec
@@ -685,8 +683,6 @@ def format_load_store(instruction: int, opcode: int, vd_vs3: int, width: int, rs
     mnemonic = get_load_store_mnemonic(opcode, width, mop, mew, nf, lumop_sumop_rs2_vs2)
     if mnemonic is None:
         return "UNKNOWN"
-    
-    is_load = (opcode == 0x07)
     
     # Whole register load: vl1re8.v v1, (x1) 
     # Whole register store: vs1r.v v1, (x1)
@@ -857,7 +853,7 @@ def disassemble_rvv(instruction: int) -> str:
     opcode, funct6, vm, vs2, vs1_rs1, funct3, vd_rd, imm5 = extract_fields(instruction)
     
     if opcode == 0x07 or opcode == 0x27:
-        return format_load_store(instruction, opcode, funct3, vd_rd, vs1_rs1, vm)
+        return format_load_store(instruction, opcode, vd_rd, funct3, vs1_rs1, vm)
     
     if opcode != 0x57:
         return "UNKNOWN opcode"

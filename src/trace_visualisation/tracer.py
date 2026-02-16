@@ -211,7 +211,6 @@ Instruction Type Filters:
     if args.graphs_only:
         args.skip_ui = True
     
-    # Validate inputs
     if args.start < 0:
         print("Error: start must be >= 0", file=sys.stderr)
         sys.exit(1)

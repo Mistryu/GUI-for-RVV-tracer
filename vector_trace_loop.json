@@ -1,9 +1,10 @@
 [
   {
-    "pc": "0x0000003f9293e8ac",
+    "pc": "0x0000003faac2f8ac",
     "instruction": "0x0c94f757",
     "type": 2,
-      "number": 0, 
+    "number": 0, 
+    "lmul": 2,
     "rd": 14,
     "rd_value": "0x0000000000000020",
     "rs1": 9,
@@ -17,16 +18,17 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8b4",
+    "pc": "0x0000003faac2f8b4",
     "instruction": "0x0d277057",
     "type": 2,
-      "number": 1, 
+    "number": 1, 
+    "lmul": 4,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
     "rs1_value": "0x0000000000000020",
     "rs2": 18,
-    "rs2_value": "0x0000003f9293eb98",
+    "rs2_value": "0x0000003faac2fb98",
     "vl": "0x0000000000000020",
     "vtype": "0x00000000000000d2",
     "vstart": "0x0000000000000000",
@@ -34,22 +36,32 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8b8",
+    "pc": "0x0000003faac2f8b8",
     "instruction": "0x5e003457",
     "type": 1,
-      "number": 2, 
+    "number": 2, 
+    "lmul": 4,
     "vd": 8,
-    "vs1": 0,
+    "vd_data": [
+      "0000000000000000000000000000000000000000000000000000000000000000",
+      "0000000000000000000000000000000000000000000000000000000000000000",
+      "0000000000000000000000000000000000000000000000000000000000000000",
+      "0000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "imm": 0,
     "vs2": 0,
-    "vd_data": "0000000000000000000000000000000000000000000000000000000000000000",
-    "vs1_data": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    "vs2_data": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
-  },
+    "vs2_data": [
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ]  },
   {
-    "pc": "0x0000003f9293e8cc",
+    "pc": "0x0000003faac2f8cc",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 3, 
+    "number": 3, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -63,22 +75,24 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8d0",
+    "pc": "0x0000003faac2f8d0",
     "instruction": "0x0206d007",
     "type": 3,
-      "number": 4, 
-    "vd": 0,
+    "number": 4, 
+    "lmul": 2,
     "rs1": 13,
-    "rs1_value": "0x0000003f92940020",
-    "vs2": 0,
-    "vd_data": "00100012001400160018001a001c001e00200022002400260028002a002c002e",
-    "vs2_data": "00100012001400160018001a001c001e00200022002400260028002a002c002e"
-  },
+    "rs1_value": "0x0000003faac31020",
+    "vd": 0,
+    "vd_data": [
+      "00100012001400160018001a001c001e00200022002400260028002a002c002e",
+      "00300032003400360038003a003c003e00400042004400460048004a004c004e"
+    ]  },
   {
-    "pc": "0x0000003f9293e8d8",
+    "pc": "0x0000003faac2f8d8",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 5, 
+    "number": 5, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -92,22 +106,31 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8dc",
+    "pc": "0x0000003faac2f8dc",
     "instruction": "0xf605e457",
     "type": 1,
-      "number": 6, 
+    "number": 6, 
+    "lmul": 2,
     "vd": 8,
-    "vs1": 11,
+    "vd_data": [
+      "0000400000004800000050000000580000006000000068000000700000007800",
+      "000080000000880000009000000098000000a0000000a8000000b0000000b800",
+      "0000c0000000c8000000d0000000d8000000e0000000e8000000f0000000f800",
+      "0000000100000801000010010000180100002001000028010000300100003801"
+    ],
+    "rs1": 11,
+    "rs1_value": "0x0000000000000400",
     "vs2": 0,
-    "vd_data": "0000400000004800000050000000580000006000000068000000700000007800",
-    "vs1_data": "0000000100000801000010010000180100002001000028010000300100003801",
-    "vs2_data": "00100012001400160018001a001c001e00200022002400260028002a002c002e"
-  },
+    "vs2_data": [
+      "00100012001400160018001a001c001e00200022002400260028002a002c002e",
+      "00300032003400360038003a003c003e00400042004400460048004a004c004e"
+    ]  },
   {
-    "pc": "0x0000003f9293e8cc",
+    "pc": "0x0000003faac2f8cc",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 7, 
+    "number": 7, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -121,22 +144,24 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8d0",
+    "pc": "0x0000003faac2f8d0",
     "instruction": "0x0206d007",
     "type": 3,
-      "number": 8, 
-    "vd": 0,
+    "number": 8, 
+    "lmul": 2,
     "rs1": 13,
-    "rs1_value": "0x0000003f9294001e",
-    "vs2": 0,
-    "vd_data": "000e00100012001400160018001a001c001e00200022002400260028002a002c",
-    "vs2_data": "000e00100012001400160018001a001c001e00200022002400260028002a002c"
-  },
+    "rs1_value": "0x0000003faac3101e",
+    "vd": 0,
+    "vd_data": [
+      "000e00100012001400160018001a001c001e00200022002400260028002a002c",
+      "002e00300032003400360038003a003c003e00400042004400460048004a004c"
+    ]  },
   {
-    "pc": "0x0000003f9293e8d8",
+    "pc": "0x0000003faac2f8d8",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 9, 
+    "number": 9, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -150,22 +175,31 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8dc",
+    "pc": "0x0000003faac2f8dc",
     "instruction": "0xf605e457",
     "type": 1,
-      "number": 10, 
+    "number": 10, 
+    "lmul": 2,
     "vd": 8,
-    "vs1": 11,
+    "vd_data": [
+      "ffff6f00ffff7f00ffff8f00ffff9f00ffffaf00ffffbf00ffffcf00ffffdf00",
+      "ffffef00ffffff00ffff0f01ffff1f01ffff2f01ffff3f01ffff4f01ffff5f01",
+      "ffff6f01ffff7f01ffff8f01ffff9f01ffffaf01ffffbf01ffffcf01ffffdf01",
+      "ffffef01ffffff01ffff0f02ffff1f02ffff2f02ffff3f02ffff4f02ffff5f02"
+    ],
+    "rs1": 11,
+    "rs1_value": "0x0000000000000800",
     "vs2": 0,
-    "vd_data": "ffff6f00ffff7f00ffff8f00ffff9f00ffffaf00ffffbf00ffffcf00ffffdf00",
-    "vs1_data": "ffffef01ffffff01ffff0f02ffff1f02ffff2f02ffff3f02ffff4f02ffff5f02",
-    "vs2_data": "000e00100012001400160018001a001c001e00200022002400260028002a002c"
-  },
+    "vs2_data": [
+      "000e00100012001400160018001a001c001e00200022002400260028002a002c",
+      "002e00300032003400360038003a003c003e00400042004400460048004a004c"
+    ]  },
   {
-    "pc": "0x0000003f9293e8cc",
+    "pc": "0x0000003faac2f8cc",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 11, 
+    "number": 11, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -179,22 +213,24 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8d0",
+    "pc": "0x0000003faac2f8d0",
     "instruction": "0x0206d007",
     "type": 3,
-      "number": 12, 
-    "vd": 0,
+    "number": 12, 
+    "lmul": 2,
     "rs1": 13,
-    "rs1_value": "0x0000003f9294001c",
-    "vs2": 0,
-    "vd_data": "000c000e00100012001400160018001a001c001e00200022002400260028002a",
-    "vs2_data": "000c000e00100012001400160018001a001c001e00200022002400260028002a"
-  },
+    "rs1_value": "0x0000003faac3101c",
+    "vd": 0,
+    "vd_data": [
+      "000c000e00100012001400160018001a001c001e00200022002400260028002a",
+      "002c002e00300032003400360038003a003c003e00400042004400460048004a"
+    ]  },
   {
-    "pc": "0x0000003f9293e8d8",
+    "pc": "0x0000003faac2f8d8",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 13, 
+    "number": 13, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -208,22 +244,31 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8dc",
+    "pc": "0x0000003faac2f8dc",
     "instruction": "0xf605e457",
     "type": 1,
-      "number": 14, 
+    "number": 14, 
+    "lmul": 2,
     "vd": 8,
-    "vs1": 11,
+    "vd_data": [
+      "ffff8f00ffffa700ffffbf00ffffd700ffffef00ffff0701ffff1f01ffff3701",
+      "ffff4f01ffff6701ffff7f01ffff9701ffffaf01ffffc701ffffdf01fffff701",
+      "ffff0f02ffff2702ffff3f02ffff5702ffff6f02ffff8702ffff9f02ffffb702",
+      "ffffcf02ffffe702ffffff02ffff1703ffff2f03ffff4703ffff5f03ffff7703"
+    ],
+    "rs1": 11,
+    "rs1_value": "0x0000000000000c00",
     "vs2": 0,
-    "vd_data": "ffff8f00ffffa700ffffbf00ffffd700ffffef00ffff0701ffff1f01ffff3701",
-    "vs1_data": "ffffcf02ffffe702ffffff02ffff1703ffff2f03ffff4703ffff5f03ffff7703",
-    "vs2_data": "000c000e00100012001400160018001a001c001e00200022002400260028002a"
-  },
+    "vs2_data": [
+      "000c000e00100012001400160018001a001c001e00200022002400260028002a",
+      "002c002e00300032003400360038003a003c003e00400042004400460048004a"
+    ]  },
   {
-    "pc": "0x0000003f9293e8cc",
+    "pc": "0x0000003faac2f8cc",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 15, 
+    "number": 15, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -237,22 +282,24 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8d0",
+    "pc": "0x0000003faac2f8d0",
     "instruction": "0x0206d007",
     "type": 3,
-      "number": 16, 
-    "vd": 0,
+    "number": 16, 
+    "lmul": 2,
     "rs1": 13,
-    "rs1_value": "0x0000003f9294001a",
-    "vs2": 0,
-    "vd_data": "000a000c000e00100012001400160018001a001c001e00200022002400260028",
-    "vs2_data": "000a000c000e00100012001400160018001a001c001e00200022002400260028"
-  },
+    "rs1_value": "0x0000003faac3101a",
+    "vd": 0,
+    "vd_data": [
+      "000a000c000e00100012001400160018001a001c001e00200022002400260028",
+      "002a002c002e00300032003400360038003a003c003e00400042004400460048"
+    ]  },
   {
-    "pc": "0x0000003f9293e8d8",
+    "pc": "0x0000003faac2f8d8",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 17, 
+    "number": 17, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -266,22 +313,31 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8dc",
+    "pc": "0x0000003faac2f8dc",
     "instruction": "0xf605e457",
     "type": 1,
-      "number": 18, 
+    "number": 18, 
+    "lmul": 2,
     "vd": 8,
-    "vs1": 11,
+    "vd_data": [
+      "ffff2f01ffff6701ffff9f01ffffd701ffff0f02ffff4702ffff7f02ffffb702",
+      "ffffef02ffff2703ffff5f03ffff9703ffffcf03ffff0704ffff3f04ffff7704",
+      "ffffaf04ffffe704ffff1f05ffff5705ffff8f05ffffc705ffffff05ffff3706",
+      "ffff6f06ffffa706ffffdf06ffff1707ffff4f07ffff8707ffffbf07fffff707"
+    ],
+    "rs1": 11,
+    "rs1_value": "0x0000000000001000",
     "vs2": 0,
-    "vd_data": "ffff2f01ffff6701ffff9f01ffffd701ffff0f02ffff4702ffff7f02ffffb702",
-    "vs1_data": "ffff6f06ffffa706ffffdf06ffff1707ffff4f07ffff8707ffffbf07fffff707",
-    "vs2_data": "000a000c000e00100012001400160018001a001c001e00200022002400260028"
-  },
+    "vs2_data": [
+      "000a000c000e00100012001400160018001a001c001e00200022002400260028",
+      "002a002c002e00300032003400360038003a003c003e00400042004400460048"
+    ]  },
   {
-    "pc": "0x0000003f9293e8cc",
+    "pc": "0x0000003faac2f8cc",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 19, 
+    "number": 19, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -295,22 +351,24 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8d0",
+    "pc": "0x0000003faac2f8d0",
     "instruction": "0x0206d007",
     "type": 3,
-      "number": 20, 
-    "vd": 0,
+    "number": 20, 
+    "lmul": 2,
     "rs1": 13,
-    "rs1_value": "0x0000003f92940018",
-    "vs2": 0,
-    "vd_data": "0008000a000c000e00100012001400160018001a001c001e0020002200240026",
-    "vs2_data": "0008000a000c000e00100012001400160018001a001c001e0020002200240026"
-  },
+    "rs1_value": "0x0000003faac31018",
+    "vd": 0,
+    "vd_data": [
+      "0008000a000c000e00100012001400160018001a001c001e0020002200240026",
+      "0028002a002c002e00300032003400360038003a003c003e0040004200440046"
+    ]  },
   {
-    "pc": "0x0000003f9293e8d8",
+    "pc": "0x0000003faac2f8d8",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 21, 
+    "number": 21, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -324,22 +382,31 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8dc",
+    "pc": "0x0000003faac2f8dc",
     "instruction": "0xf605e457",
     "type": 1,
-      "number": 22, 
+    "number": 22, 
+    "lmul": 2,
     "vd": 8,
-    "vs1": 11,
+    "vd_data": [
+      "ffffaf01ffff0702ffff5f02ffffb702ffff0f03ffff6703ffffbf03ffff1704",
+      "ffff6f04ffffc704ffff1f05ffff7705ffffcf05ffff2706ffff7f06ffffd706",
+      "ffff2f07ffff8707ffffdf07ffff3708ffff8f08ffffe708ffff3f09ffff9709",
+      "ffffef09ffff470affff9f0afffff70affff4f0bffffa70bffffff0bffff570c"
+    ],
+    "rs1": 11,
+    "rs1_value": "0x0000000000001000",
     "vs2": 0,
-    "vd_data": "ffffaf01ffff0702ffff5f02ffffb702ffff0f03ffff6703ffffbf03ffff1704",
-    "vs1_data": "ffffef09ffff470affff9f0afffff70affff4f0bffffa70bffffff0bffff570c",
-    "vs2_data": "0008000a000c000e00100012001400160018001a001c001e0020002200240026"
-  },
+    "vs2_data": [
+      "0008000a000c000e00100012001400160018001a001c001e0020002200240026",
+      "0028002a002c002e00300032003400360038003a003c003e0040004200440046"
+    ]  },
   {
-    "pc": "0x0000003f9293e8cc",
+    "pc": "0x0000003faac2f8cc",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 23, 
+    "number": 23, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -353,22 +420,24 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8d0",
+    "pc": "0x0000003faac2f8d0",
     "instruction": "0x0206d007",
     "type": 3,
-      "number": 24, 
-    "vd": 0,
+    "number": 24, 
+    "lmul": 2,
     "rs1": 13,
-    "rs1_value": "0x0000003f92940016",
-    "vs2": 0,
-    "vd_data": "00060008000a000c000e00100012001400160018001a001c001e002000220024",
-    "vs2_data": "00060008000a000c000e00100012001400160018001a001c001e002000220024"
-  },
+    "rs1_value": "0x0000003faac31016",
+    "vd": 0,
+    "vd_data": [
+      "00060008000a000c000e00100012001400160018001a001c001e002000220024",
+      "00260028002a002c002e00300032003400360038003a003c003e004000420044"
+    ]  },
   {
-    "pc": "0x0000003f9293e8d8",
+    "pc": "0x0000003faac2f8d8",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 25, 
+    "number": 25, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -382,22 +451,31 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8dc",
+    "pc": "0x0000003faac2f8dc",
     "instruction": "0xf605e457",
     "type": 1,
-      "number": 26, 
+    "number": 26, 
+    "lmul": 2,
     "vd": 8,
-    "vs1": 11,
+    "vd_data": [
+      "fffff701ffff6702ffffd702ffff4703ffffb703ffff2704ffff9704ffff0705",
+      "ffff7705ffffe705ffff5706ffffc706ffff3707ffffa707ffff1708ffff8708",
+      "fffff708ffff6709ffffd709ffff470affffb70affff270bffff970bffff070c",
+      "ffff770cffffe70cffff570dffffc70dffff370effffa70effff170fffff870f"
+    ],
+    "rs1": 11,
+    "rs1_value": "0x0000000000000c00",
     "vs2": 0,
-    "vd_data": "fffff701ffff6702ffffd702ffff4703ffffb703ffff2704ffff9704ffff0705",
-    "vs1_data": "ffff770cffffe70cffff570dffffc70dffff370effffa70effff170fffff870f",
-    "vs2_data": "00060008000a000c000e00100012001400160018001a001c001e002000220024"
-  },
+    "vs2_data": [
+      "00060008000a000c000e00100012001400160018001a001c001e002000220024",
+      "00260028002a002c002e00300032003400360038003a003c003e004000420044"
+    ]  },
   {
-    "pc": "0x0000003f9293e8cc",
+    "pc": "0x0000003faac2f8cc",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 27, 
+    "number": 27, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -411,22 +489,24 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8d0",
+    "pc": "0x0000003faac2f8d0",
     "instruction": "0x0206d007",
     "type": 3,
-      "number": 28, 
-    "vd": 0,
+    "number": 28, 
+    "lmul": 2,
     "rs1": 13,
-    "rs1_value": "0x0000003f92940014",
-    "vs2": 0,
-    "vd_data": "000400060008000a000c000e00100012001400160018001a001c001e00200022",
-    "vs2_data": "000400060008000a000c000e00100012001400160018001a001c001e00200022"
-  },
+    "rs1_value": "0x0000003faac31014",
+    "vd": 0,
+    "vd_data": [
+      "000400060008000a000c000e00100012001400160018001a001c001e00200022",
+      "002400260028002a002c002e00300032003400360038003a003c003e00400042"
+    ]  },
   {
-    "pc": "0x0000003f9293e8d8",
+    "pc": "0x0000003faac2f8d8",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 29, 
+    "number": 29, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -440,22 +520,31 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8dc",
+    "pc": "0x0000003faac2f8dc",
     "instruction": "0xf605e457",
     "type": 1,
-      "number": 30, 
+    "number": 30, 
+    "lmul": 2,
     "vd": 8,
-    "vs1": 11,
+    "vd_data": [
+      "ffff1702ffff9702ffff1703ffff9703ffff1704ffff9704ffff1705ffff9705",
+      "ffff1706ffff9706ffff1707ffff9707ffff1708ffff9708ffff1709ffff9709",
+      "ffff170affff970affff170bffff970bffff170cffff970cffff170dffff970d",
+      "ffff170effff970effff170fffff970fffff1710ffff9710ffff1711ffff9711"
+    ],
+    "rs1": 11,
+    "rs1_value": "0x0000000000000800",
     "vs2": 0,
-    "vd_data": "ffff1702ffff9702ffff1703ffff9703ffff1704ffff9704ffff1705ffff9705",
-    "vs1_data": "ffff170effff970effff170fffff970fffff1710ffff9710ffff1711ffff9711",
-    "vs2_data": "000400060008000a000c000e00100012001400160018001a001c001e00200022"
-  },
+    "vs2_data": [
+      "000400060008000a000c000e00100012001400160018001a001c001e00200022",
+      "002400260028002a002c002e00300032003400360038003a003c003e00400042"
+    ]  },
   {
-    "pc": "0x0000003f9293e8cc",
+    "pc": "0x0000003faac2f8cc",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 31, 
+    "number": 31, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -469,22 +558,24 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8d0",
+    "pc": "0x0000003faac2f8d0",
     "instruction": "0x0206d007",
     "type": 3,
-      "number": 32, 
-    "vd": 0,
+    "number": 32, 
+    "lmul": 2,
     "rs1": 13,
-    "rs1_value": "0x0000003f92940012",
-    "vs2": 0,
-    "vd_data": "0002000400060008000a000c000e00100012001400160018001a001c001e0020",
-    "vs2_data": "0002000400060008000a000c000e00100012001400160018001a001c001e0020"
-  },
+    "rs1_value": "0x0000003faac31012",
+    "vd": 0,
+    "vd_data": [
+      "0002000400060008000a000c000e00100012001400160018001a001c001e0020",
+      "0022002400260028002a002c002e00300032003400360038003a003c003e0040"
+    ]  },
   {
-    "pc": "0x0000003f9293e8d8",
+    "pc": "0x0000003faac2f8d8",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 33, 
+    "number": 33, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -498,28 +589,37 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8dc",
+    "pc": "0x0000003faac2f8dc",
     "instruction": "0xf605e457",
     "type": 1,
-      "number": 34, 
+    "number": 34, 
+    "lmul": 2,
     "vd": 8,
-    "vs1": 11,
+    "vd_data": [
+      "ffff1f02ffffa702ffff2f03ffffb703ffff3f04ffffc704ffff4f05ffffd705",
+      "ffff5f06ffffe706ffff6f07fffff707ffff7f08ffff0709ffff8f09ffff170a",
+      "ffff9f0affff270bffffaf0bffff370cffffbf0cffff470dffffcf0dffff570e",
+      "ffffdf0effff670fffffef0fffff7710ffffff10ffff8711ffff0f12ffff9712"
+    ],
+    "rs1": 11,
+    "rs1_value": "0x0000000000000400",
     "vs2": 0,
-    "vd_data": "ffff1f02ffffa702ffff2f03ffffb703ffff3f04ffffc704ffff4f05ffffd705",
-    "vs1_data": "ffffdf0effff670fffffef0fffff7710ffffff10ffff8711ffff0f12ffff9712",
-    "vs2_data": "0002000400060008000a000c000e00100012001400160018001a001c001e0020"
-  },
+    "vs2_data": [
+      "0002000400060008000a000c000e00100012001400160018001a001c001e0020",
+      "0022002400260028002a002c002e00300032003400360038003a003c003e0040"
+    ]  },
   {
-    "pc": "0x0000003f9293e8ec",
+    "pc": "0x0000003faac2f8ec",
     "instruction": "0x0d277057",
     "type": 2,
-      "number": 35, 
+    "number": 35, 
+    "lmul": 4,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
     "rs1_value": "0x0000000000000020",
     "rs2": 18,
-    "rs2_value": "0x0000003f9293eb98",
+    "rs2_value": "0x0000003faac2fb98",
     "vl": "0x0000000000000020",
     "vtype": "0x00000000000000d2",
     "vstart": "0x0000000000000000",
@@ -527,22 +627,32 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8f0",
+    "pc": "0x0000003faac2f8f0",
     "instruction": "0xa687b457",
     "type": 1,
-      "number": 36, 
+    "number": 36, 
+    "lmul": 4,
     "vd": 8,
-    "vs1": 15,
+    "vd_data": [
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ],
+    "imm": 15,
     "vs2": 8,
-    "vd_data": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    "vs1_data": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    "vs2_data": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
-  },
+    "vs2_data": [
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ]  },
   {
-    "pc": "0x0000003f9293e8f4",
+    "pc": "0x0000003faac2f8f4",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 37, 
+    "number": 37, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -556,34 +666,43 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8f8",
+    "pc": "0x0000003faac2f8f8",
     "instruction": "0xbe803057",
     "type": 1,
-      "number": 38, 
+    "number": 38, 
+    "lmul": 2,
     "vd": 0,
-    "vs1": 0,
+    "vd_data": [
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ],
+    "imm": 0,
     "vs2": 8,
-    "vd_data": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    "vs1_data": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    "vs2_data": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
-  },
+    "vs2_data": [
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ]  },
   {
-    "pc": "0x0000003f9293e8fc",
+    "pc": "0x0000003faac2f8fc",
     "instruction": "0x0207d027",
     "type": 3,
-      "number": 39, 
-    "vd": 0,
+    "number": 39, 
+    "lmul": 2,
     "rs1": 15,
-    "rs1_value": "0x0000003f92940120",
-    "vs2": 0,
-    "vd_data": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    "vs2_data": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
-  },
+    "rs1_value": "0x0000003faac31120",
+    "vd": 0,
+    "vd_data": [
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ]  },
   {
-    "pc": "0x0000003f9293e90e",
+    "pc": "0x0000003faac2f90e",
     "instruction": "0x0c977757",
     "type": 2,
-      "number": 40, 
+    "number": 40, 
+    "lmul": 2,
     "rd": 14,
     "rd_value": "0x0000000000000018",
     "rs1": 14,
@@ -597,16 +716,17 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8b4",
+    "pc": "0x0000003faac2f8b4",
     "instruction": "0x0d277057",
     "type": 2,
-      "number": 41, 
+    "number": 41, 
+    "lmul": 4,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
     "rs1_value": "0x0000000000000018",
     "rs2": 18,
-    "rs2_value": "0x0000003f9293eb98",
+    "rs2_value": "0x0000003faac2fb98",
     "vl": "0x0000000000000018",
     "vtype": "0x00000000000000d2",
     "vstart": "0x0000000000000000",
@@ -614,22 +734,32 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8b8",
+    "pc": "0x0000003faac2f8b8",
     "instruction": "0x5e003457",
     "type": 1,
-      "number": 42, 
+    "number": 42, 
+    "lmul": 4,
     "vd": 8,
-    "vs1": 0,
+    "vd_data": [
+      "0000000000000000000000000000000000000000000000000000000000000000",
+      "0000000000000000000000000000000000000000000000000000000000000000",
+      "0000000000000000000000000000000000000000000000000000000000000000",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ],
+    "imm": 0,
     "vs2": 0,
-    "vd_data": "0000000000000000000000000000000000000000000000000000000000000000",
-    "vs1_data": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    "vs2_data": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
-  },
+    "vs2_data": [
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ]  },
   {
-    "pc": "0x0000003f9293e8cc",
+    "pc": "0x0000003faac2f8cc",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 43, 
+    "number": 43, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -643,22 +773,24 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8d0",
+    "pc": "0x0000003faac2f8d0",
     "instruction": "0x0206d007",
     "type": 3,
-      "number": 44, 
-    "vd": 0,
+    "number": 44, 
+    "lmul": 2,
     "rs1": 13,
-    "rs1_value": "0x0000003f92940060",
-    "vs2": 0,
-    "vd_data": "00500052005400560058005a005c005e00600062006400660068006a006c006e",
-    "vs2_data": "00500052005400560058005a005c005e00600062006400660068006a006c006e"
-  },
+    "rs1_value": "0x0000003faac31060",
+    "vd": 0,
+    "vd_data": [
+      "00500052005400560058005a005c005e00600062006400660068006a006c006e",
+      "00700072007400760078007a007c007effffffffffffffffffffffffffffffff"
+    ]  },
   {
-    "pc": "0x0000003f9293e8d8",
+    "pc": "0x0000003faac2f8d8",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 45, 
+    "number": 45, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -672,22 +804,31 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8dc",
+    "pc": "0x0000003faac2f8dc",
     "instruction": "0xf605e457",
     "type": 1,
-      "number": 46, 
+    "number": 46, 
+    "lmul": 2,
     "vd": 8,
-    "vs1": 11,
+    "vd_data": [
+      "0000400100004801000050010000580100006001000068010000700100007801",
+      "000080010000880100009001000098010000a0010000a8010000b0010000b801",
+      "0000c0010000c8010000d0010000d8010000e0010000e8010000f0010000f801",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ],
+    "rs1": 11,
+    "rs1_value": "0x0000000000000400",
     "vs2": 0,
-    "vd_data": "0000400100004801000050010000580100006001000068010000700100007801",
-    "vs1_data": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    "vs2_data": "00500052005400560058005a005c005e00600062006400660068006a006c006e"
-  },
+    "vs2_data": [
+      "00500052005400560058005a005c005e00600062006400660068006a006c006e",
+      "00700072007400760078007a007c007effffffffffffffffffffffffffffffff"
+    ]  },
   {
-    "pc": "0x0000003f9293e8cc",
+    "pc": "0x0000003faac2f8cc",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 47, 
+    "number": 47, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -701,22 +842,24 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8d0",
+    "pc": "0x0000003faac2f8d0",
     "instruction": "0x0206d007",
     "type": 3,
-      "number": 48, 
-    "vd": 0,
+    "number": 48, 
+    "lmul": 2,
     "rs1": 13,
-    "rs1_value": "0x0000003f9294005e",
-    "vs2": 0,
-    "vd_data": "004e00500052005400560058005a005c005e00600062006400660068006a006c",
-    "vs2_data": "004e00500052005400560058005a005c005e00600062006400660068006a006c"
-  },
+    "rs1_value": "0x0000003faac3105e",
+    "vd": 0,
+    "vd_data": [
+      "004e00500052005400560058005a005c005e00600062006400660068006a006c",
+      "006e00700072007400760078007a007cffffffffffffffffffffffffffffffff"
+    ]  },
   {
-    "pc": "0x0000003f9293e8d8",
+    "pc": "0x0000003faac2f8d8",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 49, 
+    "number": 49, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -730,22 +873,31 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8dc",
+    "pc": "0x0000003faac2f8dc",
     "instruction": "0xf605e457",
     "type": 1,
-      "number": 50, 
+    "number": 50, 
+    "lmul": 2,
     "vd": 8,
-    "vs1": 11,
+    "vd_data": [
+      "0000b0030000c8030000e0030000f80300001004000028040000400400005804",
+      "00007004000088040000a0040000b8040000d0040000e8040000000500001805",
+      "00003005000048050000600500007805000090050000a8050000c0050000d805",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ],
+    "rs1": 11,
+    "rs1_value": "0x0000000000000800",
     "vs2": 0,
-    "vd_data": "0000b0030000c8030000e0030000f80300001004000028040000400400005804",
-    "vs1_data": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    "vs2_data": "004e00500052005400560058005a005c005e00600062006400660068006a006c"
-  },
+    "vs2_data": [
+      "004e00500052005400560058005a005c005e00600062006400660068006a006c",
+      "006e00700072007400760078007a007cffffffffffffffffffffffffffffffff"
+    ]  },
   {
-    "pc": "0x0000003f9293e8cc",
+    "pc": "0x0000003faac2f8cc",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 51, 
+    "number": 51, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -759,22 +911,24 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8d0",
+    "pc": "0x0000003faac2f8d0",
     "instruction": "0x0206d007",
     "type": 3,
-      "number": 52, 
-    "vd": 0,
+    "number": 52, 
+    "lmul": 2,
     "rs1": 13,
-    "rs1_value": "0x0000003f9294005c",
-    "vs2": 0,
-    "vd_data": "004c004e00500052005400560058005a005c005e00600062006400660068006a",
-    "vs2_data": "004c004e00500052005400560058005a005c005e00600062006400660068006a"
-  },
+    "rs1_value": "0x0000003faac3105c",
+    "vd": 0,
+    "vd_data": [
+      "004c004e00500052005400560058005a005c005e00600062006400660068006a",
+      "006c006e00700072007400760078007affffffffffffffffffffffffffffffff"
+    ]  },
   {
-    "pc": "0x0000003f9293e8d8",
+    "pc": "0x0000003faac2f8d8",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 53, 
+    "number": 53, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -788,22 +942,31 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8dc",
+    "pc": "0x0000003faac2f8dc",
     "instruction": "0xf605e457",
     "type": 1,
-      "number": 54, 
+    "number": 54, 
+    "lmul": 2,
     "vd": 8,
-    "vs1": 11,
+    "vd_data": [
+      "00004007000070070000a0070000d00700000008000030080000600800009008",
+      "0000c0080000f0080000200900005009000080090000b0090000e0090000100a",
+      "0000400a0000700a0000a00a0000d00a0000000b0000300b0000600b0000900b",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ],
+    "rs1": 11,
+    "rs1_value": "0x0000000000000c00",
     "vs2": 0,
-    "vd_data": "00004007000070070000a0070000d00700000008000030080000600800009008",
-    "vs1_data": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    "vs2_data": "004c004e00500052005400560058005a005c005e00600062006400660068006a"
-  },
+    "vs2_data": [
+      "004c004e00500052005400560058005a005c005e00600062006400660068006a",
+      "006c006e00700072007400760078007affffffffffffffffffffffffffffffff"
+    ]  },
   {
-    "pc": "0x0000003f9293e8cc",
+    "pc": "0x0000003faac2f8cc",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 55, 
+    "number": 55, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -817,22 +980,24 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8d0",
+    "pc": "0x0000003faac2f8d0",
     "instruction": "0x0206d007",
     "type": 3,
-      "number": 56, 
-    "vd": 0,
+    "number": 56, 
+    "lmul": 2,
     "rs1": 13,
-    "rs1_value": "0x0000003f9294005a",
-    "vs2": 0,
-    "vd_data": "004a004c004e00500052005400560058005a005c005e00600062006400660068",
-    "vs2_data": "004a004c004e00500052005400560058005a005c005e00600062006400660068"
-  },
+    "rs1_value": "0x0000003faac3105a",
+    "vd": 0,
+    "vd_data": [
+      "004a004c004e00500052005400560058005a005c005e00600062006400660068",
+      "006a006c006e00700072007400760078ffffffffffffffffffffffffffffffff"
+    ]  },
   {
-    "pc": "0x0000003f9293e8d8",
+    "pc": "0x0000003faac2f8d8",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 57, 
+    "number": 57, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -846,22 +1011,31 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8dc",
+    "pc": "0x0000003faac2f8dc",
     "instruction": "0xf605e457",
     "type": 1,
-      "number": 58, 
+    "number": 58, 
+    "lmul": 2,
     "vd": 8,
-    "vs1": 11,
+    "vd_data": [
+      "0000e00b0000300c0000800c0000d00c0000200d0000700d0000c00d0000100e",
+      "0000600e0000b00e0000000f0000500f0000a00f0000f00f0000401000009010",
+      "0000e01000003011000080110000d01100002012000070120000c01200001013",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ],
+    "rs1": 11,
+    "rs1_value": "0x0000000000001000",
     "vs2": 0,
-    "vd_data": "0000e00b0000300c0000800c0000d00c0000200d0000700d0000c00d0000100e",
-    "vs1_data": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    "vs2_data": "004a004c004e00500052005400560058005a005c005e00600062006400660068"
-  },
+    "vs2_data": [
+      "004a004c004e00500052005400560058005a005c005e00600062006400660068",
+      "006a006c006e00700072007400760078ffffffffffffffffffffffffffffffff"
+    ]  },
   {
-    "pc": "0x0000003f9293e8cc",
+    "pc": "0x0000003faac2f8cc",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 59, 
+    "number": 59, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -875,22 +1049,24 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8d0",
+    "pc": "0x0000003faac2f8d0",
     "instruction": "0x0206d007",
     "type": 3,
-      "number": 60, 
-    "vd": 0,
+    "number": 60, 
+    "lmul": 2,
     "rs1": 13,
-    "rs1_value": "0x0000003f92940058",
-    "vs2": 0,
-    "vd_data": "0048004a004c004e00500052005400560058005a005c005e0060006200640066",
-    "vs2_data": "0048004a004c004e00500052005400560058005a005c005e0060006200640066"
-  },
+    "rs1_value": "0x0000003faac31058",
+    "vd": 0,
+    "vd_data": [
+      "0048004a004c004e00500052005400560058005a005c005e0060006200640066",
+      "0068006a006c006e0070007200740076ffffffffffffffffffffffffffffffff"
+    ]  },
   {
-    "pc": "0x0000003f9293e8d8",
+    "pc": "0x0000003faac2f8d8",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 61, 
+    "number": 61, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -904,22 +1080,31 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8dc",
+    "pc": "0x0000003faac2f8dc",
     "instruction": "0xf605e457",
     "type": 1,
-      "number": 62, 
+    "number": 62, 
+    "lmul": 2,
     "vd": 8,
-    "vs1": 11,
+    "vd_data": [
+      "000060100000d010000040110000b01100002012000090120000001300007013",
+      "0000e013000050140000c014000030150000a01500001016000080160000f016",
+      "000060170000d017000040180000b01800002019000090190000001a0000701a",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ],
+    "rs1": 11,
+    "rs1_value": "0x0000000000001000",
     "vs2": 0,
-    "vd_data": "000060100000d010000040110000b01100002012000090120000001300007013",
-    "vs1_data": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    "vs2_data": "0048004a004c004e00500052005400560058005a005c005e0060006200640066"
-  },
+    "vs2_data": [
+      "0048004a004c004e00500052005400560058005a005c005e0060006200640066",
+      "0068006a006c006e0070007200740076ffffffffffffffffffffffffffffffff"
+    ]  },
   {
-    "pc": "0x0000003f9293e8cc",
+    "pc": "0x0000003faac2f8cc",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 63, 
+    "number": 63, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -933,22 +1118,24 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8d0",
+    "pc": "0x0000003faac2f8d0",
     "instruction": "0x0206d007",
     "type": 3,
-      "number": 64, 
-    "vd": 0,
+    "number": 64, 
+    "lmul": 2,
     "rs1": 13,
-    "rs1_value": "0x0000003f92940056",
-    "vs2": 0,
-    "vd_data": "00460048004a004c004e00500052005400560058005a005c005e006000620064",
-    "vs2_data": "00460048004a004c004e00500052005400560058005a005c005e006000620064"
-  },
+    "rs1_value": "0x0000003faac31056",
+    "vd": 0,
+    "vd_data": [
+      "00460048004a004c004e00500052005400560058005a005c005e006000620064",
+      "00660068006a006c006e007000720074ffffffffffffffffffffffffffffffff"
+    ]  },
   {
-    "pc": "0x0000003f9293e8d8",
+    "pc": "0x0000003faac2f8d8",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 65, 
+    "number": 65, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -962,22 +1149,31 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8dc",
+    "pc": "0x0000003faac2f8dc",
     "instruction": "0xf605e457",
     "type": 1,
-      "number": 66, 
+    "number": 66, 
+    "lmul": 2,
     "vd": 8,
-    "vs1": 11,
+    "vd_data": [
+      "0000a813000030140000b814000040150000c815000050160000d81600006017",
+      "0000e817000070180000f818000080190000081a0000901a0000181b0000a01b",
+      "0000281c0000b01c0000381d0000c01d0000481e0000d01e0000581f0000e01f",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ],
+    "rs1": 11,
+    "rs1_value": "0x0000000000000c00",
     "vs2": 0,
-    "vd_data": "0000a813000030140000b814000040150000c815000050160000d81600006017",
-    "vs1_data": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    "vs2_data": "00460048004a004c004e00500052005400560058005a005c005e006000620064"
-  },
+    "vs2_data": [
+      "00460048004a004c004e00500052005400560058005a005c005e006000620064",
+      "00660068006a006c006e007000720074ffffffffffffffffffffffffffffffff"
+    ]  },
   {
-    "pc": "0x0000003f9293e8cc",
+    "pc": "0x0000003faac2f8cc",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 67, 
+    "number": 67, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -991,22 +1187,24 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8d0",
+    "pc": "0x0000003faac2f8d0",
     "instruction": "0x0206d007",
     "type": 3,
-      "number": 68, 
-    "vd": 0,
+    "number": 68, 
+    "lmul": 2,
     "rs1": 13,
-    "rs1_value": "0x0000003f92940054",
-    "vs2": 0,
-    "vd_data": "004400460048004a004c004e00500052005400560058005a005c005e00600062",
-    "vs2_data": "004400460048004a004c004e00500052005400560058005a005c005e00600062"
-  },
+    "rs1_value": "0x0000003faac31054",
+    "vd": 0,
+    "vd_data": [
+      "004400460048004a004c004e00500052005400560058005a005c005e00600062",
+      "006400660068006a006c006e00700072ffffffffffffffffffffffffffffffff"
+    ]  },
   {
-    "pc": "0x0000003f9293e8d8",
+    "pc": "0x0000003faac2f8d8",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 69, 
+    "number": 69, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -1020,22 +1218,31 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8dc",
+    "pc": "0x0000003faac2f8dc",
     "instruction": "0xf605e457",
     "type": 1,
-      "number": 70, 
+    "number": 70, 
+    "lmul": 2,
     "vd": 8,
-    "vs1": 11,
+    "vd_data": [
+      "0000c815000060160000f81600009017000028180000c018000058190000f019",
+      "0000881a0000201b0000b81b0000501c0000e81c0000801d0000181e0000b01e",
+      "0000481f0000e01f00007820000010210000a821000040220000d82200007023",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ],
+    "rs1": 11,
+    "rs1_value": "0x0000000000000800",
     "vs2": 0,
-    "vd_data": "0000c815000060160000f81600009017000028180000c018000058190000f019",
-    "vs1_data": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    "vs2_data": "004400460048004a004c004e00500052005400560058005a005c005e00600062"
-  },
+    "vs2_data": [
+      "004400460048004a004c004e00500052005400560058005a005c005e00600062",
+      "006400660068006a006c006e00700072ffffffffffffffffffffffffffffffff"
+    ]  },
   {
-    "pc": "0x0000003f9293e8cc",
+    "pc": "0x0000003faac2f8cc",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 71, 
+    "number": 71, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -1049,22 +1256,24 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8d0",
+    "pc": "0x0000003faac2f8d0",
     "instruction": "0x0206d007",
     "type": 3,
-      "number": 72, 
-    "vd": 0,
+    "number": 72, 
+    "lmul": 2,
     "rs1": 13,
-    "rs1_value": "0x0000003f92940052",
-    "vs2": 0,
-    "vd_data": "0042004400460048004a004c004e00500052005400560058005a005c005e0060",
-    "vs2_data": "0042004400460048004a004c004e00500052005400560058005a005c005e0060"
-  },
+    "rs1_value": "0x0000003faac31052",
+    "vd": 0,
+    "vd_data": [
+      "0042004400460048004a004c004e00500052005400560058005a005c005e0060",
+      "0062006400660068006a006c006e0070ffffffffffffffffffffffffffffffff"
+    ]  },
   {
-    "pc": "0x0000003f9293e8d8",
+    "pc": "0x0000003faac2f8d8",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 73, 
+    "number": 73, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -1078,28 +1287,37 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8dc",
+    "pc": "0x0000003faac2f8dc",
     "instruction": "0xf605e457",
     "type": 1,
-      "number": 74, 
+    "number": 74, 
+    "lmul": 2,
     "vd": 8,
-    "vs1": 11,
+    "vd_data": [
+      "0000d01600007017000010180000b018000050190000f0190000901a0000301b",
+      "0000d01b0000701c0000101d0000b01d0000501e0000f01e0000901f00003020",
+      "0000d02000007021000010220000b022000050230000f0230000902400003025",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ],
+    "rs1": 11,
+    "rs1_value": "0x0000000000000400",
     "vs2": 0,
-    "vd_data": "0000d01600007017000010180000b018000050190000f0190000901a0000301b",
-    "vs1_data": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    "vs2_data": "0042004400460048004a004c004e00500052005400560058005a005c005e0060"
-  },
+    "vs2_data": [
+      "0042004400460048004a004c004e00500052005400560058005a005c005e0060",
+      "0062006400660068006a006c006e0070ffffffffffffffffffffffffffffffff"
+    ]  },
   {
-    "pc": "0x0000003f9293e8ec",
+    "pc": "0x0000003faac2f8ec",
     "instruction": "0x0d277057",
     "type": 2,
-      "number": 75, 
+    "number": 75, 
+    "lmul": 4,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
     "rs1_value": "0x0000000000000018",
     "rs2": 18,
-    "rs2_value": "0x0000003f9293eb98",
+    "rs2_value": "0x0000003faac2fb98",
     "vl": "0x0000000000000018",
     "vtype": "0x00000000000000d2",
     "vstart": "0x0000000000000000",
@@ -1107,22 +1325,32 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8f0",
+    "pc": "0x0000003faac2f8f0",
     "instruction": "0xa687b457",
     "type": 1,
-      "number": 76, 
+    "number": 76, 
+    "lmul": 4,
     "vd": 8,
-    "vs1": 15,
+    "vd_data": [
+      "a02d0000e02e00002030000060310000a0320000e03300002035000060360000",
+      "a0370000e0380000203a0000603b0000a03c0000e03d0000203f000060400000",
+      "a0410000e04200002044000060450000a0460000e047000020490000604a0000",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ],
+    "imm": 15,
     "vs2": 8,
-    "vd_data": "a02d0000e02e00002030000060310000a0320000e03300002035000060360000",
-    "vs1_data": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    "vs2_data": "a02d0000e02e00002030000060310000a0320000e03300002035000060360000"
-  },
+    "vs2_data": [
+      "a02d0000e02e00002030000060310000a0320000e03300002035000060360000",
+      "a0370000e0380000203a0000603b0000a03c0000e03d0000203f000060400000",
+      "a0410000e04200002044000060450000a0460000e047000020490000604a0000",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ]  },
   {
-    "pc": "0x0000003f9293e8f4",
+    "pc": "0x0000003faac2f8f4",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 77, 
+    "number": 77, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -1136,34 +1364,43 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8f8",
+    "pc": "0x0000003faac2f8f8",
     "instruction": "0xbe803057",
     "type": 1,
-      "number": 78, 
+    "number": 78, 
+    "lmul": 2,
     "vd": 0,
-    "vs1": 0,
+    "vd_data": [
+      "a02de02e20306031a032e03320356036a037e038203a603ba03ce03d203f6040",
+      "a041e04220446045a046e0472049604affffffffffffffffffffffffffffffff"
+    ],
+    "imm": 0,
     "vs2": 8,
-    "vd_data": "a02de02e20306031a032e03320356036a037e038203a603ba03ce03d203f6040",
-    "vs1_data": "a02de02e20306031a032e03320356036a037e038203a603ba03ce03d203f6040",
-    "vs2_data": "a02d0000e02e00002030000060310000a0320000e03300002035000060360000"
-  },
+    "vs2_data": [
+      "a02d0000e02e00002030000060310000a0320000e03300002035000060360000",
+      "a0370000e0380000203a0000603b0000a03c0000e03d0000203f000060400000",
+      "a0410000e04200002044000060450000a0460000e047000020490000604a0000",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ]  },
   {
-    "pc": "0x0000003f9293e8fc",
+    "pc": "0x0000003faac2f8fc",
     "instruction": "0x0207d027",
     "type": 3,
-      "number": 79, 
-    "vd": 0,
+    "number": 79, 
+    "lmul": 2,
     "rs1": 15,
-    "rs1_value": "0x0000003f92940160",
-    "vs2": 0,
-    "vd_data": "a02de02e20306031a032e03320356036a037e038203a603ba03ce03d203f6040",
-    "vs2_data": "a02de02e20306031a032e03320356036a037e038203a603ba03ce03d203f6040"
-  },
+    "rs1_value": "0x0000003faac31160",
+    "vd": 0,
+    "vd_data": [
+      "a02de02e20306031a032e03320356036a037e038203a603ba03ce03d203f6040",
+      "a041e04220446045a046e0472049604affffffffffffffffffffffffffffffff"
+    ]  },
   {
-    "pc": "0x0000003f9293e8ac",
+    "pc": "0x0000003faac2f8ac",
     "instruction": "0x0c94f757",
     "type": 2,
-      "number": 80, 
+    "number": 80, 
+    "lmul": 2,
     "rd": 14,
     "rd_value": "0x0000000000000020",
     "rs1": 9,
@@ -1177,16 +1414,17 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8b4",
+    "pc": "0x0000003faac2f8b4",
     "instruction": "0x0d277057",
     "type": 2,
-      "number": 81, 
+    "number": 81, 
+    "lmul": 4,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
     "rs1_value": "0x0000000000000020",
     "rs2": 18,
-    "rs2_value": "0x0000003f9293eb98",
+    "rs2_value": "0x0000003faac2fb98",
     "vl": "0x0000000000000020",
     "vtype": "0x00000000000000d2",
     "vstart": "0x0000000000000000",
@@ -1194,22 +1432,32 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8b8",
+    "pc": "0x0000003faac2f8b8",
     "instruction": "0x5e003457",
     "type": 1,
-      "number": 82, 
+    "number": 82, 
+    "lmul": 4,
     "vd": 8,
-    "vs1": 0,
+    "vd_data": [
+      "0000000000000000000000000000000000000000000000000000000000000000",
+      "0000000000000000000000000000000000000000000000000000000000000000",
+      "0000000000000000000000000000000000000000000000000000000000000000",
+      "0000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "imm": 0,
     "vs2": 0,
-    "vd_data": "0000000000000000000000000000000000000000000000000000000000000000",
-    "vs1_data": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    "vs2_data": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
-  },
+    "vs2_data": [
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ]  },
   {
-    "pc": "0x0000003f9293e8cc",
+    "pc": "0x0000003faac2f8cc",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 83, 
+    "number": 83, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -1223,22 +1471,24 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8d0",
+    "pc": "0x0000003faac2f8d0",
     "instruction": "0x0206d007",
     "type": 3,
-      "number": 84, 
-    "vd": 0,
+    "number": 84, 
+    "lmul": 2,
     "rs1": 13,
-    "rs1_value": "0x0000003f929400a0",
-    "vs2": 0,
-    "vd_data": "001400160018001a001c001e00200022002400260028002a002c002e00300032",
-    "vs2_data": "001400160018001a001c001e00200022002400260028002a002c002e00300032"
-  },
+    "rs1_value": "0x0000003faac310a0",
+    "vd": 0,
+    "vd_data": [
+      "001400160018001a001c001e00200022002400260028002a002c002e00300032",
+      "003400360038003a003c003e00400042004400460048004a004c004e00500052"
+    ]  },
   {
-    "pc": "0x0000003f9293e8d8",
+    "pc": "0x0000003faac2f8d8",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 85, 
+    "number": 85, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -1252,22 +1502,31 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8dc",
+    "pc": "0x0000003faac2f8dc",
     "instruction": "0xf605e457",
     "type": 1,
-      "number": 86, 
+    "number": 86, 
+    "lmul": 2,
     "vd": 8,
-    "vs1": 11,
+    "vd_data": [
+      "0000500000005800000060000000680000007000000078000000800000008800",
+      "00009000000098000000a0000000a8000000b0000000b8000000c0000000c800",
+      "0000d0000000d8000000e0000000e8000000f0000000f8000000000100000801",
+      "0000100100001801000020010000280100003001000038010000400100004801"
+    ],
+    "rs1": 11,
+    "rs1_value": "0x0000000000000400",
     "vs2": 0,
-    "vd_data": "0000500000005800000060000000680000007000000078000000800000008800",
-    "vs1_data": "0000100100001801000020010000280100003001000038010000400100004801",
-    "vs2_data": "001400160018001a001c001e00200022002400260028002a002c002e00300032"
-  },
+    "vs2_data": [
+      "001400160018001a001c001e00200022002400260028002a002c002e00300032",
+      "003400360038003a003c003e00400042004400460048004a004c004e00500052"
+    ]  },
   {
-    "pc": "0x0000003f9293e8cc",
+    "pc": "0x0000003faac2f8cc",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 87, 
+    "number": 87, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -1281,22 +1540,24 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8d0",
+    "pc": "0x0000003faac2f8d0",
     "instruction": "0x0206d007",
     "type": 3,
-      "number": 88, 
-    "vd": 0,
+    "number": 88, 
+    "lmul": 2,
     "rs1": 13,
-    "rs1_value": "0x0000003f9294009e",
-    "vs2": 0,
-    "vd_data": "0012001400160018001a001c001e00200022002400260028002a002c002e0030",
-    "vs2_data": "0012001400160018001a001c001e00200022002400260028002a002c002e0030"
-  },
+    "rs1_value": "0x0000003faac3109e",
+    "vd": 0,
+    "vd_data": [
+      "0012001400160018001a001c001e00200022002400260028002a002c002e0030",
+      "0032003400360038003a003c003e00400042004400460048004a004c004e0050"
+    ]  },
   {
-    "pc": "0x0000003f9293e8d8",
+    "pc": "0x0000003faac2f8d8",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 89, 
+    "number": 89, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -1310,22 +1571,31 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8dc",
+    "pc": "0x0000003faac2f8dc",
     "instruction": "0xf605e457",
     "type": 1,
-      "number": 90, 
+    "number": 90, 
+    "lmul": 2,
     "vd": 8,
-    "vs1": 11,
+    "vd_data": [
+      "0000e0000000f800000010010000280100004001000058010000700100008801",
+      "0000a0010000b8010000d0010000e80100000002000018020000300200004802",
+      "0000600200007802000090020000a8020000c0020000d8020000f00200000803",
+      "0000200300003803000050030000680300008003000098030000b0030000c803"
+    ],
+    "rs1": 11,
+    "rs1_value": "0x0000000000000800",
     "vs2": 0,
-    "vd_data": "0000e0000000f800000010010000280100004001000058010000700100008801",
-    "vs1_data": "0000200300003803000050030000680300008003000098030000b0030000c803",
-    "vs2_data": "0012001400160018001a001c001e00200022002400260028002a002c002e0030"
-  },
+    "vs2_data": [
+      "0012001400160018001a001c001e00200022002400260028002a002c002e0030",
+      "0032003400360038003a003c003e00400042004400460048004a004c004e0050"
+    ]  },
   {
-    "pc": "0x0000003f9293e8cc",
+    "pc": "0x0000003faac2f8cc",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 91, 
+    "number": 91, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -1339,22 +1609,24 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8d0",
+    "pc": "0x0000003faac2f8d0",
     "instruction": "0x0206d007",
     "type": 3,
-      "number": 92, 
-    "vd": 0,
+    "number": 92, 
+    "lmul": 2,
     "rs1": 13,
-    "rs1_value": "0x0000003f9294009c",
-    "vs2": 0,
-    "vd_data": "00100012001400160018001a001c001e00200022002400260028002a002c002e",
-    "vs2_data": "00100012001400160018001a001c001e00200022002400260028002a002c002e"
-  },
+    "rs1_value": "0x0000003faac3109c",
+    "vd": 0,
+    "vd_data": [
+      "00100012001400160018001a001c001e00200022002400260028002a002c002e",
+      "00300032003400360038003a003c003e00400042004400460048004a004c004e"
+    ]  },
   {
-    "pc": "0x0000003f9293e8d8",
+    "pc": "0x0000003faac2f8d8",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 93, 
+    "number": 93, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -1368,22 +1640,31 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8dc",
+    "pc": "0x0000003faac2f8dc",
     "instruction": "0xf605e457",
     "type": 1,
-      "number": 94, 
+    "number": 94, 
+    "lmul": 2,
     "vd": 8,
-    "vs1": 11,
+    "vd_data": [
+      "0000a0010000d001000000020000300200006002000090020000c0020000f002",
+      "0000200300005003000080030000b0030000e003000010040000400400007004",
+      "0000a0040000d004000000050000300500006005000090050000c0050000f005",
+      "0000200600005006000080060000b0060000e006000010070000400700007007"
+    ],
+    "rs1": 11,
+    "rs1_value": "0x0000000000000c00",
     "vs2": 0,
-    "vd_data": "0000a0010000d001000000020000300200006002000090020000c0020000f002",
-    "vs1_data": "0000200600005006000080060000b0060000e006000010070000400700007007",
-    "vs2_data": "00100012001400160018001a001c001e00200022002400260028002a002c002e"
-  },
+    "vs2_data": [
+      "00100012001400160018001a001c001e00200022002400260028002a002c002e",
+      "00300032003400360038003a003c003e00400042004400460048004a004c004e"
+    ]  },
   {
-    "pc": "0x0000003f9293e8cc",
+    "pc": "0x0000003faac2f8cc",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 95, 
+    "number": 95, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -1397,22 +1678,24 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8d0",
+    "pc": "0x0000003faac2f8d0",
     "instruction": "0x0206d007",
     "type": 3,
-      "number": 96, 
-    "vd": 0,
+    "number": 96, 
+    "lmul": 2,
     "rs1": 13,
-    "rs1_value": "0x0000003f9294009a",
-    "vs2": 0,
-    "vd_data": "000e00100012001400160018001a001c001e00200022002400260028002a002c",
-    "vs2_data": "000e00100012001400160018001a001c001e00200022002400260028002a002c"
-  },
+    "rs1_value": "0x0000003faac3109a",
+    "vd": 0,
+    "vd_data": [
+      "000e00100012001400160018001a001c001e00200022002400260028002a002c",
+      "002e00300032003400360038003a003c003e00400042004400460048004a004c"
+    ]  },
   {
-    "pc": "0x0000003f9293e8d8",
+    "pc": "0x0000003faac2f8d8",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 97, 
+    "number": 97, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -1426,22 +1709,31 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8dc",
+    "pc": "0x0000003faac2f8dc",
     "instruction": "0xf605e457",
     "type": 1,
-      "number": 98, 
+    "number": 98, 
+    "lmul": 2,
     "vd": 8,
-    "vs1": 11,
+    "vd_data": [
+      "000080020000d00200002003000070030000c00300001004000060040000b004",
+      "00000005000050050000a0050000f00500004006000090060000e00600003007",
+      "000080070000d00700002008000070080000c00800001009000060090000b009",
+      "0000000a0000500a0000a00a0000f00a0000400b0000900b0000e00b0000300c"
+    ],
+    "rs1": 11,
+    "rs1_value": "0x0000000000001000",
     "vs2": 0,
-    "vd_data": "000080020000d00200002003000070030000c00300001004000060040000b004",
-    "vs1_data": "0000000a0000500a0000a00a0000f00a0000400b0000900b0000e00b0000300c",
-    "vs2_data": "000e00100012001400160018001a001c001e00200022002400260028002a002c"
-  },
+    "vs2_data": [
+      "000e00100012001400160018001a001c001e00200022002400260028002a002c",
+      "002e00300032003400360038003a003c003e00400042004400460048004a004c"
+    ]  },
   {
-    "pc": "0x0000003f9293e8cc",
+    "pc": "0x0000003faac2f8cc",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 99, 
+    "number": 99, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -1455,22 +1747,24 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8d0",
+    "pc": "0x0000003faac2f8d0",
     "instruction": "0x0206d007",
     "type": 3,
-      "number": 100, 
-    "vd": 0,
+    "number": 100, 
+    "lmul": 2,
     "rs1": 13,
-    "rs1_value": "0x0000003f92940098",
-    "vs2": 0,
-    "vd_data": "000c000e00100012001400160018001a001c001e00200022002400260028002a",
-    "vs2_data": "000c000e00100012001400160018001a001c001e00200022002400260028002a"
-  },
+    "rs1_value": "0x0000003faac31098",
+    "vd": 0,
+    "vd_data": [
+      "000c000e00100012001400160018001a001c001e00200022002400260028002a",
+      "002c002e00300032003400360038003a003c003e00400042004400460048004a"
+    ]  },
   {
-    "pc": "0x0000003f9293e8d8",
+    "pc": "0x0000003faac2f8d8",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 101, 
+    "number": 101, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -1484,22 +1778,31 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8dc",
+    "pc": "0x0000003faac2f8dc",
     "instruction": "0xf605e457",
     "type": 1,
-      "number": 102, 
+    "number": 102, 
+    "lmul": 2,
     "vd": 8,
-    "vs1": 11,
+    "vd_data": [
+      "000040030000b003000020040000900400000005000070050000e00500005006",
+      "0000c006000030070000a00700001008000080080000f008000060090000d009",
+      "0000400a0000b00a0000200b0000900b0000000c0000700c0000e00c0000500d",
+      "0000c00d0000300e0000a00e0000100f0000800f0000f00f000060100000d010"
+    ],
+    "rs1": 11,
+    "rs1_value": "0x0000000000001000",
     "vs2": 0,
-    "vd_data": "000040030000b003000020040000900400000005000070050000e00500005006",
-    "vs1_data": "0000c00d0000300e0000a00e0000100f0000800f0000f00f000060100000d010",
-    "vs2_data": "000c000e00100012001400160018001a001c001e00200022002400260028002a"
-  },
+    "vs2_data": [
+      "000c000e00100012001400160018001a001c001e00200022002400260028002a",
+      "002c002e00300032003400360038003a003c003e00400042004400460048004a"
+    ]  },
   {
-    "pc": "0x0000003f9293e8cc",
+    "pc": "0x0000003faac2f8cc",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 103, 
+    "number": 103, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -1513,22 +1816,24 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8d0",
+    "pc": "0x0000003faac2f8d0",
     "instruction": "0x0206d007",
     "type": 3,
-      "number": 104, 
-    "vd": 0,
+    "number": 104, 
+    "lmul": 2,
     "rs1": 13,
-    "rs1_value": "0x0000003f92940096",
-    "vs2": 0,
-    "vd_data": "000a000c000e00100012001400160018001a001c001e00200022002400260028",
-    "vs2_data": "000a000c000e00100012001400160018001a001c001e00200022002400260028"
-  },
+    "rs1_value": "0x0000003faac31096",
+    "vd": 0,
+    "vd_data": [
+      "000a000c000e00100012001400160018001a001c001e00200022002400260028",
+      "002a002c002e00300032003400360038003a003c003e00400042004400460048"
+    ]  },
   {
-    "pc": "0x0000003f9293e8d8",
+    "pc": "0x0000003faac2f8d8",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 105, 
+    "number": 105, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -1542,22 +1847,31 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8dc",
+    "pc": "0x0000003faac2f8dc",
     "instruction": "0xf605e457",
     "type": 1,
-      "number": 106, 
+    "number": 106, 
+    "lmul": 2,
     "vd": 8,
-    "vs1": 11,
+    "vd_data": [
+      "0000b803000040040000c804000050050000d805000060060000e80600007007",
+      "0000f8070000800800000809000090090000180a0000a00a0000280b0000b00b",
+      "0000380c0000c00c0000480d0000d00d0000580e0000e00e0000680f0000f00f",
+      "0000781000000011000088110000101200009812000020130000a81300003014"
+    ],
+    "rs1": 11,
+    "rs1_value": "0x0000000000000c00",
     "vs2": 0,
-    "vd_data": "0000b803000040040000c804000050050000d805000060060000e80600007007",
-    "vs1_data": "0000781000000011000088110000101200009812000020130000a81300003014",
-    "vs2_data": "000a000c000e00100012001400160018001a001c001e00200022002400260028"
-  },
+    "vs2_data": [
+      "000a000c000e00100012001400160018001a001c001e00200022002400260028",
+      "002a002c002e00300032003400360038003a003c003e00400042004400460048"
+    ]  },
   {
-    "pc": "0x0000003f9293e8cc",
+    "pc": "0x0000003faac2f8cc",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 107, 
+    "number": 107, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -1571,22 +1885,24 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8d0",
+    "pc": "0x0000003faac2f8d0",
     "instruction": "0x0206d007",
     "type": 3,
-      "number": 108, 
-    "vd": 0,
+    "number": 108, 
+    "lmul": 2,
     "rs1": 13,
-    "rs1_value": "0x0000003f92940094",
-    "vs2": 0,
-    "vd_data": "0008000a000c000e00100012001400160018001a001c001e0020002200240026",
-    "vs2_data": "0008000a000c000e00100012001400160018001a001c001e0020002200240026"
-  },
+    "rs1_value": "0x0000003faac31094",
+    "vd": 0,
+    "vd_data": [
+      "0008000a000c000e00100012001400160018001a001c001e0020002200240026",
+      "0028002a002c002e00300032003400360038003a003c003e0040004200440046"
+    ]  },
   {
-    "pc": "0x0000003f9293e8d8",
+    "pc": "0x0000003faac2f8d8",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 109, 
+    "number": 109, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -1600,22 +1916,31 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8dc",
+    "pc": "0x0000003faac2f8dc",
     "instruction": "0xf605e457",
     "type": 1,
-      "number": 110, 
+    "number": 110, 
+    "lmul": 2,
     "vd": 8,
-    "vs1": 11,
+    "vd_data": [
+      "0000f80300009004000028050000c005000058060000f0060000880700002008",
+      "0000b808000050090000e8090000800a0000180b0000b00b0000480c0000e00c",
+      "0000780d0000100e0000a80e0000400f0000d80f00007010000008110000a011",
+      "000038120000d012000068130000001400009814000030150000c81500006016"
+    ],
+    "rs1": 11,
+    "rs1_value": "0x0000000000000800",
     "vs2": 0,
-    "vd_data": "0000f80300009004000028050000c005000058060000f0060000880700002008",
-    "vs1_data": "000038120000d012000068130000001400009814000030150000c81500006016",
-    "vs2_data": "0008000a000c000e00100012001400160018001a001c001e0020002200240026"
-  },
+    "vs2_data": [
+      "0008000a000c000e00100012001400160018001a001c001e0020002200240026",
+      "0028002a002c002e00300032003400360038003a003c003e0040004200440046"
+    ]  },
   {
-    "pc": "0x0000003f9293e8cc",
+    "pc": "0x0000003faac2f8cc",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 111, 
+    "number": 111, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -1629,22 +1954,24 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8d0",
+    "pc": "0x0000003faac2f8d0",
     "instruction": "0x0206d007",
     "type": 3,
-      "number": 112, 
-    "vd": 0,
+    "number": 112, 
+    "lmul": 2,
     "rs1": 13,
-    "rs1_value": "0x0000003f92940092",
-    "vs2": 0,
-    "vd_data": "00060008000a000c000e00100012001400160018001a001c001e002000220024",
-    "vs2_data": "00060008000a000c000e00100012001400160018001a001c001e002000220024"
-  },
+    "rs1_value": "0x0000003faac31092",
+    "vd": 0,
+    "vd_data": [
+      "00060008000a000c000e00100012001400160018001a001c001e002000220024",
+      "00260028002a002c002e00300032003400360038003a003c003e004000420044"
+    ]  },
   {
-    "pc": "0x0000003f9293e8d8",
+    "pc": "0x0000003faac2f8d8",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 113, 
+    "number": 113, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -1658,28 +1985,37 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8dc",
+    "pc": "0x0000003faac2f8dc",
     "instruction": "0xf605e457",
     "type": 1,
-      "number": 114, 
+    "number": 114, 
+    "lmul": 2,
     "vd": 8,
-    "vs1": 11,
+    "vd_data": [
+      "000010040000b004000050050000f00500009006000030070000d00700007008",
+      "000010090000b0090000500a0000f00a0000900b0000300c0000d00c0000700d",
+      "0000100e0000b00e0000500f0000f00f00009010000030110000d01100007012",
+      "000010130000b013000050140000f01400009015000030160000d01600007017"
+    ],
+    "rs1": 11,
+    "rs1_value": "0x0000000000000400",
     "vs2": 0,
-    "vd_data": "000010040000b004000050050000f00500009006000030070000d00700007008",
-    "vs1_data": "000010130000b013000050140000f01400009015000030160000d01600007017",
-    "vs2_data": "00060008000a000c000e00100012001400160018001a001c001e002000220024"
-  },
+    "vs2_data": [
+      "00060008000a000c000e00100012001400160018001a001c001e002000220024",
+      "00260028002a002c002e00300032003400360038003a003c003e004000420044"
+    ]  },
   {
-    "pc": "0x0000003f9293e8ec",
+    "pc": "0x0000003faac2f8ec",
     "instruction": "0x0d277057",
     "type": 2,
-      "number": 115, 
+    "number": 115, 
+    "lmul": 4,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
     "rs1_value": "0x0000000000000020",
     "rs2": 18,
-    "rs2_value": "0x0000003f9293eb98",
+    "rs2_value": "0x0000003faac2fb98",
     "vl": "0x0000000000000020",
     "vtype": "0x00000000000000d2",
     "vstart": "0x0000000000000000",
@@ -1687,22 +2023,32 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8f0",
+    "pc": "0x0000003faac2f8f0",
     "instruction": "0xa687b457",
     "type": 1,
-      "number": 116, 
+    "number": 116, 
+    "lmul": 4,
     "vd": 8,
-    "vs1": 15,
+    "vd_data": [
+      "2008000060090000a00a0000e00b0000200d0000600e0000a00f0000e0100000",
+      "2012000060130000a0140000e01500002017000060180000a0190000e01a0000",
+      "201c0000601d0000a01e0000e01f00002021000060220000a0230000e0240000",
+      "2026000060270000a0280000e0290000202b0000602c0000a02d0000e02e0000"
+    ],
+    "imm": 15,
     "vs2": 8,
-    "vd_data": "2008000060090000a00a0000e00b0000200d0000600e0000a00f0000e0100000",
-    "vs1_data": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    "vs2_data": "2008000060090000a00a0000e00b0000200d0000600e0000a00f0000e0100000"
-  },
+    "vs2_data": [
+      "2008000060090000a00a0000e00b0000200d0000600e0000a00f0000e0100000",
+      "2012000060130000a0140000e01500002017000060180000a0190000e01a0000",
+      "201c0000601d0000a01e0000e01f00002021000060220000a0230000e0240000",
+      "2026000060270000a0280000e0290000202b0000602c0000a02d0000e02e0000"
+    ]  },
   {
-    "pc": "0x0000003f9293e8f4",
+    "pc": "0x0000003faac2f8f4",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 117, 
+    "number": 117, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -1716,34 +2062,43 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8f8",
+    "pc": "0x0000003faac2f8f8",
     "instruction": "0xbe803057",
     "type": 1,
-      "number": 118, 
+    "number": 118, 
+    "lmul": 2,
     "vd": 0,
-    "vs1": 0,
+    "vd_data": [
+      "20086009a00ae00b200d600ea00fe01020126013a014e01520176018a019e01a",
+      "201c601da01ee01f20216022a023e02420266027a028e029202b602ca02de02e"
+    ],
+    "imm": 0,
     "vs2": 8,
-    "vd_data": "20086009a00ae00b200d600ea00fe01020126013a014e01520176018a019e01a",
-    "vs1_data": "20086009a00ae00b200d600ea00fe01020126013a014e01520176018a019e01a",
-    "vs2_data": "2008000060090000a00a0000e00b0000200d0000600e0000a00f0000e0100000"
-  },
+    "vs2_data": [
+      "2008000060090000a00a0000e00b0000200d0000600e0000a00f0000e0100000",
+      "2012000060130000a0140000e01500002017000060180000a0190000e01a0000",
+      "201c0000601d0000a01e0000e01f00002021000060220000a0230000e0240000",
+      "2026000060270000a0280000e0290000202b0000602c0000a02d0000e02e0000"
+    ]  },
   {
-    "pc": "0x0000003f9293e8fc",
+    "pc": "0x0000003faac2f8fc",
     "instruction": "0x0207d027",
     "type": 3,
-      "number": 119, 
-    "vd": 0,
+    "number": 119, 
+    "lmul": 2,
     "rs1": 15,
-    "rs1_value": "0x0000003f929401a0",
-    "vs2": 0,
-    "vd_data": "20086009a00ae00b200d600ea00fe01020126013a014e01520176018a019e01a",
-    "vs2_data": "20086009a00ae00b200d600ea00fe01020126013a014e01520176018a019e01a"
-  },
+    "rs1_value": "0x0000003faac311a0",
+    "vd": 0,
+    "vd_data": [
+      "20086009a00ae00b200d600ea00fe01020126013a014e01520176018a019e01a",
+      "201c601da01ee01f20216022a023e02420266027a028e029202b602ca02de02e"
+    ]  },
   {
-    "pc": "0x0000003f9293e90e",
+    "pc": "0x0000003faac2f90e",
     "instruction": "0x0c977757",
     "type": 2,
-      "number": 120, 
+    "number": 120, 
+    "lmul": 2,
     "rd": 14,
     "rd_value": "0x0000000000000018",
     "rs1": 14,
@@ -1757,16 +2112,17 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8b4",
+    "pc": "0x0000003faac2f8b4",
     "instruction": "0x0d277057",
     "type": 2,
-      "number": 121, 
+    "number": 121, 
+    "lmul": 4,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
     "rs1_value": "0x0000000000000018",
     "rs2": 18,
-    "rs2_value": "0x0000003f9293eb98",
+    "rs2_value": "0x0000003faac2fb98",
     "vl": "0x0000000000000018",
     "vtype": "0x00000000000000d2",
     "vstart": "0x0000000000000000",
@@ -1774,22 +2130,32 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8b8",
+    "pc": "0x0000003faac2f8b8",
     "instruction": "0x5e003457",
     "type": 1,
-      "number": 122, 
+    "number": 122, 
+    "lmul": 4,
     "vd": 8,
-    "vs1": 0,
+    "vd_data": [
+      "0000000000000000000000000000000000000000000000000000000000000000",
+      "0000000000000000000000000000000000000000000000000000000000000000",
+      "0000000000000000000000000000000000000000000000000000000000000000",
+      "2026000060270000a0280000e0290000202b0000602c0000a02d0000e02e0000"
+    ],
+    "imm": 0,
     "vs2": 0,
-    "vd_data": "0000000000000000000000000000000000000000000000000000000000000000",
-    "vs1_data": "20086009a00ae00b200d600ea00fe01020126013a014e01520176018a019e01a",
-    "vs2_data": "20086009a00ae00b200d600ea00fe01020126013a014e01520176018a019e01a"
-  },
+    "vs2_data": [
+      "20086009a00ae00b200d600ea00fe01020126013a014e01520176018a019e01a",
+      "201c601da01ee01f20216022a023e02420266027a028e029202b602ca02de02e",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ]  },
   {
-    "pc": "0x0000003f9293e8cc",
+    "pc": "0x0000003faac2f8cc",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 123, 
+    "number": 123, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -1803,22 +2169,24 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8d0",
+    "pc": "0x0000003faac2f8d0",
     "instruction": "0x0206d007",
     "type": 3,
-      "number": 124, 
-    "vd": 0,
+    "number": 124, 
+    "lmul": 2,
     "rs1": 13,
-    "rs1_value": "0x0000003f929400e0",
-    "vs2": 0,
-    "vd_data": "005400560058005a005c005e00600062006400660068006a006c006e00700072",
-    "vs2_data": "005400560058005a005c005e00600062006400660068006a006c006e00700072"
-  },
+    "rs1_value": "0x0000003faac310e0",
+    "vd": 0,
+    "vd_data": [
+      "005400560058005a005c005e00600062006400660068006a006c006e00700072",
+      "007400760078007a007c007e0000000220266027a028e029202b602ca02de02e"
+    ]  },
   {
-    "pc": "0x0000003f9293e8d8",
+    "pc": "0x0000003faac2f8d8",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 125, 
+    "number": 125, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -1832,22 +2200,31 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8dc",
+    "pc": "0x0000003faac2f8dc",
     "instruction": "0xf605e457",
     "type": 1,
-      "number": 126, 
+    "number": 126, 
+    "lmul": 2,
     "vd": 8,
-    "vs1": 11,
+    "vd_data": [
+      "0000500100005801000060010000680100007001000078010000800100008801",
+      "00009001000098010000a0010000a8010000b0010000b8010000c0010000c801",
+      "0000d0010000d8010000e0010000e8010000f0010000f8010000000000000800",
+      "2026000060270000a0280000e0290000202b0000602c0000a02d0000e02e0000"
+    ],
+    "rs1": 11,
+    "rs1_value": "0x0000000000000400",
     "vs2": 0,
-    "vd_data": "0000500100005801000060010000680100007001000078010000800100008801",
-    "vs1_data": "2026000060270000a0280000e0290000202b0000602c0000a02d0000e02e0000",
-    "vs2_data": "005400560058005a005c005e00600062006400660068006a006c006e00700072"
-  },
+    "vs2_data": [
+      "005400560058005a005c005e00600062006400660068006a006c006e00700072",
+      "007400760078007a007c007e0000000220266027a028e029202b602ca02de02e"
+    ]  },
   {
-    "pc": "0x0000003f9293e8cc",
+    "pc": "0x0000003faac2f8cc",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 127, 
+    "number": 127, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -1861,22 +2238,24 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8d0",
+    "pc": "0x0000003faac2f8d0",
     "instruction": "0x0206d007",
     "type": 3,
-      "number": 128, 
-    "vd": 0,
+    "number": 128, 
+    "lmul": 2,
     "rs1": 13,
-    "rs1_value": "0x0000003f929400de",
-    "vs2": 0,
-    "vd_data": "0052005400560058005a005c005e00600062006400660068006a006c006e0070",
-    "vs2_data": "0052005400560058005a005c005e00600062006400660068006a006c006e0070"
-  },
+    "rs1_value": "0x0000003faac310de",
+    "vd": 0,
+    "vd_data": [
+      "0052005400560058005a005c005e00600062006400660068006a006c006e0070",
+      "0072007400760078007a007c007e000020266027a028e029202b602ca02de02e"
+    ]  },
   {
-    "pc": "0x0000003f9293e8d8",
+    "pc": "0x0000003faac2f8d8",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 129, 
+    "number": 129, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -1890,22 +2269,31 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8dc",
+    "pc": "0x0000003faac2f8dc",
     "instruction": "0xf605e457",
     "type": 1,
-      "number": 130, 
+    "number": 130, 
+    "lmul": 2,
     "vd": 8,
-    "vs1": 11,
+    "vd_data": [
+      "0000e0030000f803000010040000280400004004000058040000700400008804",
+      "0000a0040000b8040000d0040000e80400000005000018050000300500004805",
+      "0000600500007805000090050000a8050000c0050000d8050000f00300000800",
+      "2026000060270000a0280000e0290000202b0000602c0000a02d0000e02e0000"
+    ],
+    "rs1": 11,
+    "rs1_value": "0x0000000000000800",
     "vs2": 0,
-    "vd_data": "0000e0030000f803000010040000280400004004000058040000700400008804",
-    "vs1_data": "2026000060270000a0280000e0290000202b0000602c0000a02d0000e02e0000",
-    "vs2_data": "0052005400560058005a005c005e00600062006400660068006a006c006e0070"
-  },
+    "vs2_data": [
+      "0052005400560058005a005c005e00600062006400660068006a006c006e0070",
+      "0072007400760078007a007c007e000020266027a028e029202b602ca02de02e"
+    ]  },
   {
-    "pc": "0x0000003f9293e8cc",
+    "pc": "0x0000003faac2f8cc",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 131, 
+    "number": 131, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -1919,22 +2307,24 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8d0",
+    "pc": "0x0000003faac2f8d0",
     "instruction": "0x0206d007",
     "type": 3,
-      "number": 132, 
-    "vd": 0,
+    "number": 132, 
+    "lmul": 2,
     "rs1": 13,
-    "rs1_value": "0x0000003f929400dc",
-    "vs2": 0,
-    "vd_data": "00500052005400560058005a005c005e00600062006400660068006a006c006e",
-    "vs2_data": "00500052005400560058005a005c005e00600062006400660068006a006c006e"
-  },
+    "rs1_value": "0x0000003faac310dc",
+    "vd": 0,
+    "vd_data": [
+      "00500052005400560058005a005c005e00600062006400660068006a006c006e",
+      "00700072007400760078007a007c007e20266027a028e029202b602ca02de02e"
+    ]  },
   {
-    "pc": "0x0000003f9293e8d8",
+    "pc": "0x0000003faac2f8d8",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 133, 
+    "number": 133, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -1948,22 +2338,31 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8dc",
+    "pc": "0x0000003faac2f8dc",
     "instruction": "0xf605e457",
     "type": 1,
-      "number": 134, 
+    "number": 134, 
+    "lmul": 2,
     "vd": 8,
-    "vs1": 11,
+    "vd_data": [
+      "0000a0070000d007000000080000300800006008000090080000c0080000f008",
+      "0000200900005009000080090000b0090000e0090000100a0000400a0000700a",
+      "0000a00a0000d00a0000000b0000300b0000600b0000900b0000c0090000f005",
+      "2026000060270000a0280000e0290000202b0000602c0000a02d0000e02e0000"
+    ],
+    "rs1": 11,
+    "rs1_value": "0x0000000000000c00",
     "vs2": 0,
-    "vd_data": "0000a0070000d007000000080000300800006008000090080000c0080000f008",
-    "vs1_data": "2026000060270000a0280000e0290000202b0000602c0000a02d0000e02e0000",
-    "vs2_data": "00500052005400560058005a005c005e00600062006400660068006a006c006e"
-  },
+    "vs2_data": [
+      "00500052005400560058005a005c005e00600062006400660068006a006c006e",
+      "00700072007400760078007a007c007e20266027a028e029202b602ca02de02e"
+    ]  },
   {
-    "pc": "0x0000003f9293e8cc",
+    "pc": "0x0000003faac2f8cc",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 135, 
+    "number": 135, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -1977,22 +2376,24 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8d0",
+    "pc": "0x0000003faac2f8d0",
     "instruction": "0x0206d007",
     "type": 3,
-      "number": 136, 
-    "vd": 0,
+    "number": 136, 
+    "lmul": 2,
     "rs1": 13,
-    "rs1_value": "0x0000003f929400da",
-    "vs2": 0,
-    "vd_data": "004e00500052005400560058005a005c005e00600062006400660068006a006c",
-    "vs2_data": "004e00500052005400560058005a005c005e00600062006400660068006a006c"
-  },
+    "rs1_value": "0x0000003faac310da",
+    "vd": 0,
+    "vd_data": [
+      "004e00500052005400560058005a005c005e00600062006400660068006a006c",
+      "006e00700072007400760078007a007c20266027a028e029202b602ca02de02e"
+    ]  },
   {
-    "pc": "0x0000003f9293e8d8",
+    "pc": "0x0000003faac2f8d8",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 137, 
+    "number": 137, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -2006,22 +2407,31 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8dc",
+    "pc": "0x0000003faac2f8dc",
     "instruction": "0xf605e457",
     "type": 1,
-      "number": 138, 
+    "number": 138, 
+    "lmul": 2,
     "vd": 8,
-    "vs1": 11,
+    "vd_data": [
+      "0000800c0000d00c0000200d0000700d0000c00d0000100e0000600e0000b00e",
+      "0000000f0000500f0000a00f0000f00f00004010000090100000e01000003011",
+      "000080110000d01100002012000070120000c01200001013000060110000b00d",
+      "2026000060270000a0280000e0290000202b0000602c0000a02d0000e02e0000"
+    ],
+    "rs1": 11,
+    "rs1_value": "0x0000000000001000",
     "vs2": 0,
-    "vd_data": "0000800c0000d00c0000200d0000700d0000c00d0000100e0000600e0000b00e",
-    "vs1_data": "2026000060270000a0280000e0290000202b0000602c0000a02d0000e02e0000",
-    "vs2_data": "004e00500052005400560058005a005c005e00600062006400660068006a006c"
-  },
+    "vs2_data": [
+      "004e00500052005400560058005a005c005e00600062006400660068006a006c",
+      "006e00700072007400760078007a007c20266027a028e029202b602ca02de02e"
+    ]  },
   {
-    "pc": "0x0000003f9293e8cc",
+    "pc": "0x0000003faac2f8cc",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 139, 
+    "number": 139, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -2035,22 +2445,24 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8d0",
+    "pc": "0x0000003faac2f8d0",
     "instruction": "0x0206d007",
     "type": 3,
-      "number": 140, 
-    "vd": 0,
+    "number": 140, 
+    "lmul": 2,
     "rs1": 13,
-    "rs1_value": "0x0000003f929400d8",
-    "vs2": 0,
-    "vd_data": "004c004e00500052005400560058005a005c005e00600062006400660068006a",
-    "vs2_data": "004c004e00500052005400560058005a005c005e00600062006400660068006a"
-  },
+    "rs1_value": "0x0000003faac310d8",
+    "vd": 0,
+    "vd_data": [
+      "004c004e00500052005400560058005a005c005e00600062006400660068006a",
+      "006c006e00700072007400760078007a20266027a028e029202b602ca02de02e"
+    ]  },
   {
-    "pc": "0x0000003f9293e8d8",
+    "pc": "0x0000003faac2f8d8",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 141, 
+    "number": 141, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -2064,22 +2476,31 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8dc",
+    "pc": "0x0000003faac2f8dc",
     "instruction": "0xf605e457",
     "type": 1,
-      "number": 142, 
+    "number": 142, 
+    "lmul": 2,
     "vd": 8,
-    "vs1": 11,
+    "vd_data": [
+      "000040110000b011000020120000901200000013000070130000e01300005014",
+      "0000c014000030150000a01500001016000080160000f016000060170000d017",
+      "000040180000b01800002019000090190000001a0000701a0000e01800005015",
+      "2026000060270000a0280000e0290000202b0000602c0000a02d0000e02e0000"
+    ],
+    "rs1": 11,
+    "rs1_value": "0x0000000000001000",
     "vs2": 0,
-    "vd_data": "000040110000b011000020120000901200000013000070130000e01300005014",
-    "vs1_data": "2026000060270000a0280000e0290000202b0000602c0000a02d0000e02e0000",
-    "vs2_data": "004c004e00500052005400560058005a005c005e00600062006400660068006a"
-  },
+    "vs2_data": [
+      "004c004e00500052005400560058005a005c005e00600062006400660068006a",
+      "006c006e00700072007400760078007a20266027a028e029202b602ca02de02e"
+    ]  },
   {
-    "pc": "0x0000003f9293e8cc",
+    "pc": "0x0000003faac2f8cc",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 143, 
+    "number": 143, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -2093,22 +2514,24 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8d0",
+    "pc": "0x0000003faac2f8d0",
     "instruction": "0x0206d007",
     "type": 3,
-      "number": 144, 
-    "vd": 0,
+    "number": 144, 
+    "lmul": 2,
     "rs1": 13,
-    "rs1_value": "0x0000003f929400d6",
-    "vs2": 0,
-    "vd_data": "004a004c004e00500052005400560058005a005c005e00600062006400660068",
-    "vs2_data": "004a004c004e00500052005400560058005a005c005e00600062006400660068"
-  },
+    "rs1_value": "0x0000003faac310d6",
+    "vd": 0,
+    "vd_data": [
+      "004a004c004e00500052005400560058005a005c005e00600062006400660068",
+      "006a006c006e0070007200740076007820266027a028e029202b602ca02de02e"
+    ]  },
   {
-    "pc": "0x0000003f9293e8d8",
+    "pc": "0x0000003faac2f8d8",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 145, 
+    "number": 145, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -2122,22 +2545,31 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8dc",
+    "pc": "0x0000003faac2f8dc",
     "instruction": "0xf605e457",
     "type": 1,
-      "number": 146, 
+    "number": 146, 
+    "lmul": 2,
     "vd": 8,
-    "vs1": 11,
+    "vd_data": [
+      "0000b814000040150000c815000050160000d816000060170000e81700007018",
+      "0000f818000080190000081a0000901a0000181b0000a01b0000281c0000b01c",
+      "0000381d0000c01d0000481e0000d01e0000581f0000e01f0000681e0000f01a",
+      "2026000060270000a0280000e0290000202b0000602c0000a02d0000e02e0000"
+    ],
+    "rs1": 11,
+    "rs1_value": "0x0000000000000c00",
     "vs2": 0,
-    "vd_data": "0000b814000040150000c815000050160000d816000060170000e81700007018",
-    "vs1_data": "2026000060270000a0280000e0290000202b0000602c0000a02d0000e02e0000",
-    "vs2_data": "004a004c004e00500052005400560058005a005c005e00600062006400660068"
-  },
+    "vs2_data": [
+      "004a004c004e00500052005400560058005a005c005e00600062006400660068",
+      "006a006c006e0070007200740076007820266027a028e029202b602ca02de02e"
+    ]  },
   {
-    "pc": "0x0000003f9293e8cc",
+    "pc": "0x0000003faac2f8cc",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 147, 
+    "number": 147, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -2151,22 +2583,24 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8d0",
+    "pc": "0x0000003faac2f8d0",
     "instruction": "0x0206d007",
     "type": 3,
-      "number": 148, 
-    "vd": 0,
+    "number": 148, 
+    "lmul": 2,
     "rs1": 13,
-    "rs1_value": "0x0000003f929400d4",
-    "vs2": 0,
-    "vd_data": "0048004a004c004e00500052005400560058005a005c005e0060006200640066",
-    "vs2_data": "0048004a004c004e00500052005400560058005a005c005e0060006200640066"
-  },
+    "rs1_value": "0x0000003faac310d4",
+    "vd": 0,
+    "vd_data": [
+      "0048004a004c004e00500052005400560058005a005c005e0060006200640066",
+      "0068006a006c006e007000720074007620266027a028e029202b602ca02de02e"
+    ]  },
   {
-    "pc": "0x0000003f9293e8d8",
+    "pc": "0x0000003faac2f8d8",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 149, 
+    "number": 149, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -2180,22 +2614,31 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8dc",
+    "pc": "0x0000003faac2f8dc",
     "instruction": "0xf605e457",
     "type": 1,
-      "number": 150, 
+    "number": 150, 
+    "lmul": 2,
     "vd": 8,
-    "vs1": 11,
+    "vd_data": [
+      "0000f81600009017000028180000c018000058190000f0190000881a0000201b",
+      "0000b81b0000501c0000e81c0000801d0000181e0000b01e0000481f0000e01f",
+      "00007820000010210000a821000040220000d82200007023000008220000a01e",
+      "2026000060270000a0280000e0290000202b0000602c0000a02d0000e02e0000"
+    ],
+    "rs1": 11,
+    "rs1_value": "0x0000000000000800",
     "vs2": 0,
-    "vd_data": "0000f81600009017000028180000c018000058190000f0190000881a0000201b",
-    "vs1_data": "2026000060270000a0280000e0290000202b0000602c0000a02d0000e02e0000",
-    "vs2_data": "0048004a004c004e00500052005400560058005a005c005e0060006200640066"
-  },
+    "vs2_data": [
+      "0048004a004c004e00500052005400560058005a005c005e0060006200640066",
+      "0068006a006c006e007000720074007620266027a028e029202b602ca02de02e"
+    ]  },
   {
-    "pc": "0x0000003f9293e8cc",
+    "pc": "0x0000003faac2f8cc",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 151, 
+    "number": 151, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -2209,22 +2652,24 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8d0",
+    "pc": "0x0000003faac2f8d0",
     "instruction": "0x0206d007",
     "type": 3,
-      "number": 152, 
-    "vd": 0,
+    "number": 152, 
+    "lmul": 2,
     "rs1": 13,
-    "rs1_value": "0x0000003f929400d2",
-    "vs2": 0,
-    "vd_data": "00460048004a004c004e00500052005400560058005a005c005e006000620064",
-    "vs2_data": "00460048004a004c004e00500052005400560058005a005c005e006000620064"
-  },
+    "rs1_value": "0x0000003faac310d2",
+    "vd": 0,
+    "vd_data": [
+      "00460048004a004c004e00500052005400560058005a005c005e006000620064",
+      "00660068006a006c006e00700072007420266027a028e029202b602ca02de02e"
+    ]  },
   {
-    "pc": "0x0000003f9293e8d8",
+    "pc": "0x0000003faac2f8d8",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 153, 
+    "number": 153, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -2238,28 +2683,37 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8dc",
+    "pc": "0x0000003faac2f8dc",
     "instruction": "0xf605e457",
     "type": 1,
-      "number": 154, 
+    "number": 154, 
+    "lmul": 2,
     "vd": 8,
-    "vs1": 11,
+    "vd_data": [
+      "000010180000b018000050190000f0190000901a0000301b0000d01b0000701c",
+      "0000101d0000b01d0000501e0000f01e0000901f000030200000d02000007021",
+      "000010220000b022000050230000f02300009024000030250000d02300007020",
+      "2026000060270000a0280000e0290000202b0000602c0000a02d0000e02e0000"
+    ],
+    "rs1": 11,
+    "rs1_value": "0x0000000000000400",
     "vs2": 0,
-    "vd_data": "000010180000b018000050190000f0190000901a0000301b0000d01b0000701c",
-    "vs1_data": "2026000060270000a0280000e0290000202b0000602c0000a02d0000e02e0000",
-    "vs2_data": "00460048004a004c004e00500052005400560058005a005c005e006000620064"
-  },
+    "vs2_data": [
+      "00460048004a004c004e00500052005400560058005a005c005e006000620064",
+      "00660068006a006c006e00700072007420266027a028e029202b602ca02de02e"
+    ]  },
   {
-    "pc": "0x0000003f9293e8ec",
+    "pc": "0x0000003faac2f8ec",
     "instruction": "0x0d277057",
     "type": 2,
-      "number": 155, 
+    "number": 155, 
+    "lmul": 4,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
     "rs1_value": "0x0000000000000018",
     "rs2": 18,
-    "rs2_value": "0x0000003f9293eb98",
+    "rs2_value": "0x0000003faac2fb98",
     "vl": "0x0000000000000018",
     "vtype": "0x00000000000000d2",
     "vstart": "0x0000000000000000",
@@ -2267,22 +2721,32 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8f0",
+    "pc": "0x0000003faac2f8f0",
     "instruction": "0xa687b457",
     "type": 1,
-      "number": 156, 
+    "number": 156, 
+    "lmul": 4,
     "vd": 8,
-    "vs1": 15,
+    "vd_data": [
+      "2030000060310000a0320000e03300002035000060360000a0370000e0380000",
+      "203a0000603b0000a03c0000e03d0000203f000060400000a0410000e0420000",
+      "2044000060450000a0460000e047000020490000604a0000a0470000e0400000",
+      "2026000060270000a0280000e0290000202b0000602c0000a02d0000e02e0000"
+    ],
+    "imm": 15,
     "vs2": 8,
-    "vd_data": "2030000060310000a0320000e03300002035000060360000a0370000e0380000",
-    "vs1_data": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    "vs2_data": "2030000060310000a0320000e03300002035000060360000a0370000e0380000"
-  },
+    "vs2_data": [
+      "2030000060310000a0320000e03300002035000060360000a0370000e0380000",
+      "203a0000603b0000a03c0000e03d0000203f000060400000a0410000e0420000",
+      "2044000060450000a0460000e047000020490000604a0000a0470000e0400000",
+      "2026000060270000a0280000e0290000202b0000602c0000a02d0000e02e0000"
+    ]  },
   {
-    "pc": "0x0000003f9293e8f4",
+    "pc": "0x0000003faac2f8f4",
     "instruction": "0x0c977057",
     "type": 2,
-      "number": 157, 
+    "number": 157, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 14,
@@ -2296,40 +2760,49 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e8f8",
+    "pc": "0x0000003faac2f8f8",
     "instruction": "0xbe803057",
     "type": 1,
-      "number": 158, 
+    "number": 158, 
+    "lmul": 2,
     "vd": 0,
-    "vs1": 0,
+    "vd_data": [
+      "20306031a032e03320356036a037e038203a603ba03ce03d203f6040a041e042",
+      "20446045a046e0472049604aa047e04020266027a028e029202b602ca02de02e"
+    ],
+    "imm": 0,
     "vs2": 8,
-    "vd_data": "20306031a032e03320356036a037e038203a603ba03ce03d203f6040a041e042",
-    "vs1_data": "20306031a032e03320356036a037e038203a603ba03ce03d203f6040a041e042",
-    "vs2_data": "2030000060310000a0320000e03300002035000060360000a0370000e0380000"
-  },
+    "vs2_data": [
+      "2030000060310000a0320000e03300002035000060360000a0370000e0380000",
+      "203a0000603b0000a03c0000e03d0000203f000060400000a0410000e0420000",
+      "2044000060450000a0460000e047000020490000604a0000a0470000e0400000",
+      "2026000060270000a0280000e0290000202b0000602c0000a02d0000e02e0000"
+    ]  },
   {
-    "pc": "0x0000003f9293e8fc",
+    "pc": "0x0000003faac2f8fc",
     "instruction": "0x0207d027",
     "type": 3,
-      "number": 159, 
-    "vd": 0,
+    "number": 159, 
+    "lmul": 2,
     "rs1": 15,
-    "rs1_value": "0x0000003f929401e0",
-    "vs2": 0,
-    "vd_data": "20306031a032e03320356036a037e038203a603ba03ce03d203f6040a041e042",
-    "vs2_data": "20306031a032e03320356036a037e038203a603ba03ce03d203f6040a041e042"
-  },
+    "rs1_value": "0x0000003faac311e0",
+    "vd": 0,
+    "vd_data": [
+      "20306031a032e03320356036a037e038203a603ba03ce03d203f6040a041e042",
+      "20446045a046e0472049604aa047e04020266027a028e029202b602ca02de02e"
+    ]  },
   {
-    "pc": "0x0000003f9293e9a0",
+    "pc": "0x0000003faac2f9a0",
     "instruction": "0x0c9a77d7",
     "type": 2,
-      "number": 160, 
+    "number": 160, 
+    "lmul": 2,
     "rd": 15,
     "rd_value": "0x0000000000000020",
     "rs1": 20,
     "rs1_value": "0x0000000000000040",
     "rs2": 9,
-    "rs2_value": "0x0000003f92940110",
+    "rs2_value": "0x0000003faac31110",
     "vl": "0x0000000000000020",
     "vtype": "0x00000000000000c9",
     "vstart": "0x0000000000000000",
@@ -2337,16 +2810,17 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e9be",
+    "pc": "0x0000003faac2f9be",
     "instruction": "0x0c97f057",
     "type": 2,
-      "number": 161, 
+    "number": 161, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 15,
     "rs1_value": "0x0000000000000020",
     "rs2": 9,
-    "rs2_value": "0x0000003f92940110",
+    "rs2_value": "0x0000003faac31110",
     "vl": "0x0000000000000020",
     "vtype": "0x00000000000000c9",
     "vstart": "0x0000000000000000",
@@ -2354,28 +2828,30 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e9c2",
+    "pc": "0x0000003faac2f9c2",
     "instruction": "0x0206d007",
     "type": 3,
-      "number": 162, 
-    "vd": 0,
+    "number": 162, 
+    "lmul": 2,
     "rs1": 13,
-    "rs1_value": "0x0000003f92940110",
-    "vs2": 0,
-    "vd_data": "00000000000000000000000000000000ffffffffffffffffffffffffffffffff",
-    "vs2_data": "00000000000000000000000000000000ffffffffffffffffffffffffffffffff"
-  },
+    "rs1_value": "0x0000003faac31110",
+    "vd": 0,
+    "vd_data": [
+      "00000000000000000000000000000000ffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ]  },
   {
-    "pc": "0x0000003f9293e9c6",
+    "pc": "0x0000003faac2f9c6",
     "instruction": "0x0c97f057",
     "type": 2,
-      "number": 163, 
+    "number": 163, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 15,
     "rs1_value": "0x0000000000000020",
     "rs2": 9,
-    "rs2_value": "0x0000003f92940110",
+    "rs2_value": "0x0000003faac31110",
     "vl": "0x0000000000000020",
     "vtype": "0x00000000000000c9",
     "vstart": "0x0000000000000000",
@@ -2383,28 +2859,40 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e9ca",
+    "pc": "0x0000003faac2f9ca",
     "instruction": "0xee002457",
     "type": 1,
-      "number": 164, 
+    "number": 164, 
+    "lmul": 2,
     "vd": 8,
+    "vd_data": [
+      "0000000000000000000000000000000000000000000000000000000000000000",
+      "0100000001000000010000000100000001000000010000000100000001000000",
+      "0100000001000000010000000100000001000000010000000100000001000000",
+      "0100000001000000010000000100000001000000010000000100000001000000"
+    ],
     "vs1": 0,
+    "vs1_data": [
+      "00000000000000000000000000000000ffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ],
     "vs2": 0,
-    "vd_data": "0000000000000000000000000000000000000000000000000000000000000000",
-    "vs1_data": "00000000000000000000000000000000ffffffffffffffffffffffffffffffff",
-    "vs2_data": "00000000000000000000000000000000ffffffffffffffffffffffffffffffff"
-  },
+    "vs2_data": [
+      "00000000000000000000000000000000ffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ]  },
   {
-    "pc": "0x0000003f9293e9ce",
+    "pc": "0x0000003faac2f9ce",
     "instruction": "0x0d27f057",
     "type": 2,
-      "number": 165, 
+    "number": 165, 
+    "lmul": 4,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 15,
     "rs1_value": "0x0000000000000020",
     "rs2": 18,
-    "rs2_value": "0x0000003f9293ec00",
+    "rs2_value": "0x0000003faac2fc00",
     "vl": "0x0000000000000020",
     "vtype": "0x00000000000000d2",
     "vstart": "0x0000000000000000",
@@ -2412,52 +2900,93 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e9d2",
+    "pc": "0x0000003faac2f9d2",
     "instruction": "0x42006657",
     "type": 1,
-      "number": 166, 
+    "number": 166, 
+    "lmul": 4,
     "vd": 12,
-    "vs1": 0,
+    "vd_data": [
+      "00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ],
+    "rs1": 0,
+    "rs1_value": "0x0000000000000000",
     "vs2": 0,
-    "vd_data": "00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    "vs1_data": "00000000000000000000000000000000ffffffffffffffffffffffffffffffff",
-    "vs2_data": "00000000000000000000000000000000ffffffffffffffffffffffffffffffff"
-  },
+    "vs2_data": [
+      "00000000000000000000000000000000ffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ]  },
   {
-    "pc": "0x0000003f9293e9d6",
+    "pc": "0x0000003faac2f9d6",
     "instruction": "0x02862657",
     "type": 1,
-      "number": 167, 
+    "number": 167, 
+    "lmul": 4,
     "vd": 12,
+    "vd_data": [
+      "18000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ],
     "vs1": 12,
+    "vs1_data": [
+      "18000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ],
     "vs2": 8,
-    "vd_data": "18000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    "vs1_data": "18000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    "vs2_data": "0000000000000000000000000000000000000000000000000000000000000000"
-  },
+    "vs2_data": [
+      "0000000000000000000000000000000000000000000000000000000000000000",
+      "0100000001000000010000000100000001000000010000000100000001000000",
+      "0100000001000000010000000100000001000000010000000100000001000000",
+      "0100000001000000010000000100000001000000010000000100000001000000"
+    ]  },
   {
-    "pc": "0x0000003f9293e9da",
+    "pc": "0x0000003faac2f9da",
     "instruction": "0x42c026d7",
     "type": 1,
-      "number": 168, 
+    "number": 168, 
+    "lmul": 4,
     "vd": 13,
+    "vd_data": [
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ],
     "vs1": 0,
+    "vs1_data": [
+      "00000000000000000000000000000000ffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ],
     "vs2": 12,
-    "vd_data": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    "vs1_data": "00000000000000000000000000000000ffffffffffffffffffffffffffffffff",
-    "vs2_data": "18000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
-  },
+    "vs2_data": [
+      "18000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ]  },
   {
-    "pc": "0x0000003f9293e9b2",
+    "pc": "0x0000003faac2f9b2",
     "instruction": "0x0c97f7d7",
     "type": 2,
-      "number": 169, 
+    "number": 169, 
+    "lmul": 2,
     "rd": 15,
     "rd_value": "0x0000000000000020",
     "rs1": 15,
     "rs1_value": "0x0000000000000020",
     "rs2": 9,
-    "rs2_value": "0x0000003f92940110",
+    "rs2_value": "0x0000003faac31110",
     "vl": "0x0000000000000020",
     "vtype": "0x00000000000000c9",
     "vstart": "0x0000000000000000",
@@ -2465,16 +2994,17 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e9be",
+    "pc": "0x0000003faac2f9be",
     "instruction": "0x0c97f057",
     "type": 2,
-      "number": 170, 
+    "number": 170, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 15,
     "rs1_value": "0x0000000000000020",
     "rs2": 9,
-    "rs2_value": "0x0000003f92940110",
+    "rs2_value": "0x0000003faac31110",
     "vl": "0x0000000000000020",
     "vtype": "0x00000000000000c9",
     "vstart": "0x0000000000000000",
@@ -2482,28 +3012,30 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e9c2",
+    "pc": "0x0000003faac2f9c2",
     "instruction": "0x0206d007",
     "type": 3,
-      "number": 171, 
-    "vd": 0,
+    "number": 171, 
+    "lmul": 2,
     "rs1": 13,
-    "rs1_value": "0x0000003f92940150",
-    "vs2": 0,
-    "vd_data": "ffffffffffffffffffffffffffffffffa02de02e20306031a032e03320356036",
-    "vs2_data": "ffffffffffffffffffffffffffffffffa02de02e20306031a032e03320356036"
-  },
+    "rs1_value": "0x0000003faac31150",
+    "vd": 0,
+    "vd_data": [
+      "ffffffffffffffffffffffffffffffffa02de02e20306031a032e03320356036",
+      "a037e038203a603ba03ce03d203f6040a041e04220446045a046e0472049604a"
+    ]  },
   {
-    "pc": "0x0000003f9293e9c6",
+    "pc": "0x0000003faac2f9c6",
     "instruction": "0x0c97f057",
     "type": 2,
-      "number": 172, 
+    "number": 172, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 15,
     "rs1_value": "0x0000000000000020",
     "rs2": 9,
-    "rs2_value": "0x0000003f92940110",
+    "rs2_value": "0x0000003faac31110",
     "vl": "0x0000000000000020",
     "vtype": "0x00000000000000c9",
     "vstart": "0x0000000000000000",
@@ -2511,28 +3043,40 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e9ca",
+    "pc": "0x0000003faac2f9ca",
     "instruction": "0xee002457",
     "type": 1,
-      "number": 173, 
+    "number": 173, 
+    "lmul": 2,
     "vd": 8,
+    "vd_data": [
+      "0100000001000000010000000100000001000000010000000100000001000000",
+      "00a421080044950800040c0900e4850900e4020a0004830a0044060b00a48c0b",
+      "0024160c00c4a20c0084320d0064c50d00645b0e0084f40e00c4900f00243010",
+      "00a4d210004478110004211200e4cc1200e47b1300042e140044e31400a49b15"
+    ],
     "vs1": 0,
+    "vs1_data": [
+      "ffffffffffffffffffffffffffffffffa02de02e20306031a032e03320356036",
+      "a037e038203a603ba03ce03d203f6040a041e04220446045a046e0472049604a"
+    ],
     "vs2": 0,
-    "vd_data": "0100000001000000010000000100000001000000010000000100000001000000",
-    "vs1_data": "ffffffffffffffffffffffffffffffffa02de02e20306031a032e03320356036",
-    "vs2_data": "ffffffffffffffffffffffffffffffffa02de02e20306031a032e03320356036"
-  },
+    "vs2_data": [
+      "ffffffffffffffffffffffffffffffffa02de02e20306031a032e03320356036",
+      "a037e038203a603ba03ce03d203f6040a041e04220446045a046e0472049604a"
+    ]  },
   {
-    "pc": "0x0000003f9293e9ce",
+    "pc": "0x0000003faac2f9ce",
     "instruction": "0x0d27f057",
     "type": 2,
-      "number": 174, 
+    "number": 174, 
+    "lmul": 4,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 15,
     "rs1_value": "0x0000000000000020",
     "rs2": 18,
-    "rs2_value": "0x0000003f9293ec00",
+    "rs2_value": "0x0000003faac2fc00",
     "vl": "0x0000000000000020",
     "vtype": "0x00000000000000d2",
     "vstart": "0x0000000000000000",
@@ -2540,52 +3084,93 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e9d2",
+    "pc": "0x0000003faac2f9d2",
     "instruction": "0x42006657",
     "type": 1,
-      "number": 175, 
+    "number": 175, 
+    "lmul": 4,
     "vd": 12,
-    "vs1": 0,
+    "vd_data": [
+      "00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ],
+    "rs1": 0,
+    "rs1_value": "0x0000000000000000",
     "vs2": 0,
-    "vd_data": "00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    "vs1_data": "ffffffffffffffffffffffffffffffffa02de02e20306031a032e03320356036",
-    "vs2_data": "ffffffffffffffffffffffffffffffffa02de02e20306031a032e03320356036"
-  },
+    "vs2_data": [
+      "ffffffffffffffffffffffffffffffffa02de02e20306031a032e03320356036",
+      "a037e038203a603ba03ce03d203f6040a041e04220446045a046e0472049604a",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ]  },
   {
-    "pc": "0x0000003f9293e9d6",
+    "pc": "0x0000003faac2f9d6",
     "instruction": "0x02862657",
     "type": 1,
-      "number": 176, 
+    "number": 176, 
+    "lmul": 4,
     "vd": 12,
+    "vd_data": [
+      "08e08458ffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ],
     "vs1": 12,
+    "vs1_data": [
+      "08e08458ffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ],
     "vs2": 8,
-    "vd_data": "08e08458ffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    "vs1_data": "08e08458ffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    "vs2_data": "0100000001000000010000000100000001000000010000000100000001000000"
-  },
+    "vs2_data": [
+      "0100000001000000010000000100000001000000010000000100000001000000",
+      "00a421080044950800040c0900e4850900e4020a0004830a0044060b00a48c0b",
+      "0024160c00c4a20c0084320d0064c50d00645b0e0084f40e00c4900f00243010",
+      "00a4d210004478110004211200e4cc1200e47b1300042e140044e31400a49b15"
+    ]  },
   {
-    "pc": "0x0000003f9293e9da",
+    "pc": "0x0000003faac2f9da",
     "instruction": "0x42c026d7",
     "type": 1,
-      "number": 177, 
+    "number": 177, 
+    "lmul": 4,
     "vd": 13,
+    "vd_data": [
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ],
     "vs1": 0,
+    "vs1_data": [
+      "ffffffffffffffffffffffffffffffffa02de02e20306031a032e03320356036",
+      "a037e038203a603ba03ce03d203f6040a041e04220446045a046e0472049604a",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ],
     "vs2": 12,
-    "vd_data": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    "vs1_data": "ffffffffffffffffffffffffffffffffa02de02e20306031a032e03320356036",
-    "vs2_data": "08e08458ffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
-  },
+    "vs2_data": [
+      "08e08458ffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ]  },
   {
-    "pc": "0x0000003f9293e9a0",
+    "pc": "0x0000003faac2f9a0",
     "instruction": "0x0c9a77d7",
     "type": 2,
-      "number": 178, 
+    "number": 178, 
+    "lmul": 2,
     "rd": 15,
     "rd_value": "0x0000000000000020",
     "rs1": 20,
     "rs1_value": "0x0000000000000040",
     "rs2": 9,
-    "rs2_value": "0x0000003f92940110",
+    "rs2_value": "0x0000003faac31110",
     "vl": "0x0000000000000020",
     "vtype": "0x00000000000000c9",
     "vstart": "0x0000000000000000",
@@ -2593,16 +3178,17 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e9be",
+    "pc": "0x0000003faac2f9be",
     "instruction": "0x0c97f057",
     "type": 2,
-      "number": 179, 
+    "number": 179, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 15,
     "rs1_value": "0x0000000000000020",
     "rs2": 9,
-    "rs2_value": "0x0000003f92940110",
+    "rs2_value": "0x0000003faac31110",
     "vl": "0x0000000000000020",
     "vtype": "0x00000000000000c9",
     "vstart": "0x0000000000000000",
@@ -2610,28 +3196,30 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e9c2",
+    "pc": "0x0000003faac2f9c2",
     "instruction": "0x0206d007",
     "type": 3,
-      "number": 180, 
-    "vd": 0,
+    "number": 180, 
+    "lmul": 2,
     "rs1": 13,
-    "rs1_value": "0x0000003f92940190",
-    "vs2": 0,
-    "vd_data": "0000000000000000000000000000000020086009a00ae00b200d600ea00fe010",
-    "vs2_data": "0000000000000000000000000000000020086009a00ae00b200d600ea00fe010"
-  },
+    "rs1_value": "0x0000003faac31190",
+    "vd": 0,
+    "vd_data": [
+      "0000000000000000000000000000000020086009a00ae00b200d600ea00fe010",
+      "20126013a014e01520176018a019e01a201c601da01ee01f20216022a023e024"
+    ]  },
   {
-    "pc": "0x0000003f9293e9c6",
+    "pc": "0x0000003faac2f9c6",
     "instruction": "0x0c97f057",
     "type": 2,
-      "number": 181, 
+    "number": 181, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 15,
     "rs1_value": "0x0000000000000020",
     "rs2": 9,
-    "rs2_value": "0x0000003f92940110",
+    "rs2_value": "0x0000003faac31110",
     "vl": "0x0000000000000020",
     "vtype": "0x00000000000000c9",
     "vstart": "0x0000000000000000",
@@ -2639,28 +3227,40 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e9ca",
+    "pc": "0x0000003faac2f9ca",
     "instruction": "0xee002457",
     "type": 1,
-      "number": 182, 
+    "number": 182, 
+    "lmul": 2,
     "vd": 8,
+    "vd_data": [
+      "0000000000000000000000000000000000000000000000000000000000000000",
+      "0004420000e4570000e4700000048d000044ac0000a4ce000024f40000c41c01",
+      "00844801006477010064a9010084de0100c416020024520200a490020044d202",
+      "0004170300e45e0300e4a9030004f8030044490400a49d040024f50400c44f05"
+    ],
     "vs1": 0,
+    "vs1_data": [
+      "0000000000000000000000000000000020086009a00ae00b200d600ea00fe010",
+      "20126013a014e01520176018a019e01a201c601da01ee01f20216022a023e024"
+    ],
     "vs2": 0,
-    "vd_data": "0000000000000000000000000000000000000000000000000000000000000000",
-    "vs1_data": "0000000000000000000000000000000020086009a00ae00b200d600ea00fe010",
-    "vs2_data": "0000000000000000000000000000000020086009a00ae00b200d600ea00fe010"
-  },
+    "vs2_data": [
+      "0000000000000000000000000000000020086009a00ae00b200d600ea00fe010",
+      "20126013a014e01520176018a019e01a201c601da01ee01f20216022a023e024"
+    ]  },
   {
-    "pc": "0x0000003f9293e9ce",
+    "pc": "0x0000003faac2f9ce",
     "instruction": "0x0d27f057",
     "type": 2,
-      "number": 183, 
+    "number": 183, 
+    "lmul": 4,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 15,
     "rs1_value": "0x0000000000000020",
     "rs2": 18,
-    "rs2_value": "0x0000003f9293ec00",
+    "rs2_value": "0x0000003faac2fc00",
     "vl": "0x0000000000000020",
     "vtype": "0x00000000000000d2",
     "vstart": "0x0000000000000000",
@@ -2668,52 +3268,93 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e9d2",
+    "pc": "0x0000003faac2f9d2",
     "instruction": "0x42006657",
     "type": 1,
-      "number": 184, 
+    "number": 184, 
+    "lmul": 4,
     "vd": 12,
-    "vs1": 0,
+    "vd_data": [
+      "00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ],
+    "rs1": 0,
+    "rs1_value": "0x0000000000000000",
     "vs2": 0,
-    "vd_data": "00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    "vs1_data": "0000000000000000000000000000000020086009a00ae00b200d600ea00fe010",
-    "vs2_data": "0000000000000000000000000000000020086009a00ae00b200d600ea00fe010"
-  },
+    "vs2_data": [
+      "0000000000000000000000000000000020086009a00ae00b200d600ea00fe010",
+      "20126013a014e01520176018a019e01a201c601da01ee01f20216022a023e024",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ]  },
   {
-    "pc": "0x0000003f9293e9d6",
+    "pc": "0x0000003faac2f9d6",
     "instruction": "0x02862657",
     "type": 1,
-      "number": 185, 
+    "number": 185, 
+    "lmul": 4,
     "vd": 12,
+    "vd_data": [
+      "00e07a36ffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ],
     "vs1": 12,
+    "vs1_data": [
+      "00e07a36ffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ],
     "vs2": 8,
-    "vd_data": "00e07a36ffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    "vs1_data": "00e07a36ffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    "vs2_data": "0000000000000000000000000000000000000000000000000000000000000000"
-  },
+    "vs2_data": [
+      "0000000000000000000000000000000000000000000000000000000000000000",
+      "0004420000e4570000e4700000048d000044ac0000a4ce000024f40000c41c01",
+      "00844801006477010064a9010084de0100c416020024520200a490020044d202",
+      "0004170300e45e0300e4a9030004f8030044490400a49d040024f50400c44f05"
+    ]  },
   {
-    "pc": "0x0000003f9293e9da",
+    "pc": "0x0000003faac2f9da",
     "instruction": "0x42c026d7",
     "type": 1,
-      "number": 186, 
+    "number": 186, 
+    "lmul": 4,
     "vd": 13,
+    "vd_data": [
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ],
     "vs1": 0,
+    "vs1_data": [
+      "0000000000000000000000000000000020086009a00ae00b200d600ea00fe010",
+      "20126013a014e01520176018a019e01a201c601da01ee01f20216022a023e024",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ],
     "vs2": 12,
-    "vd_data": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    "vs1_data": "0000000000000000000000000000000020086009a00ae00b200d600ea00fe010",
-    "vs2_data": "00e07a36ffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
-  },
+    "vs2_data": [
+      "00e07a36ffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ]  },
   {
-    "pc": "0x0000003f9293e9b2",
+    "pc": "0x0000003faac2f9b2",
     "instruction": "0x0c97f7d7",
     "type": 2,
-      "number": 187, 
+    "number": 187, 
+    "lmul": 2,
     "rd": 15,
     "rd_value": "0x0000000000000020",
     "rs1": 15,
     "rs1_value": "0x0000000000000020",
     "rs2": 9,
-    "rs2_value": "0x0000003f92940110",
+    "rs2_value": "0x0000003faac31110",
     "vl": "0x0000000000000020",
     "vtype": "0x00000000000000c9",
     "vstart": "0x0000000000000000",
@@ -2721,16 +3362,17 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e9be",
+    "pc": "0x0000003faac2f9be",
     "instruction": "0x0c97f057",
     "type": 2,
-      "number": 188, 
+    "number": 188, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 15,
     "rs1_value": "0x0000000000000020",
     "rs2": 9,
-    "rs2_value": "0x0000003f92940110",
+    "rs2_value": "0x0000003faac31110",
     "vl": "0x0000000000000020",
     "vtype": "0x00000000000000c9",
     "vstart": "0x0000000000000000",
@@ -2738,28 +3380,30 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e9c2",
+    "pc": "0x0000003faac2f9c2",
     "instruction": "0x0206d007",
     "type": 3,
-      "number": 189, 
-    "vd": 0,
+    "number": 189, 
+    "lmul": 2,
     "rs1": 13,
-    "rs1_value": "0x0000003f929401d0",
-    "vs2": 0,
-    "vd_data": "20266027a028e029202b602ca02de02e20306031a032e03320356036a037e038",
-    "vs2_data": "20266027a028e029202b602ca02de02e20306031a032e03320356036a037e038"
-  },
+    "rs1_value": "0x0000003faac311d0",
+    "vd": 0,
+    "vd_data": [
+      "20266027a028e029202b602ca02de02e20306031a032e03320356036a037e038",
+      "203a603ba03ce03d203f6040a041e04220446045a046e0472049604aa047e040"
+    ]  },
   {
-    "pc": "0x0000003f9293e9c6",
+    "pc": "0x0000003faac2f9c6",
     "instruction": "0x0c97f057",
     "type": 2,
-      "number": 190, 
+    "number": 190, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 15,
     "rs1_value": "0x0000000000000020",
     "rs2": 9,
-    "rs2_value": "0x0000003f92940110",
+    "rs2_value": "0x0000003faac31110",
     "vl": "0x0000000000000020",
     "vtype": "0x00000000000000c9",
     "vstart": "0x0000000000000000",
@@ -2767,28 +3411,40 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e9ca",
+    "pc": "0x0000003faac2f9ca",
     "instruction": "0xee002457",
     "type": 1,
-      "number": 191, 
+    "number": 191, 
+    "lmul": 2,
     "vd": 8,
+    "vd_data": [
+      "0084ad0500640e06006472060084d90600c443070024b10700a4210800449508",
+      "00040c0900e4850900e4020a0004830a0044060b00a48c0b0024160c00c4a20c",
+      "0084320d0064c50d00645b0e0084f40e00c4900f0024301000a4d21000447811",
+      "0004211200e4cc1200e47b1300042e140044e31400a49b1500240a1400c47010"
+    ],
     "vs1": 0,
+    "vs1_data": [
+      "20266027a028e029202b602ca02de02e20306031a032e03320356036a037e038",
+      "203a603ba03ce03d203f6040a041e04220446045a046e0472049604aa047e040"
+    ],
     "vs2": 0,
-    "vd_data": "0084ad0500640e06006472060084d90600c443070024b10700a4210800449508",
-    "vs1_data": "20266027a028e029202b602ca02de02e20306031a032e03320356036a037e038",
-    "vs2_data": "20266027a028e029202b602ca02de02e20306031a032e03320356036a037e038"
-  },
+    "vs2_data": [
+      "20266027a028e029202b602ca02de02e20306031a032e03320356036a037e038",
+      "203a603ba03ce03d203f6040a041e04220446045a046e0472049604aa047e040"
+    ]  },
   {
-    "pc": "0x0000003f9293e9ce",
+    "pc": "0x0000003faac2f9ce",
     "instruction": "0x0d27f057",
     "type": 2,
-      "number": 192, 
+    "number": 192, 
+    "lmul": 4,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 15,
     "rs1_value": "0x0000000000000020",
     "rs2": 18,
-    "rs2_value": "0x0000003f9293ec00",
+    "rs2_value": "0x0000003faac2fc00",
     "vl": "0x0000000000000020",
     "vtype": "0x00000000000000d2",
     "vstart": "0x0000000000000000",
@@ -2796,52 +3452,93 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293e9d2",
+    "pc": "0x0000003faac2f9d2",
     "instruction": "0x42006657",
     "type": 1,
-      "number": 193, 
+    "number": 193, 
+    "lmul": 4,
     "vd": 12,
-    "vs1": 0,
+    "vd_data": [
+      "00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ],
+    "rs1": 0,
+    "rs1_value": "0x0000000000000000",
     "vs2": 0,
-    "vd_data": "00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    "vs1_data": "20266027a028e029202b602ca02de02e20306031a032e03320356036a037e038",
-    "vs2_data": "20266027a028e029202b602ca02de02e20306031a032e03320356036a037e038"
-  },
+    "vs2_data": [
+      "20266027a028e029202b602ca02de02e20306031a032e03320356036a037e038",
+      "203a603ba03ce03d203f6040a041e04220446045a046e0472049604aa047e040",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ]  },
   {
-    "pc": "0x0000003f9293e9d6",
+    "pc": "0x0000003faac2f9d6",
     "instruction": "0x02862657",
     "type": 1,
-      "number": 194, 
+    "number": 194, 
+    "lmul": 4,
     "vd": 12,
+    "vd_data": [
+      "0080fca4ffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ],
     "vs1": 12,
+    "vs1_data": [
+      "0080fca4ffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ],
     "vs2": 8,
-    "vd_data": "0080fca4ffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    "vs1_data": "0080fca4ffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    "vs2_data": "0084ad0500640e06006472060084d90600c443070024b10700a4210800449508"
-  },
+    "vs2_data": [
+      "0084ad0500640e06006472060084d90600c443070024b10700a4210800449508",
+      "00040c0900e4850900e4020a0004830a0044060b00a48c0b0024160c00c4a20c",
+      "0084320d0064c50d00645b0e0084f40e00c4900f0024301000a4d21000447811",
+      "0004211200e4cc1200e47b1300042e140044e31400a49b1500240a1400c47010"
+    ]  },
   {
-    "pc": "0x0000003f9293e9da",
+    "pc": "0x0000003faac2f9da",
     "instruction": "0x42c026d7",
     "type": 1,
-      "number": 195, 
+    "number": 195, 
+    "lmul": 4,
     "vd": 13,
+    "vd_data": [
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ],
     "vs1": 0,
+    "vs1_data": [
+      "20266027a028e029202b602ca02de02e20306031a032e03320356036a037e038",
+      "203a603ba03ce03d203f6040a041e04220446045a046e0472049604aa047e040",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ],
     "vs2": 12,
-    "vd_data": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    "vs1_data": "20266027a028e029202b602ca02de02e20306031a032e03320356036a037e038",
-    "vs2_data": "0080fca4ffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
-  },
+    "vs2_data": [
+      "0080fca4ffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ]  },
   {
-    "pc": "0x0000003f9293ea4c",
+    "pc": "0x0000003faac2fa4c",
     "instruction": "0x0c95f7d7",
     "type": 2,
-      "number": 196, 
+    "number": 196, 
+    "lmul": 2,
     "rd": 15,
     "rd_value": "0x0000000000000020",
     "rs1": 11,
     "rs1_value": "0x0000000000000040",
     "rs2": 9,
-    "rs2_value": "0x0000003f92940110",
+    "rs2_value": "0x0000003faac31110",
     "vl": "0x0000000000000020",
     "vtype": "0x00000000000000c9",
     "vstart": "0x0000000000000000",
@@ -2849,16 +3546,17 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293ea66",
+    "pc": "0x0000003faac2fa66",
     "instruction": "0x0c97f057",
     "type": 2,
-      "number": 197, 
+    "number": 197, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 15,
     "rs1_value": "0x0000000000000020",
     "rs2": 9,
-    "rs2_value": "0x0000003f92940110",
+    "rs2_value": "0x0000003faac31110",
     "vl": "0x0000000000000020",
     "vtype": "0x00000000000000c9",
     "vstart": "0x0000000000000000",
@@ -2866,28 +3564,30 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293ea6a",
+    "pc": "0x0000003faac2fa6a",
     "instruction": "0x02075007",
     "type": 3,
-      "number": 198, 
-    "vd": 0,
+    "number": 198, 
+    "lmul": 2,
     "rs1": 14,
-    "rs1_value": "0x0000003f92940110",
-    "vs2": 0,
-    "vd_data": "00000000000000000000000000000000ffffffffffffffffffffffffffffffff",
-    "vs2_data": "00000000000000000000000000000000ffffffffffffffffffffffffffffffff"
-  },
+    "rs1_value": "0x0000003faac31110",
+    "vd": 0,
+    "vd_data": [
+      "00000000000000000000000000000000ffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ]  },
   {
-    "pc": "0x0000003f9293ea6e",
+    "pc": "0x0000003faac2fa6e",
     "instruction": "0x0c97f057",
     "type": 2,
-      "number": 199, 
+    "number": 199, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 15,
     "rs1_value": "0x0000000000000020",
     "rs2": 9,
-    "rs2_value": "0x0000003f92940110",
+    "rs2_value": "0x0000003faac31110",
     "vl": "0x0000000000000020",
     "vtype": "0x00000000000000c9",
     "vstart": "0x0000000000000000",
@@ -2895,22 +3595,31 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293ea72",
+    "pc": "0x0000003faac2fa72",
     "instruction": "0xee066457",
     "type": 1,
-      "number": 200, 
+    "number": 200, 
+    "lmul": 2,
     "vd": 8,
-    "vs1": 12,
+    "vd_data": [
+      "0000000000000000000000000000000000000000000000000000000000000000",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ],
+    "rs1": 12,
+    "rs1_value": "0x0000000000000001",
     "vs2": 0,
-    "vd_data": "0000000000000000000000000000000000000000000000000000000000000000",
-    "vs1_data": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    "vs2_data": "00000000000000000000000000000000ffffffffffffffffffffffffffffffff"
-  },
+    "vs2_data": [
+      "00000000000000000000000000000000ffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ]  },
   {
-    "pc": "0x0000003f9293ea76",
+    "pc": "0x0000003faac2fa76",
     "instruction": "0x0d27f057",
     "type": 2,
-      "number": 201, 
+    "number": 201, 
+    "lmul": 4,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 15,
@@ -2924,28 +3633,38 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293ea7a",
+    "pc": "0x0000003faac2fa7a",
     "instruction": "0xa6853457",
     "type": 1,
-      "number": 202, 
+    "number": 202, 
+    "lmul": 4,
     "vd": 8,
-    "vs1": 10,
+    "vd_data": [
+      "0000000000000000000000000000000000000000000000000000000000000000",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ],
+    "imm": 10,
     "vs2": 8,
-    "vd_data": "0000000000000000000000000000000000000000000000000000000000000000",
-    "vs1_data": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    "vs2_data": "0000000000000000000000000000000000000000000000000000000000000000"
-  },
+    "vs2_data": [
+      "0000000000000000000000000000000000000000000000000000000000000000",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ]  },
   {
-    "pc": "0x0000003f9293ea7e",
+    "pc": "0x0000003faac2fa7e",
     "instruction": "0x0c97f057",
     "type": 2,
-      "number": 203, 
+    "number": 203, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 15,
     "rs1_value": "0x0000000000000020",
     "rs2": 9,
-    "rs2_value": "0x0000003f92940110",
+    "rs2_value": "0x0000003faac31110",
     "vl": "0x0000000000000020",
     "vtype": "0x00000000000000c9",
     "vstart": "0x0000000000000000",
@@ -2953,40 +3672,49 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293ea82",
+    "pc": "0x0000003faac2fa82",
     "instruction": "0xbe803057",
     "type": 1,
-      "number": 204, 
+    "number": 204, 
+    "lmul": 2,
     "vd": 0,
-    "vs1": 0,
+    "vd_data": [
+      "00000000000000000000000000000000ffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ],
+    "imm": 0,
     "vs2": 8,
-    "vd_data": "00000000000000000000000000000000ffffffffffffffffffffffffffffffff",
-    "vs1_data": "00000000000000000000000000000000ffffffffffffffffffffffffffffffff",
-    "vs2_data": "0000000000000000000000000000000000000000000000000000000000000000"
-  },
+    "vs2_data": [
+      "0000000000000000000000000000000000000000000000000000000000000000",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ]  },
   {
-    "pc": "0x0000003f9293ea86",
+    "pc": "0x0000003faac2fa86",
     "instruction": "0x02075027",
     "type": 3,
-      "number": 205, 
-    "vd": 0,
+    "number": 205, 
+    "lmul": 2,
     "rs1": 14,
-    "rs1_value": "0x0000003f92940110",
-    "vs2": 0,
-    "vd_data": "00000000000000000000000000000000ffffffffffffffffffffffffffffffff",
-    "vs2_data": "00000000000000000000000000000000ffffffffffffffffffffffffffffffff"
-  },
+    "rs1_value": "0x0000003faac31110",
+    "vd": 0,
+    "vd_data": [
+      "00000000000000000000000000000000ffffffffffffffffffffffffffffffff",
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ]  },
   {
-    "pc": "0x0000003f9293ea5a",
+    "pc": "0x0000003faac2fa5a",
     "instruction": "0x0c97f7d7",
     "type": 2,
-      "number": 206, 
+    "number": 206, 
+    "lmul": 2,
     "rd": 15,
     "rd_value": "0x0000000000000020",
     "rs1": 15,
     "rs1_value": "0x0000000000000020",
     "rs2": 9,
-    "rs2_value": "0x0000003f92940110",
+    "rs2_value": "0x0000003faac31110",
     "vl": "0x0000000000000020",
     "vtype": "0x00000000000000c9",
     "vstart": "0x0000000000000000",
@@ -2994,16 +3722,17 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293ea66",
+    "pc": "0x0000003faac2fa66",
     "instruction": "0x0c97f057",
     "type": 2,
-      "number": 207, 
+    "number": 207, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 15,
     "rs1_value": "0x0000000000000020",
     "rs2": 9,
-    "rs2_value": "0x0000003f92940110",
+    "rs2_value": "0x0000003faac31110",
     "vl": "0x0000000000000020",
     "vtype": "0x00000000000000c9",
     "vstart": "0x0000000000000000",
@@ -3011,28 +3740,30 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293ea6a",
+    "pc": "0x0000003faac2fa6a",
     "instruction": "0x02075007",
     "type": 3,
-      "number": 208, 
-    "vd": 0,
+    "number": 208, 
+    "lmul": 2,
     "rs1": 14,
-    "rs1_value": "0x0000003f92940150",
-    "vs2": 0,
-    "vd_data": "ffffffffffffffffffffffffffffffffa02de02e20306031a032e03320356036",
-    "vs2_data": "ffffffffffffffffffffffffffffffffa02de02e20306031a032e03320356036"
-  },
+    "rs1_value": "0x0000003faac31150",
+    "vd": 0,
+    "vd_data": [
+      "ffffffffffffffffffffffffffffffffa02de02e20306031a032e03320356036",
+      "a037e038203a603ba03ce03d203f6040a041e04220446045a046e0472049604a"
+    ]  },
   {
-    "pc": "0x0000003f9293ea6e",
+    "pc": "0x0000003faac2fa6e",
     "instruction": "0x0c97f057",
     "type": 2,
-      "number": 209, 
+    "number": 209, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 15,
     "rs1_value": "0x0000000000000020",
     "rs2": 9,
-    "rs2_value": "0x0000003f92940110",
+    "rs2_value": "0x0000003faac31110",
     "vl": "0x0000000000000020",
     "vtype": "0x00000000000000c9",
     "vstart": "0x0000000000000000",
@@ -3040,22 +3771,31 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293ea72",
+    "pc": "0x0000003faac2fa72",
     "instruction": "0xee066457",
     "type": 1,
-      "number": 210, 
+    "number": 210, 
+    "lmul": 2,
     "vd": 8,
-    "vs1": 12,
+    "vd_data": [
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "a02d0000e02e00002030000060310000a0320000e03300002035000060360000",
+      "a0370000e0380000203a0000603b0000a03c0000e03d0000203f000060400000",
+      "a0410000e04200002044000060450000a0460000e047000020490000604a0000"
+    ],
+    "rs1": 12,
+    "rs1_value": "0x0000000000000001",
     "vs2": 0,
-    "vd_data": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    "vs1_data": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    "vs2_data": "ffffffffffffffffffffffffffffffffa02de02e20306031a032e03320356036"
-  },
+    "vs2_data": [
+      "ffffffffffffffffffffffffffffffffa02de02e20306031a032e03320356036",
+      "a037e038203a603ba03ce03d203f6040a041e04220446045a046e0472049604a"
+    ]  },
   {
-    "pc": "0x0000003f9293ea76",
+    "pc": "0x0000003faac2fa76",
     "instruction": "0x0d27f057",
     "type": 2,
-      "number": 211, 
+    "number": 211, 
+    "lmul": 4,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 15,
@@ -3069,28 +3809,38 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293ea7a",
+    "pc": "0x0000003faac2fa7a",
     "instruction": "0xa6853457",
     "type": 1,
-      "number": 212, 
+    "number": 212, 
+    "lmul": 4,
     "vd": 8,
-    "vs1": 10,
+    "vd_data": [
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "0b0000000b0000000c0000000c0000000c0000000c0000000d0000000d000000",
+      "0d0000000e0000000e0000000e0000000f0000000f0000000f00000010000000",
+      "1000000010000000110000001100000011000000110000001200000012000000"
+    ],
+    "imm": 10,
     "vs2": 8,
-    "vd_data": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    "vs1_data": "0d0000000e0000000e0000000e0000000f0000000f0000000f00000010000000",
-    "vs2_data": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
-  },
+    "vs2_data": [
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "0b0000000b0000000c0000000c0000000c0000000c0000000d0000000d000000",
+      "0d0000000e0000000e0000000e0000000f0000000f0000000f00000010000000",
+      "1000000010000000110000001100000011000000110000001200000012000000"
+    ]  },
   {
-    "pc": "0x0000003f9293ea7e",
+    "pc": "0x0000003faac2fa7e",
     "instruction": "0x0c97f057",
     "type": 2,
-      "number": 213, 
+    "number": 213, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 15,
     "rs1_value": "0x0000000000000020",
     "rs2": 9,
-    "rs2_value": "0x0000003f92940110",
+    "rs2_value": "0x0000003faac31110",
     "vl": "0x0000000000000020",
     "vtype": "0x00000000000000c9",
     "vstart": "0x0000000000000000",
@@ -3098,40 +3848,49 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293ea82",
+    "pc": "0x0000003faac2fa82",
     "instruction": "0xbe803057",
     "type": 1,
-      "number": 214, 
+    "number": 214, 
+    "lmul": 2,
     "vd": 0,
-    "vs1": 0,
+    "vd_data": [
+      "ffffffffffffffffffffffffffffffff0b000b000c000c000c000c000d000d00",
+      "0d000e000e000e000f000f000f00100010001000110011001100110012001200"
+    ],
+    "imm": 0,
     "vs2": 8,
-    "vd_data": "ffffffffffffffffffffffffffffffff0b000b000c000c000c000c000d000d00",
-    "vs1_data": "ffffffffffffffffffffffffffffffff0b000b000c000c000c000c000d000d00",
-    "vs2_data": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
-  },
+    "vs2_data": [
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "0b0000000b0000000c0000000c0000000c0000000c0000000d0000000d000000",
+      "0d0000000e0000000e0000000e0000000f0000000f0000000f00000010000000",
+      "1000000010000000110000001100000011000000110000001200000012000000"
+    ]  },
   {
-    "pc": "0x0000003f9293ea86",
+    "pc": "0x0000003faac2fa86",
     "instruction": "0x02075027",
     "type": 3,
-      "number": 215, 
-    "vd": 0,
+    "number": 215, 
+    "lmul": 2,
     "rs1": 14,
-    "rs1_value": "0x0000003f92940150",
-    "vs2": 0,
-    "vd_data": "ffffffffffffffffffffffffffffffff0b000b000c000c000c000c000d000d00",
-    "vs2_data": "ffffffffffffffffffffffffffffffff0b000b000c000c000c000c000d000d00"
-  },
+    "rs1_value": "0x0000003faac31150",
+    "vd": 0,
+    "vd_data": [
+      "ffffffffffffffffffffffffffffffff0b000b000c000c000c000c000d000d00",
+      "0d000e000e000e000f000f000f00100010001000110011001100110012001200"
+    ]  },
   {
-    "pc": "0x0000003f9293ea4c",
+    "pc": "0x0000003faac2fa4c",
     "instruction": "0x0c95f7d7",
     "type": 2,
-      "number": 216, 
+    "number": 216, 
+    "lmul": 2,
     "rd": 15,
     "rd_value": "0x0000000000000020",
     "rs1": 11,
     "rs1_value": "0x0000000000000040",
     "rs2": 9,
-    "rs2_value": "0x0000003f92940190",
+    "rs2_value": "0x0000003faac31190",
     "vl": "0x0000000000000020",
     "vtype": "0x00000000000000c9",
     "vstart": "0x0000000000000000",
@@ -3139,16 +3898,17 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293ea66",
+    "pc": "0x0000003faac2fa66",
     "instruction": "0x0c97f057",
     "type": 2,
-      "number": 217, 
+    "number": 217, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 15,
     "rs1_value": "0x0000000000000020",
     "rs2": 9,
-    "rs2_value": "0x0000003f92940190",
+    "rs2_value": "0x0000003faac31190",
     "vl": "0x0000000000000020",
     "vtype": "0x00000000000000c9",
     "vstart": "0x0000000000000000",
@@ -3156,28 +3916,30 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293ea6a",
+    "pc": "0x0000003faac2fa6a",
     "instruction": "0x02075007",
     "type": 3,
-      "number": 218, 
-    "vd": 0,
+    "number": 218, 
+    "lmul": 2,
     "rs1": 14,
-    "rs1_value": "0x0000003f92940190",
-    "vs2": 0,
-    "vd_data": "0000000000000000000000000000000020086009a00ae00b200d600ea00fe010",
-    "vs2_data": "0000000000000000000000000000000020086009a00ae00b200d600ea00fe010"
-  },
+    "rs1_value": "0x0000003faac31190",
+    "vd": 0,
+    "vd_data": [
+      "0000000000000000000000000000000020086009a00ae00b200d600ea00fe010",
+      "20126013a014e01520176018a019e01a201c601da01ee01f20216022a023e024"
+    ]  },
   {
-    "pc": "0x0000003f9293ea6e",
+    "pc": "0x0000003faac2fa6e",
     "instruction": "0x0c97f057",
     "type": 2,
-      "number": 219, 
+    "number": 219, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 15,
     "rs1_value": "0x0000000000000020",
     "rs2": 9,
-    "rs2_value": "0x0000003f92940190",
+    "rs2_value": "0x0000003faac31190",
     "vl": "0x0000000000000020",
     "vtype": "0x00000000000000c9",
     "vstart": "0x0000000000000000",
@@ -3185,22 +3947,31 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293ea72",
+    "pc": "0x0000003faac2fa72",
     "instruction": "0xee066457",
     "type": 1,
-      "number": 220, 
+    "number": 220, 
+    "lmul": 2,
     "vd": 8,
-    "vs1": 12,
+    "vd_data": [
+      "0000000000000000000000000000000000000000000000000000000000000000",
+      "2008000060090000a00a0000e00b0000200d0000600e0000a00f0000e0100000",
+      "2012000060130000a0140000e01500002017000060180000a0190000e01a0000",
+      "201c0000601d0000a01e0000e01f00002021000060220000a0230000e0240000"
+    ],
+    "rs1": 12,
+    "rs1_value": "0x0000000000000001",
     "vs2": 0,
-    "vd_data": "0000000000000000000000000000000000000000000000000000000000000000",
-    "vs1_data": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    "vs2_data": "0000000000000000000000000000000020086009a00ae00b200d600ea00fe010"
-  },
+    "vs2_data": [
+      "0000000000000000000000000000000020086009a00ae00b200d600ea00fe010",
+      "20126013a014e01520176018a019e01a201c601da01ee01f20216022a023e024"
+    ]  },
   {
-    "pc": "0x0000003f9293ea76",
+    "pc": "0x0000003faac2fa76",
     "instruction": "0x0d27f057",
     "type": 2,
-      "number": 221, 
+    "number": 221, 
+    "lmul": 4,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 15,
@@ -3214,28 +3985,38 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293ea7a",
+    "pc": "0x0000003faac2fa7a",
     "instruction": "0xa6853457",
     "type": 1,
-      "number": 222, 
+    "number": 222, 
+    "lmul": 4,
     "vd": 8,
-    "vs1": 10,
+    "vd_data": [
+      "0000000000000000000000000000000000000000000000000000000000000000",
+      "0200000002000000020000000200000003000000030000000300000004000000",
+      "0400000004000000050000000500000005000000060000000600000006000000",
+      "0700000007000000070000000700000008000000080000000800000009000000"
+    ],
+    "imm": 10,
     "vs2": 8,
-    "vd_data": "0000000000000000000000000000000000000000000000000000000000000000",
-    "vs1_data": "0400000004000000050000000500000005000000060000000600000006000000",
-    "vs2_data": "0000000000000000000000000000000000000000000000000000000000000000"
-  },
+    "vs2_data": [
+      "0000000000000000000000000000000000000000000000000000000000000000",
+      "0200000002000000020000000200000003000000030000000300000004000000",
+      "0400000004000000050000000500000005000000060000000600000006000000",
+      "0700000007000000070000000700000008000000080000000800000009000000"
+    ]  },
   {
-    "pc": "0x0000003f9293ea7e",
+    "pc": "0x0000003faac2fa7e",
     "instruction": "0x0c97f057",
     "type": 2,
-      "number": 223, 
+    "number": 223, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 15,
     "rs1_value": "0x0000000000000020",
     "rs2": 9,
-    "rs2_value": "0x0000003f92940190",
+    "rs2_value": "0x0000003faac31190",
     "vl": "0x0000000000000020",
     "vtype": "0x00000000000000c9",
     "vstart": "0x0000000000000000",
@@ -3243,40 +4024,49 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293ea82",
+    "pc": "0x0000003faac2fa82",
     "instruction": "0xbe803057",
     "type": 1,
-      "number": 224, 
+    "number": 224, 
+    "lmul": 2,
     "vd": 0,
-    "vs1": 0,
+    "vd_data": [
+      "0000000000000000000000000000000002000200020002000300030003000400",
+      "0400040005000500050006000600060007000700070007000800080008000900"
+    ],
+    "imm": 0,
     "vs2": 8,
-    "vd_data": "0000000000000000000000000000000002000200020002000300030003000400",
-    "vs1_data": "0000000000000000000000000000000002000200020002000300030003000400",
-    "vs2_data": "0000000000000000000000000000000000000000000000000000000000000000"
-  },
+    "vs2_data": [
+      "0000000000000000000000000000000000000000000000000000000000000000",
+      "0200000002000000020000000200000003000000030000000300000004000000",
+      "0400000004000000050000000500000005000000060000000600000006000000",
+      "0700000007000000070000000700000008000000080000000800000009000000"
+    ]  },
   {
-    "pc": "0x0000003f9293ea86",
+    "pc": "0x0000003faac2fa86",
     "instruction": "0x02075027",
     "type": 3,
-      "number": 225, 
-    "vd": 0,
+    "number": 225, 
+    "lmul": 2,
     "rs1": 14,
-    "rs1_value": "0x0000003f92940190",
-    "vs2": 0,
-    "vd_data": "0000000000000000000000000000000002000200020002000300030003000400",
-    "vs2_data": "0000000000000000000000000000000002000200020002000300030003000400"
-  },
+    "rs1_value": "0x0000003faac31190",
+    "vd": 0,
+    "vd_data": [
+      "0000000000000000000000000000000002000200020002000300030003000400",
+      "0400040005000500050006000600060007000700070007000800080008000900"
+    ]  },
   {
-    "pc": "0x0000003f9293ea5a",
+    "pc": "0x0000003faac2fa5a",
     "instruction": "0x0c97f7d7",
     "type": 2,
-      "number": 226, 
+    "number": 226, 
+    "lmul": 2,
     "rd": 15,
     "rd_value": "0x0000000000000020",
     "rs1": 15,
     "rs1_value": "0x0000000000000020",
     "rs2": 9,
-    "rs2_value": "0x0000003f92940190",
+    "rs2_value": "0x0000003faac31190",
     "vl": "0x0000000000000020",
     "vtype": "0x00000000000000c9",
     "vstart": "0x0000000000000000",
@@ -3284,16 +4074,17 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293ea66",
+    "pc": "0x0000003faac2fa66",
     "instruction": "0x0c97f057",
     "type": 2,
-      "number": 227, 
+    "number": 227, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 15,
     "rs1_value": "0x0000000000000020",
     "rs2": 9,
-    "rs2_value": "0x0000003f92940190",
+    "rs2_value": "0x0000003faac31190",
     "vl": "0x0000000000000020",
     "vtype": "0x00000000000000c9",
     "vstart": "0x0000000000000000",
@@ -3301,28 +4092,30 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293ea6a",
+    "pc": "0x0000003faac2fa6a",
     "instruction": "0x02075007",
     "type": 3,
-      "number": 228, 
-    "vd": 0,
+    "number": 228, 
+    "lmul": 2,
     "rs1": 14,
-    "rs1_value": "0x0000003f929401d0",
-    "vs2": 0,
-    "vd_data": "20266027a028e029202b602ca02de02e20306031a032e03320356036a037e038",
-    "vs2_data": "20266027a028e029202b602ca02de02e20306031a032e03320356036a037e038"
-  },
+    "rs1_value": "0x0000003faac311d0",
+    "vd": 0,
+    "vd_data": [
+      "20266027a028e029202b602ca02de02e20306031a032e03320356036a037e038",
+      "203a603ba03ce03d203f6040a041e04220446045a046e0472049604aa047e040"
+    ]  },
   {
-    "pc": "0x0000003f9293ea6e",
+    "pc": "0x0000003faac2fa6e",
     "instruction": "0x0c97f057",
     "type": 2,
-      "number": 229, 
+    "number": 229, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 15,
     "rs1_value": "0x0000000000000020",
     "rs2": 9,
-    "rs2_value": "0x0000003f92940190",
+    "rs2_value": "0x0000003faac31190",
     "vl": "0x0000000000000020",
     "vtype": "0x00000000000000c9",
     "vstart": "0x0000000000000000",
@@ -3330,22 +4123,31 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293ea72",
+    "pc": "0x0000003faac2fa72",
     "instruction": "0xee066457",
     "type": 1,
-      "number": 230, 
+    "number": 230, 
+    "lmul": 2,
     "vd": 8,
-    "vs1": 12,
+    "vd_data": [
+      "2026000060270000a0280000e0290000202b0000602c0000a02d0000e02e0000",
+      "2030000060310000a0320000e03300002035000060360000a0370000e0380000",
+      "203a0000603b0000a03c0000e03d0000203f000060400000a0410000e0420000",
+      "2044000060450000a0460000e047000020490000604a0000a0470000e0400000"
+    ],
+    "rs1": 12,
+    "rs1_value": "0x0000000000000001",
     "vs2": 0,
-    "vd_data": "2026000060270000a0280000e0290000202b0000602c0000a02d0000e02e0000",
-    "vs1_data": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    "vs2_data": "20266027a028e029202b602ca02de02e20306031a032e03320356036a037e038"
-  },
+    "vs2_data": [
+      "20266027a028e029202b602ca02de02e20306031a032e03320356036a037e038",
+      "203a603ba03ce03d203f6040a041e04220446045a046e0472049604aa047e040"
+    ]  },
   {
-    "pc": "0x0000003f9293ea76",
+    "pc": "0x0000003faac2fa76",
     "instruction": "0x0d27f057",
     "type": 2,
-      "number": 231, 
+    "number": 231, 
+    "lmul": 4,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 15,
@@ -3359,28 +4161,38 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293ea7a",
+    "pc": "0x0000003faac2fa7a",
     "instruction": "0xa6853457",
     "type": 1,
-      "number": 232, 
+    "number": 232, 
+    "lmul": 4,
     "vd": 8,
-    "vs1": 10,
+    "vd_data": [
+      "09000000090000000a0000000a0000000a0000000b0000000b0000000b000000",
+      "0c0000000c0000000c0000000c0000000d0000000d0000000d0000000e000000",
+      "0e0000000e0000000f0000000f0000000f000000100000001000000010000000",
+      "1100000011000000110000001100000012000000120000001100000010000000"
+    ],
+    "imm": 10,
     "vs2": 8,
-    "vd_data": "09000000090000000a0000000a0000000a0000000b0000000b0000000b000000",
-    "vs1_data": "0e0000000e0000000f0000000f0000000f000000100000001000000010000000",
-    "vs2_data": "09000000090000000a0000000a0000000a0000000b0000000b0000000b000000"
-  },
+    "vs2_data": [
+      "09000000090000000a0000000a0000000a0000000b0000000b0000000b000000",
+      "0c0000000c0000000c0000000c0000000d0000000d0000000d0000000e000000",
+      "0e0000000e0000000f0000000f0000000f000000100000001000000010000000",
+      "1100000011000000110000001100000012000000120000001100000010000000"
+    ]  },
   {
-    "pc": "0x0000003f9293ea7e",
+    "pc": "0x0000003faac2fa7e",
     "instruction": "0x0c97f057",
     "type": 2,
-      "number": 233, 
+    "number": 233, 
+    "lmul": 2,
     "rd": 0,
     "rd_value": "0x0000000000000000",
     "rs1": 15,
     "rs1_value": "0x0000000000000020",
     "rs2": 9,
-    "rs2_value": "0x0000003f92940190",
+    "rs2_value": "0x0000003faac31190",
     "vl": "0x0000000000000020",
     "vtype": "0x00000000000000c9",
     "vstart": "0x0000000000000000",
@@ -3388,26 +4200,34 @@
     "vlenb": "0x0000000000000020"
   },
   {
-    "pc": "0x0000003f9293ea82",
+    "pc": "0x0000003faac2fa82",
     "instruction": "0xbe803057",
     "type": 1,
-      "number": 234, 
+    "number": 234, 
+    "lmul": 2,
     "vd": 0,
-    "vs1": 0,
+    "vd_data": [
+      "090009000a000a000a000b000b000b000c000c000c000c000d000d000d000e00",
+      "0e000e000f000f000f0010001000100011001100110011001200120011001000"
+    ],
+    "imm": 0,
     "vs2": 8,
-    "vd_data": "090009000a000a000a000b000b000b000c000c000c000c000d000d000d000e00",
-    "vs1_data": "090009000a000a000a000b000b000b000c000c000c000c000d000d000d000e00",
-    "vs2_data": "09000000090000000a0000000a0000000a0000000b0000000b0000000b000000"
-  },
+    "vs2_data": [
+      "09000000090000000a0000000a0000000a0000000b0000000b0000000b000000",
+      "0c0000000c0000000c0000000c0000000d0000000d0000000d0000000e000000",
+      "0e0000000e0000000f0000000f0000000f000000100000001000000010000000",
+      "1100000011000000110000001100000012000000120000001100000010000000"
+    ]  },
   {
-    "pc": "0x0000003f9293ea86",
+    "pc": "0x0000003faac2fa86",
     "instruction": "0x02075027",
     "type": 3,
-      "number": 235, 
-    "vd": 0,
+    "number": 235, 
+    "lmul": 2,
     "rs1": 14,
-    "rs1_value": "0x0000003f929401d0",
-    "vs2": 0,
-    "vd_data": "090009000a000a000a000b000b000b000c000c000c000c000d000d000d000e00",
-    "vs2_data": "090009000a000a000a000b000b000b000c000c000c000c000d000d000d000e00"
-  }]
+    "rs1_value": "0x0000003faac311d0",
+    "vd": 0,
+    "vd_data": [
+      "090009000a000a000a000b000b000b000c000c000c000c000d000d000d000e00",
+      "0e000e000f000f000f0010001000100011001100110011001200120011001000"
+    ]  }]
