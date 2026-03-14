@@ -1,6 +1,6 @@
 import json
 import networkx as nx
-from typing import Dict, List, Tuple, Set
+from typing import Dict, List, Tuple, Set, Any
 from pathlib import Path
 import sys
 import argparse
@@ -15,6 +15,85 @@ class ComputationGraphBuilder:
             'vcsr': None,
             'vlenb': None
         }
+        self.v0_data = None
+        self.register_data: Dict[int, Any] = {}  # Tracks the last known data for each register index
+
+    def update_rvv_state(self, instr: Dict) -> None:
+        if instr.get('type') == 2:
+            if 'vl' in instr:
+                self.rvv_state['vl'] = instr['vl']
+            if 'vtype' in instr:
+                self.rvv_state['vtype'] = instr['vtype']
+            if 'vstart' in instr:
+                self.rvv_state['vstart'] = instr['vstart']
+            if 'vcsr' in instr:
+                self.rvv_state['vcsr'] = instr['vcsr']
+            if 'vlenb' in instr:
+                self.rvv_state['vlenb'] = instr['vlenb']
+
+        if instr.get('vd') == 0 and 'vd_data' in instr:
+            v0_data = instr['vd_data']
+            self.v0_data = v0_data[0] if isinstance(v0_data, list) else v0_data
+
+    def get_state_with_mask(self, instr: Dict) -> Dict:
+        state = self.rvv_state.copy()
+
+        if instr.get('type') != 2:
+            instruction_hex = instr.get('instruction', '0x0')
+            try:
+                vm_bit = (int(instruction_hex, 16) >> 25) & 0x1
+            except (ValueError, TypeError):
+                vm_bit = 1
+
+            if vm_bit == 0 and self.v0_data is not None:
+                state['v0_mask'] = self.v0_data
+
+        return state
+
+    def fix_overwritten_sources(self, instr: Dict) -> Dict:
+        if 'vd' not in instr or instr.get('vd') is None:
+            return instr
+
+        vd = instr['vd']
+        vd_data = instr.get('vd_data', [])
+        num_dest_regs = len(vd_data) if isinstance(vd_data, list) else 1
+        dest_regs = set(range(vd, vd + num_dest_regs))
+
+        instr = instr.copy()
+
+        for src_field, data_field in [('vs1', 'vs1_data'), ('vs2', 'vs2_data'), ('vs3', 'vs3_data')]:
+            if src_field not in instr or instr.get(src_field) is None:
+                continue
+            
+            src_base = instr[src_field]
+            src_data = instr.get(data_field, [])
+            num_src_regs = len(src_data) if isinstance(src_data, list) else 1
+            src_regs = list(range(src_base, src_base + num_src_regs))
+
+            # Check if any of the source registers overlap with destination
+            if not dest_regs.intersection(src_regs):
+                continue
+
+            # Replaces each overlapping register's data with the saved pre-execution value
+            corrected = list(src_data) if isinstance(src_data, list) else [src_data]
+            for i, reg_idx in enumerate(src_regs):
+                if reg_idx in dest_regs and reg_idx in self.register_data:
+                    saved = self.register_data[reg_idx]
+                    corrected[i] = saved if isinstance(src_data, list) else saved
+            instr[data_field] = corrected if isinstance(src_data, list) else corrected[0]
+
+        return instr
+
+    def save_register_data(self, instr: Dict) -> None:
+        if 'vd' not in instr or instr.get('vd') is None:
+            return
+        vd = instr['vd']
+        vd_data = instr.get('vd_data', [])
+        if isinstance(vd_data, list):
+            for i, val in enumerate(vd_data):
+                self.register_data[vd + i] = val
+        else:
+            self.register_data[vd] = vd_data
 
     def extract_vector_registers(self, instr: Dict) -> Tuple[Set[int], Set[int]]:
         sources = set()
@@ -43,28 +122,18 @@ class ComputationGraphBuilder:
         
         return sources, destinations
     
-    def update_rvv_state(self, instr: Dict) -> None:
-        if instr.get('type') == 2:
-            if 'vl' in instr:
-                self.rvv_state['vl'] = instr['vl']
-            if 'vtype' in instr:
-                self.rvv_state['vtype'] = instr['vtype']
-            if 'vstart' in instr:
-                self.rvv_state['vstart'] = instr['vstart']
-            if 'vcsr' in instr:
-                self.rvv_state['vcsr'] = instr['vcsr']
-            if 'vlenb' in instr:
-                self.rvv_state['vlenb'] = instr['vlenb']
-
     def build_computational_graph(self, trace: List[Dict]) -> nx.DiGraph:
         graph = nx.DiGraph()
         register_producers = {}
         
         for instr in trace:
             self.update_rvv_state(instr)
-            
+
+            # Fix sources that overlap with destination BEFORE updating register_data
+            instr = self.fix_overwritten_sources(instr)
+
             instr_with_state = instr.copy()
-            instr_with_state['rvv_state'] = self.rvv_state.copy()
+            instr_with_state['rvv_state'] = self.get_state_with_mask(instr)
             
             node_id = f"instr_{instr['number']}"
             graph.add_node(node_id, instruction=instr_with_state)
@@ -77,26 +146,28 @@ class ComputationGraphBuilder:
                     if producer_id != node_id:
                         graph.add_edge(producer_id, node_id, register=src_reg)
             
+            # Save current vd data, then update producers
+            self.save_register_data(instr)
             for dest_reg in destinations:
                 register_producers[dest_reg] = node_id
         
         return graph
 
     def build_aggregated_computational_graph(self, trace: List[Dict]) -> nx.DiGraph:
-
         graph = nx.DiGraph()
         register_producers = {}
         pc_map = {}
         
         for instr in trace:
             self.update_rvv_state(instr)
-            
+
+            instr = self.fix_overwritten_sources(instr)
+
             instr_with_state = instr.copy()
-            instr_with_state['rvv_state'] = self.rvv_state.copy()
+            instr_with_state['rvv_state'] = self.get_state_with_mask(instr)
             
             pc = instr.get('pc')
             
-            # Adding nodes
             if pc in pc_map:
                 node_id = pc_map[pc]
                 existing_instr = graph.nodes[node_id]['instruction']
@@ -107,12 +178,6 @@ class ComputationGraphBuilder:
                 
                 existing_instr['iterations'].append(instr_with_state)
                 existing_instr['iteration_count'] += 1
-
-                # TODO ask if the first instruction state should be updated with the latest one or not                
-                # for key in instr_with_state:
-                #     if key not in ['iterations', 'iteration_count']:
-                #         existing_instr[key] = instr_with_state[key]
-                
                 graph.nodes[node_id]['instruction'] = existing_instr
             else:
                 node_id = f"pc_{pc}"
@@ -121,13 +186,13 @@ class ComputationGraphBuilder:
             
             sources, destinations = self.extract_vector_registers(instr)
             
-            # Adding edges
             for src_reg in sources:
                 if src_reg in register_producers:
                     producer_id = register_producers[src_reg]
                     if producer_id != node_id:
                         graph.add_edge(producer_id, node_id, register=src_reg)
             
+            self.save_register_data(instr)
             for dest_reg in destinations:
                 register_producers[dest_reg] = node_id
         
@@ -140,9 +205,11 @@ class ComputationGraphBuilder:
         
         for instr in trace:
             self.update_rvv_state(instr)
-            
+
+            instr = self.fix_overwritten_sources(instr)
+
             instr_with_state = instr.copy()
-            instr_with_state['rvv_state'] = self.rvv_state.copy()
+            instr_with_state['rvv_state'] = self.get_state_with_mask(instr)
             
             pc = instr.get('pc')
             
@@ -156,12 +223,6 @@ class ComputationGraphBuilder:
                 
                 existing_instr['iterations'].append(instr_with_state)
                 existing_instr['iteration_count'] += 1
-                
-                # TODO ask if we want this
-                # for key in instr_with_state:
-                #     if key not in ['iterations', 'iteration_count']:
-                #         existing_instr[key] = instr_with_state[key]
-                
                 graph.nodes[node_id]['instruction'] = existing_instr
             else:
                 node_id = f"pc_{pc}"
@@ -172,6 +233,7 @@ class ComputationGraphBuilder:
                 if not graph.has_edge(prev_node_id, node_id):
                     graph.add_edge(prev_node_id, node_id, edge_type='execution_order')
             
+            self.save_register_data(instr)
             prev_node_id = node_id
         
         return graph
@@ -194,8 +256,6 @@ class ComputationGraphBuilder:
                 'source': source,
                 'target': target,
             }
-            # Add any additional edge attributes. We can filter to only include the ones we are interested in in cytoscape later on so I will leave it in for now
-            # TODO ask if we want to include this and add an option to filter in cytoscape. 
             if 'register' in data:
                 edge_data['register'] = data['register']
             if 'edge_type' in data:
@@ -292,8 +352,7 @@ Graph types:
             builder.graph_to_json(graph, args.output1)
             
             print(f"  Nodes: {graph.number_of_nodes()}")
-            print(f"  Edges: {graph.number_of_edges()}")
-            print()
+            print(f"  Edges: {graph.number_of_edges()}\n")
         
         if build_aggregated:
             builder.rvv_state = {
@@ -309,8 +368,7 @@ Graph types:
             builder.graph_to_json(agg_graph, args.output2)
             
             print(f"  Nodes: {agg_graph.number_of_nodes()}")
-            print(f"  Edges: {agg_graph.number_of_edges()}")
-            print()
+            print(f"  Edges: {agg_graph.number_of_edges()}\n")
         
         if build_execution:
             builder.rvv_state = {
@@ -326,7 +384,7 @@ Graph types:
             builder.graph_to_json(exec_graph, args.output3)
             
             print(f"  Nodes: {exec_graph.number_of_nodes()}")
-            print(f"  Edges: {exec_graph.number_of_edges()}")
+            print(f"  Edges: {exec_graph.number_of_edges()}\n")
         print("\nDone!")
     
     except json.JSONDecodeError as e:

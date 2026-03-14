@@ -42,51 +42,6 @@ def create_app(graph_files: dict, start: int = 0, end: Optional[int] = None, fil
         print(f"Warning: Large graph detected ({num_elements} elements)")
         print(f"Size shrunk to {num_elements} elements, but performance may still be slow and bugs may appear.")
 
-    # Pretty good:
-    # dagre
-    # klay so far my favorite
-
-    # Medium:
-    # breathfirst
-
-    # Bad:
-    # cose-bilkent
-
-    # Just past one of those in the layout field to check how it works
-    # KLAY:
-                    # layout={
-                    #     'name': 'klay',
-                    #     'klay': {
-                    #         'direction': 'RIGHT',
-                    #         'spacing': 50,
-                    #         'nodePlacement': 'LINEAR_SEGMENTS'
-                    #     },
-                    #     'animate': False,
-                    #     'fit': True
-                    # },
-    #
-    # DAGRE:
-    # {
-    #     'name': 'dagre',
-    #     'rankDir': 'LR',
-    #     'nodeSep': 100,
-    #     'rankSep': 150
-    # },
-    #
-    # BREADTHFIRST:
-    # {
-    #     'name': 'breadthfirst',
-    #     'directed': True,
-    #     'spacingFactor': 1.5,
-    #     'avoidOverlap': True
-    # },
-    #TODO comparison between these different program types:
-    # Long big program 
-    # Maybe a big loop with compuataions
-    # Setup a benchmark 
-    # Fix load/store instructions
-    # Get ratio of rvv vs non rvv instructions 
-
     app.layout = html.Div([
         # Graph type selector buttons
         html.Div([
@@ -126,7 +81,7 @@ def create_app(graph_files: dict, start: int = 0, end: Optional[int] = None, fil
                     boxSelectionEnabled=False,
                     minZoom=0.1,
                     maxZoom=3.0,
-                    wheelSensitivity=1,
+                    wheelSensitivity=0.5,
                     responsive=True,
                 )
             ], style=LAYOUT_STYLES['graph_panel']),
@@ -138,8 +93,6 @@ def create_app(graph_files: dict, start: int = 0, end: Optional[int] = None, fil
         ], style=LAYOUT_STYLES['flex_wrapper'])
     ], style=LAYOUT_STYLES['container'])
     
-    # TODO Expandable dropdown menu  
- 
     # I added dynamic object at runtime which is valid python so the errors are just a typecheck
     app.graph_files = valid_files
     app.filter_params = {'start': start, 'end': end, 'filter_types': filter_types}
@@ -209,23 +162,128 @@ def create_app(graph_files: dict, start: int = 0, end: Optional[int] = None, fil
         
         node = selected_nodes[0]
         instr = node.get('instruction', {})
-        
         is_loop = 'iterations' in instr
-        
-        #TODO rn I'm just showing data from first iteration of loop but add option to scroll though them
+
         if is_loop:
-            iteration_count = instr.get('iteration_count', 1)
-            display_instr = instr['iterations'][0]
+            iterations = instr.get('iterations', [])
+            iteration_count = instr.get('iteration_count', len(iterations) if iterations else 1)
+            display_instr = iterations[0] if iterations else {}
         else:
+            iterations = [instr]
             display_instr = instr
             iteration_count = 1
-        
-        instr_type = display_instr.get('type')
-        instruction = node.get('label', display_instr.get('instruction', 'N/A')).splitlines()[1].strip() 
-        lmul = display_instr.get('lmul', 1)
-        
+
+        instruction = node.get('label', display_instr.get('instruction', 'N/A')).splitlines()[1].strip()
+
+
+
+        # Helper function to build instruction details section (used for the main view and looped iterations)
+        def build_instruction_details(curr_instr):
+            section = []
+
+            rvv_state = curr_instr.get('rvv_state', {})
+            vtype_decoded = decode_vtype(rvv_state.get('vtype'))
+            vsew = vtype_decoded.get('vsew', 'e8')
+            sew = {'e8': 1, 'e16': 2, 'e32': 4, 'e64': 8}.get(vsew, 1)
+            lmul_str = vtype_decoded.get('vlmul', '1')
+
+            vl_raw = rvv_state.get('vl')
+            vl = int(vl_raw, 16) if vl_raw is not None else None
+
+            vm_bit = (int(curr_instr.get('instruction', '0x0'), 16) >> 25) & 0x1
+            mask = rvv_state.get('v0_mask') if vm_bit == 0 else None
+
+            section.extend([
+                html.Hr(),
+                html.Div([
+                    html.H4('Instruction Info', style={'marginBottom': '10px'}),
+                    html.P([html.Strong('Number: '), str(curr_instr.get('number', 'N/A'))]),
+                    html.P([html.Strong('PC: '), curr_instr.get('pc', 'N/A')]),
+                    html.P([html.Strong('Instruction: '), curr_instr.get('instruction', 'N/A')]),
+                ]),
+                html.Hr(),
+            ])
+
+            scalar_section = []
+            scalar_section.append(html.H4('Scalar Registers', style={'marginBottom': '10px'}))
+            
+            if curr_instr.get('rd') is not None:
+                scalar_section.append(format_register_data(instruction, f"x{curr_instr.get('rd')}", 'rd destination', curr_instr.get('rd_value', 'N/A')))
+            if curr_instr.get('rs1') is not None:
+                scalar_section.append(format_register_data(instruction, f"x{curr_instr.get('rs1')}", 'rs1 source', curr_instr.get('rs1_value', 'N/A')))
+            if curr_instr.get('rs2') is not None:
+                scalar_section.append(format_register_data(instruction, f"x{curr_instr.get('rs2')}", 'rs2 source', curr_instr.get('rs2_value', 'N/A')))
+            if len(scalar_section) > 1:
+                section.extend(scalar_section)
+
+            imm_section = []
+            imm_section.append(html.H4('Immediate Values', style={'marginBottom': '10px'}))
+            
+            if curr_instr.get('imm') is not None:
+                imm_section.append(html.P([html.Strong('Immediate: '), str(curr_instr.get('imm'))]))
+            if len(imm_section) > 1:
+                section.extend(imm_section)
+
+
+            vec_section = []
+            vec_section.append(html.H4('Vector Registers', style={'marginBottom': '10px'}))
+            
+            if 'vd' in curr_instr and curr_instr.get('vd') is not None:
+                vec_section.append(html.H4('Destination vd:', style={'marginBottom': '10px'}))
+                vec_section.append(format_register_data(instruction, f"v{curr_instr.get('vd')}", 'vd destination', curr_instr.get('vd_data', 'N/A'), sew, mask, vl))
+            if 'vs3' in curr_instr and curr_instr.get('vs3') is not None:
+                vec_section.append(html.H4('Store data vs3:', style={'marginBottom': '10px'}))
+                vec_section.append(format_register_data(instruction, f"v{curr_instr.get('vs3')}", 'vs3 store data', curr_instr.get('vs3_data', 'N/A'), sew, mask, vl))
+            if 'vs1' in curr_instr and curr_instr.get('vs1') is not None:
+                vec_section.append(html.H4('Source vs1:', style={'marginBottom': '10px'}))
+                vec_section.append(format_register_data(instruction, f"v{curr_instr.get('vs1')}", 'vs1 source', curr_instr.get('vs1_data', 'N/A'), sew, mask, vl))
+            if 'vs2' in curr_instr and curr_instr.get('vs2') is not None:
+                vec_section.append(html.H4('Source vs2:', style={'marginBottom': '10px'}))
+                vec_section.append(format_register_data(instruction, f"v{curr_instr.get('vs2')}", 'vs2 source', curr_instr.get('vs2_data', 'N/A'), sew, mask, vl))
+            
+            if 'v0_mask' in rvv_state:
+                vec_section.append(html.H4('V0 Mask Register:', style={'marginBottom': '10px'}))
+                vec_section.append(format_register_data(instruction, 'v0', 'v0 mask', rvv_state.get('v0_mask'), sew, mask=None, vl=vl))
+                
+            if len(vec_section) > 1:
+                section.extend(vec_section)
+
+            if rvv_state:
+                vcsr_decoded = decode_vcsr(rvv_state.get('vcsr'))
+                rvv_section = [
+                    html.Hr(),
+                    html.H4('RVV State (at execution)', style={'marginBottom': '10px'}),
+                    html.P([html.Strong('VL: '), str(int(rvv_state.get('vl', 'N/A'), 16)) if rvv_state.get('vl') is not None else 'N/A'], style={'marginBottom': '8px'}),
+                    html.Div([
+                        html.P([html.Strong('VTYPE: '), str(rvv_state.get('vtype', 'N/A'))]),
+                        html.Ul([
+                            html.Li(f"vill: {vtype_decoded.get('vill', 'N/A')}"),
+                            html.Li(f"vma: {vtype_decoded.get('vma', 'N/A')}"),
+                            html.Li(f"vta: {vtype_decoded.get('vta', 'N/A')}"),
+                            html.Li(f"vsew: {vsew}"),
+                            html.Li(f"vlmul: {lmul_str}")
+                        ], style={'marginLeft': '0px', 'fontSize': '16px', 'color': "#030303"})
+                    ], style={'marginBottom': '8px'}) if vtype_decoded else None,
+                    html.P([html.Strong('VSTART: '), str(int(rvv_state.get('vstart', 'N/A'), 16)) if rvv_state.get('vstart') is not None else 'N/A'], style={'marginBottom': '8px'}),
+                    html.Div([
+                        html.P([html.Strong('VCSR: '), str(rvv_state.get('vcsr', 'N/A'))]),
+                        html.Ul([
+                            html.Li(f"vxsat (fixed-point saturation): {vcsr_decoded.get('vxsat', 'N/A')}"),
+                            html.Li(f"vxrm (rounding mode): {vcsr_decoded.get('vxrm', 'N/A')}")
+                        ], style={'marginLeft': '0px', 'fontSize': '16px', 'color': "#030303"})
+                    ], style={'marginBottom': '8px'}) if vcsr_decoded else None,
+                    html.P([html.Strong('VLENB (Vector register length in bytes): '), str(int(rvv_state.get('vlenb', 'N/A'), 16)) if rvv_state.get('vlenb') is not None else 'N/A'], style={'marginBottom': '100px'}),
+                ]
+                section.extend([html.Div([item for item in rvv_section if item is not None])])
+
+            return section
+
+
+
         details = []
-        details.append(html.H3(instruction, style={'marginTop': 0, 'fontFamily': 'monospace', 'fontSize': '16px'}))
+        details.extend([
+            html.H3(instruction, style={'marginTop': 0, 'fontFamily': 'monospace', 'fontSize': '16px'})
+        ])
 
         if is_loop:
             details.append(
@@ -236,104 +294,30 @@ def create_app(graph_files: dict, start: int = 0, end: Optional[int] = None, fil
                     ], style={'color': '#0066cc', 'fontWeight': 'bold'})
                 ])
             )
-        
-        details.extend([
-            html.Hr(),
-            html.Div([
-                html.H4('Instruction Info', style={'marginBottom': '10px'}),
-                html.P([html.Strong('Number: '), str(display_instr.get('number', 'N/A'))]),
-                html.P([html.Strong('PC: '), display_instr.get('pc', 'N/A')]),
-                html.P([html.Strong('Instruction: '), display_instr.get('instruction', 'N/A')]),
-                html.P([html.Strong('LMUL: '), str(lmul)]),
-            ]),
-            html.Hr(),
-        ])
-        
-        scalar_section = []
-        scalar_section.append(html.H4('Scalar Registers', style={'marginBottom': '10px'}))
-        
-        if display_instr.get('rd') is not None:
-            scalar_section.append(format_register_data(f"x{display_instr.get('rd')}", 'rd destination', display_instr.get('rd_value', 'N/A')))
-        
-        if display_instr.get('rs1') is not None:
-            scalar_section.append(format_register_data(f"x{display_instr.get('rs1')}", 'rs1 source', display_instr.get('rs1_value', 'N/A')))
-        
-        if display_instr.get('rs2') is not None:
-            scalar_section.append(format_register_data(f"x{display_instr.get('rs2')}", 'rs2 source', display_instr.get('rs2_value', 'N/A')))
-    
-        if len(scalar_section) > 1:
-            details.extend(scalar_section)
-        
-        # Vector registers
-        vec_section = []
-        vec_section.append(html.H4('Vector Registers', style={'marginBottom': '10px'}))
 
-        
-        if 'vd' in display_instr and display_instr.get('vd') is not None:
-            vec_section.append(html.H4('Destination vd:', style={'marginBottom': '10px'}))
-            vec_section.append(format_register_data(f"v{display_instr.get('vd')}", 'vd destination', display_instr.get('vd_data', 'N/A')))
-        
-        if 'vs1' in display_instr and display_instr.get('vs1') is not None:
-            vec_section.append(html.H4('Source vs1:', style={'marginBottom': '10px'}))
-            vec_section.append(format_register_data(f"v{display_instr.get('vs1')}", 'vs1 source 1', display_instr.get('vs1_data', 'N/A')))
+        # First iteration
+        details.extend(build_instruction_details(display_instr))
 
-        if 'vs2' in display_instr and display_instr.get('vs2') is not None:
-            vec_section.append(html.H4('Source vs2:', style={'marginBottom': '10px'}))
-            vec_section.append(format_register_data(f"v{display_instr.get('vs2')}", 'vs2 source 2', display_instr.get('vs2_data', 'N/A')))  
-        
-        if len(vec_section) > 1:
-            details.extend(vec_section)
-        
-        # RVV state 
-        rvv_state = display_instr.get('rvv_state', {})
-        if rvv_state:
-            vtype_decoded = decode_vtype(rvv_state.get('vtype'))
-            vcsr_decoded = decode_vcsr(rvv_state.get('vcsr'))
-            
-            rvv_section = [
+        # Rolled iterations section (collapsible)
+        if is_loop and iterations:
+            rolled_items = []
+            for idx, it in enumerate(iterations, start=1):
+                rolled_items.append(
+                    html.Details([
+                        html.Summary(
+                            f"Iteration {idx} (#{it.get('number', 'N/A')}): {instruction}",
+                            style={'cursor': 'pointer', 'fontFamily': 'monospace'}
+                        ),
+                        html.Div(build_instruction_details(it), style={'paddingLeft': '10px'})
+                    ], style={'marginBottom': '8px'})
+                )
+
+            details.extend([
                 html.Hr(),
-                html.H4('RVV State (at execution)', style={'marginBottom': '10px'}),
-                
-                # VL
-                html.P([html.Strong('VL: '), 
-                       str(rvv_state.get('vl', 'N/A'))],
-                       style={'marginBottom': '8px'}),
-                
-                # VTYPE
-                html.Div([
-                    html.P([html.Strong('VTYPE: '), str(rvv_state.get('vtype', 'N/A'))]),
-                    html.Ul([
-                        html.Li(f"vill: {vtype_decoded.get('vill', 'N/A')}"),
-                        html.Li(f"vma: {vtype_decoded.get('vma', 'N/A')}"),
-                        html.Li(f"vta: {vtype_decoded.get('vta', 'N/A')}"),
-                        html.Li(f"vsew: {vtype_decoded.get('vsew', 'N/A')}"),
-                        html.Li(f"vlmul: {vtype_decoded.get('vlmul', 'N/A')}")
-                    ], style={'marginLeft': '0px', 'fontSize': '16px', 'color': "#030303"})
-                ], style={'marginBottom': '8px'}) if vtype_decoded else None,
-                
-                # VSTART
-                html.P([html.Strong('VSTART: '), 
-                       str(rvv_state.get('vstart', 'N/A'))],
-                       style={'marginBottom': '8px'}),
-                
-                # VCSR
-                html.Div([
-                    html.P([html.Strong('VCSR: '), str(rvv_state.get('vcsr', 'N/A'))]),
-                    html.Ul([
-                        html.Li(f"vxsat (fixed-point saturation): {vcsr_decoded.get('vxsat', 'N/A')}"),
-                        html.Li(f"vxrm (rounding mode): {vcsr_decoded.get('vxrm', 'N/A')}")
-                    ], style={'marginLeft': '0px', 'fontSize': '16px', 'color': "#030303"})
-                ], style={'marginBottom': '8px'}) if vcsr_decoded else None,
-                
-                # VLENB
-                html.P([html.Strong('VLENB (Vector register length in bytes): '), 
-                       str(rvv_state.get('vlenb', 'N/A'))],
-                       style={'marginBottom': '100px'}),
-            ]
-            
-            rvv_section = [item for item in rvv_section if item is not None]
-            details.extend([html.Div(rvv_section)])
-        
+                html.H4('Iterations:', style={'marginBottom': '10px', 'color': '#0066cc', 'fontWeight': 'bold'}),
+                html.Div(rolled_items)
+            ])
+
         return html.Div(details, style={'padding': '10px'})
     
     return app
