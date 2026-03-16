@@ -1,6 +1,7 @@
 # Computational Graph for RISC-V Vector Instructions
 
 A visualization tool for RISC-V Vector Extension instruction traces, building dependency graphs and providing an interactive UI for analysis.
+The traces used for this project where gathered by https://github.com/Mistryu/mambo-v-rvv-tracer.git
 
 ## Installation Steps
 
