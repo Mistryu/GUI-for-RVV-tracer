@@ -71,13 +71,3 @@ trace-ui
 ```
 
 The web interface will open at `http://127.0.0.1:8050/`
-
-### Launch Both 
-Launch the graph creation and the UI in one command:
-
-```bash
-tracer your_trace.json
-```
-
-### Additional options
-Use --help to see all aviable flags
