@@ -328,12 +328,10 @@ def main():
         description='Interactive visualization UI for RISC-V vector instruction computation graph',
         epilog='''
 Examples:
-  %(prog)s                              # Load graphs with default settings
-  %(prog)s -s 1000 -e 2000              # Load instructions 1000-2000
-  %(prog)s -t reg ls                    # Only show register and load/store instructions
-  %(prog)s -t csr                       # Only show CSR instructions
-  %(prog)s -s 0 -e 500 -t reg           # First 500 register instructions
-  %(prog)s -i1 my_comp.json             # Use custom computational graph file
+  %(prog)s -s 1000 -e 2000          # Load instructions 1000-2000
+  %(prog)s -t reg ls                # Remove register and load/store instructions
+  %(prog)s -s 0 -e 500 -t reg       # First 500 register instructions
+  %(prog)s -i1 my_comp.json         # Use custom computational graph file
 
 Default graph files:
   computational_graph.json

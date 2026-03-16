@@ -86,8 +86,6 @@ def validate_trace_file(input_file: str) -> bool:
                 print(f"Error: Trace file must contain a JSON array", file=sys.stderr)
                 return False
             return True
-    #TODO this can be used to check if there was an illigal instruction error during the tracing itself
-    # but it might be better to implement the detection inside graph_creation in case incomplete traces break it. 
     except json.JSONDecodeError as e:
         print(f"Error: Invalid JSON in trace file: {e}", file=sys.stderr)
         return False
@@ -97,18 +95,15 @@ def main():
     parser = argparse.ArgumentParser(
         description='Tracer - RISC-V Vector Trace Visualization',
         epilog='''
-This tool:
-  1. Builds computation graphs from trace file
-  2. Launches interactive visualization UI
 
 Examples:
-  %(prog)s trace.json                   # Full pipeline with defaults
+  %(prog)s --help            # Shows help menu
+  %(prog)s trace.json                   # Create all graphs and launch UI 
   %(prog)s trace.json -s 0 -e 1000      # Visualize first 1000 instructions
-  %(prog)s trace.json -t reg            # Only register instructions
+  %(prog)s trace.json -t reg            # Remove register instructions
   %(prog)s trace.json --skip-ui         # Only build graphs, don't launch UI
   %(prog)s trace.json --skip-graphs     # Use existing graphs, just launch UI
   %(prog)s trace.json -rs               # Skip standard computational graph
-  %(prog)s trace.json --help            # Shows help menu
   
 Graph Types Built:
   - Computational Graph: Full computational graph where edges represent dependencies
@@ -117,7 +112,7 @@ Graph Types Built:
 
 Instruction Type Filters:
   reg : Register-register instructions (type 1)
-  csr : Vector CSR configuration instructions (type 2)
+  csr : Vector CSR configuration instructions (type 2) be default removed from computational graph and aggregated graph.
   ls  : Load/Store instructions (type 3)
         ''',
         formatter_class=argparse.RawDescriptionHelpFormatter
@@ -196,20 +191,12 @@ Instruction Type Filters:
         action='store_true',
         help='Skip UI launch, only create graphs'
     )
-    control_group.add_argument(
-        '--graphs-only',
-        action='store_true',
-        help='Alias for --skip-ui'
-    )
     
     args = parser.parse_args()
     
     if args.skip_graphs and args.skip_ui:
         print("Error: Cannot skip both graphs and UI", file=sys.stderr)
         sys.exit(1)
-    
-    if args.graphs_only:
-        args.skip_ui = True
     
     if args.start < 0:
         print("Error: start must be >= 0", file=sys.stderr)
@@ -263,18 +250,12 @@ Instruction Type Filters:
             sys.exit(1)
     else:
         print("Skipping UI launch")
-        print()
         print("Graph files created:")
         print(f"  - {args.output1}")
         print(f"  - {args.output2}")
         print(f"  - {args.output3}")
-        print()
-        print("To launch UI manually, run:")
-        print(f"  python -m trace_visualisation.UI.app")
-    
-    print("Pipeline completed successfully")
-    print()
 
+    print("\nSuccessfully completed all steps!")
 
 if __name__ == '__main__':
     main()

@@ -272,19 +272,14 @@ def main() -> None:
         description='Build computational graphs from RISC-V vector instruction trace',
         epilog='''
 Examples:
-  %(prog)s                              # Build all three graphs from vector_trace.json
   %(prog)s trace.json                   # Build all three graphs from custom file
   %(prog)s -s                           # Build only standard computational graph
-  %(prog)s -a                           # Build only aggregated computational graph
-  %(prog)s -e                           # Build only execution graph
   %(prog)s trace.json -o my_graph.json  # Custom output name for standard graph
 
-Graph types:
-  Computational: Computational graph where edges represent register dependencies (computational_graph.json)
-  
-  Aggregated: Computational graph where instructions with the same pc are aggregated to represent loops (aggregated_computational_graph.json)
-  
-  Execution: Shows execution order with loop aggregation (execution_graph.json)
+Graph Types Built:
+  - Computational Graph: Full computational graph where edges represent dependencies
+  - Aggregated Graph: Loop-aggregated computational graph
+  - Execution Graph: Sequential execution order with aggregated loops
         ''',
         formatter_class=argparse.RawDescriptionHelpFormatter
     )
@@ -347,7 +342,7 @@ Graph types:
             trace = json.load(f)
     
         if build_standard:
-            print("Building standard computational graph...")
+            print("Building standard computational graph")
             graph = builder.build_computational_graph(trace)
             builder.graph_to_json(graph, args.output1)
             
@@ -363,7 +358,7 @@ Graph types:
                 'vlenb': None
             }
             
-            print("Building aggregated computational graph...")
+            print("Building aggregated computational graph")
             agg_graph = builder.build_aggregated_computational_graph(trace)
             builder.graph_to_json(agg_graph, args.output2)
             
@@ -379,7 +374,7 @@ Graph types:
                 'vlenb': None
             }
             
-            print("Building execution graph...")
+            print("Building execution graph")
             exec_graph = builder.build_execution_graph(trace)
             builder.graph_to_json(exec_graph, args.output3)
             

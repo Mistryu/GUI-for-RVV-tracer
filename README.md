@@ -4,13 +4,28 @@ A visualization tool for RISC-V Vector Extension instruction traces, building de
 
 ## Installation Steps
 
-### 1. Install the package
+### 1. Clone the repository and enter the project directory
+
+```bash
+git clone https://github.com/Mistryu/GUI-for-RVV-tracer.git
+cd GUI-for-RVV-tracer
+```
+
+### 2. Create and activate a Python 3 virtual environment
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install --upgrade pip
+```
+
+### 3. Install the package
 
 ```bash
 pip install -e .
 ```
 
-### 2. Verify installation
+### 4. Verify installation
 
 Check that the commands are available:
 
