@@ -4,19 +4,13 @@ A visualization tool for RISC-V Vector Extension instruction traces, building de
 
 ## Installation Steps
 
-### 1. Navigate to the project directory
-
-```bash
-cd trace_visualisation
-```
-
-### 2. Install the package
+### 1. Install the package
 
 ```bash
 pip install -e .
 ```
 
-### 3. Verify installation
+### 2. Verify installation
 
 Check that the commands are available:
 
@@ -77,3 +71,13 @@ trace-ui
 ```
 
 The web interface will open at `http://127.0.0.1:8050/`
+
+### Launch Both 
+Launch the graph creation and the UI in one command:
+
+```bash
+tracer your_trace.json
+```
+
+### Additional options
+Use --help to see all aviable flags
