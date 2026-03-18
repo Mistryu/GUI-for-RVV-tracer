@@ -45,7 +45,7 @@ def get_operand_category(funct3: int) -> Optional[str]:
 
 # Instruction mnemoics from pages 95-98 of RISC-V V spec 1.0
 
-def get_OPIVV_mnemonic(funct6: int) -> Tuple[Optional[str], bool]:
+def get_OPIVV_mnemonic(funct6: int, vs2: int, vm: int) -> Tuple[Optional[str], bool]:
 
     opcode_map = {
         0b000000: 'vadd',
@@ -64,7 +64,7 @@ def get_OPIVV_mnemonic(funct6: int) -> Tuple[Optional[str], bool]:
         0b010001: 'vmadc',
         0b010010: 'vsbc',
         0b010011: 'vmsbc',
-        0b010111: 'vmerge',
+        0b010111: 'vmerge/vmv',
         0b011000: 'vmseq',
         0b011001: 'vmsne',
         0b011010: 'vmsltu',
@@ -91,60 +91,72 @@ def get_OPIVV_mnemonic(funct6: int) -> Tuple[Optional[str], bool]:
         0b110001: 'vwredsum'
     }
     
-    return (opcode_map.get(funct6), False)
+    mnemonic = opcode_map.get(funct6)
+    if mnemonic == "vmerge/vmv":
+        if vm == 1 and vs2 == 0b00000:
+            return ('vmv.v.v', True)
+        return ('vmerge', False)
+    
+    return mnemonic, False
 
         
-def get_OPIVX_mnemonic(funct6: int) -> Tuple[Optional[str], bool]:
+def get_OPIVX_mnemonic(funct6: int, vs2: int, vm: int) -> Tuple[Optional[str], bool]:
         
-        opcode_map = {    
-        0b000000: 'vadd',
-        0b000010: 'vsub',
-        0b000011: 'vrsub',
-        0b000100: 'vminu',
-        0b000101: 'vmin',
-        0b000110: 'vmaxu',
-        0b000111: 'vmax',
-        0b001001: 'vand',
-        0b001010: 'vor',
-        0b001011: 'vxor',
-        0b001100: 'vrgather',
-        0b001110: 'vslideup',
-        0b001111: 'vslidedown',
+    opcode_map = {    
+    0b000000: 'vadd',
+    0b000010: 'vsub',
+    0b000011: 'vrsub',
+    0b000100: 'vminu',
+    0b000101: 'vmin',
+    0b000110: 'vmaxu',
+    0b000111: 'vmax',
+    0b001001: 'vand',
+    0b001010: 'vor',
+    0b001011: 'vxor',
+    0b001100: 'vrgather',
+    0b001110: 'vslideup',
+    0b001111: 'vslidedown',
+    
+    0b010000: 'vadc',
+    0b010001: 'vmadc',
+    0b010010: 'vsbc',
+    0b010011: 'vmsbc',
+    0b010111: 'vmerge/vmv',
+    0b011000: 'vmseq',
+    0b011001: 'vmsne',
+    0b011010: 'vmsltu',
+    0b011011: 'vmslt',
+    0b011100: 'vmsleu',
+    0b011101: 'vmsle',
+    0b011110: 'vmsgtu',
+    0b011111: 'vmsgt',
+    
+    0b100000: 'vsaddu',
+    0b100001: 'vsadd',
+    0b100010: 'vssubu',
+    0b100011: 'vssub',
+    0b100101: 'vsll',
+    0b101100: 'vsmul',
+    0b101000: 'vsrl',
+    0b101001: 'vsra',
+    0b101010: 'vssrl',
+    0b101011: 'vssra',
+    0b101100: 'vnsrl',
+    0b101101: 'vnsra',
+    0b101110: 'vnclipu',
+    0b101111: 'vnclip'
+    }
+    
+    mnemonic = opcode_map.get(funct6)
+    if mnemonic == "vmerge/vmv":
+        if vm == 1 and vs2 == 0b00000:
+            return ('vmv.v.x', True)
+        return ('vmerge', False)
+    
+    return mnemonic, False
         
-        0b010000: 'vadc',
-        0b010001: 'vmadc',
-        0b010010: 'vsbc',
-        0b010011: 'vmsbc',
-        0b010111: 'vmerge',
-        0b011000: 'vmseq',
-        0b011001: 'vmsne',
-        0b011010: 'vmsltu',
-        0b011011: 'vmslt',
-        0b011100: 'vmsleu',
-        0b011101: 'vmsle',
-        0b011110: 'vmsgtu',
-        0b011111: 'vmsgt',
         
-        0b100000: 'vsaddu',
-        0b100001: 'vsadd',
-        0b100010: 'vssubu',
-        0b100011: 'vssub',
-        0b100101: 'vsll',
-        0b101100: 'vsmul',
-        0b101000: 'vsrl',
-        0b101001: 'vsra',
-        0b101010: 'vssrl',
-        0b101011: 'vssra',
-        0b101100: 'vnsrl',
-        0b101101: 'vnsra',
-        0b101110: 'vnclipu',
-        0b101111: 'vnclip'
-        }
-        
-        return (opcode_map.get(funct6), False)
-        
-        
-def get_OPIVI_mnemonic(funct6: int) -> Tuple[Optional[str], bool]:    
+def get_OPIVI_mnemonic(funct6: int, vs2: int, vm: int) -> Tuple[Optional[str], bool]:    
      
     opcode_map = {
         0b000000: 'vadd',
@@ -158,7 +170,7 @@ def get_OPIVI_mnemonic(funct6: int) -> Tuple[Optional[str], bool]:
         
         0b010000: 'vadc',
         0b010001: 'vmadc',
-        0b010111: 'vmerge',
+        0b010111: 'vmerge/vmv',
         0b011000: 'vmseq',
         0b011001: 'vmsne',
         0b011100: 'vmsleu',
@@ -181,7 +193,13 @@ def get_OPIVI_mnemonic(funct6: int) -> Tuple[Optional[str], bool]:
         0b101110: 'vnclipu',
         0b101111: 'vnclip'
     }
+    
     mnemonic = opcode_map.get(funct6)
+    if mnemonic == "vmerge/vmv":
+        if vm == 1 and vs2 == 0b00000:
+            return ('vmv.v.i', True)
+        return ('vmerge', False)
+    
     if mnemonic == 'vmv':
         return (mnemonic, True)
     
@@ -482,14 +500,14 @@ def get_config_mnemonic(funct6: int, vs2: int, vs1_rs1: int) -> Tuple[Optional[s
     return (None, False)
 
 
-def get_mnemonic(funct6: int, category: str, vs2: int, vs1_rs1: int) -> Tuple[Optional[str], bool]:
+def get_mnemonic(funct6: int, category: str, vs2: int, vs1_rs1: int, vm: int) -> Tuple[Optional[str], bool]:
 
     if category == 'OPIVV':
-        return get_OPIVV_mnemonic(funct6)
+        return get_OPIVV_mnemonic(funct6, vs2, vm)
     elif category == 'OPIVX':
-        return get_OPIVX_mnemonic(funct6)
+        return get_OPIVX_mnemonic(funct6, vs2, vm)
     elif category == 'OPIVI':
-        return get_OPIVI_mnemonic(funct6)
+        return get_OPIVI_mnemonic(funct6, vs2, vm)
     elif category == 'OPMVV':
         return get_OPMVV_mnemonic(funct6, vs1_rs1)
     elif category == 'OPMVX':
@@ -792,8 +810,14 @@ def format_instruction(mnemonic: str, category: str, vd_rd: int, vs2: int,
         if mnemonic in ['vmv.x.s', 'vfmv.f.s', 'vcpop.m', 'vfirst.m']:
             return f"{mnemonic} x{vd_rd}, v{vs2}"
         
-        elif mnemonic in ['vmv.s.x', 'vfmv.s.f']:
+        elif mnemonic in ['vmv.s.x', 'vfmv.s.f', 'vmv.v.x']:
             return f"{mnemonic} v{vd_rd}, x{vs1_rs1}"
+        
+        elif mnemonic in ['vmv.v.v']:
+            return f"{mnemonic} v{vd_rd}, v{vs1_rs1}"
+        
+        elif mnemonic in ['vmv.v.i']:
+            return f"{mnemonic} v{vd_rd}, {sign_extend_imm5(imm5)}"
         
         elif mnemonic in ['vzext.vf8', 'vsext.vf8', 'vzext.vf4', 'vsext.vf4',
                           'vzext.vf2', 'vsext.vf2', 'vmsbf.m', 'vmsof.m', 'vmsif.m', 'viota.m',
@@ -870,11 +894,11 @@ def disassemble_rvv(instruction: int) -> str:
     if category == 'OPCFG':
         return format_OPCFG(instruction, vd_rd, vs1_rs1, vs2)
     
-    mnemonic, special = get_mnemonic(funct6, category, vs2, vs1_rs1)
-    
+    mnemonic, special = get_mnemonic(funct6, category, vs2, vs1_rs1, vm)
+
     if mnemonic is None:
         return "UNKNOWN mnemonic"
-    
+
     return format_instruction(mnemonic, category, vd_rd, vs2, vs1_rs1, imm5, vm, special)
 
 

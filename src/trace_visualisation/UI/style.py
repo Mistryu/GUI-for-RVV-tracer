@@ -1,5 +1,3 @@
-"""Stylesheet definitions for the visualization app."""
-
 CYTOSCAPE_STYLESHEET = [
     {
         'selector': 'node',
