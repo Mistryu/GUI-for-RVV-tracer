@@ -81,7 +81,7 @@ def create_app(graph_files: dict, start: int = 0, end: Optional[int] = None, fil
                     boxSelectionEnabled=False,
                     minZoom=0.1,
                     maxZoom=3.0,
-                    wheelSensitivity=0.5,
+                    wheelSensitivity=0.2    ,
                     responsive=True,
                 )
             ], style=LAYOUT_STYLES['graph_panel']),
@@ -99,12 +99,12 @@ def create_app(graph_files: dict, start: int = 0, end: Optional[int] = None, fil
 
     @callback(
         [Output('computation-graph', 'elements'),
-         Output('btn-computational', 'style'),
-         Output('btn-aggregated', 'style'),
-         Output('btn-execution', 'style')],
+            Output('btn-computational', 'style'),
+            Output('btn-aggregated', 'style'),
+            Output('btn-execution', 'style')],
         [Input('btn-computational', 'n_clicks'),
-         Input('btn-aggregated', 'n_clicks'),
-         Input('btn-execution', 'n_clicks')],
+            Input('btn-aggregated', 'n_clicks'),
+            Input('btn-execution', 'n_clicks')],
         prevent_initial_call=True
     )
     def switch_graph(btn_comp, btn_agg, btn_exec):
@@ -301,7 +301,21 @@ def create_app(graph_files: dict, start: int = 0, end: Optional[int] = None, fil
         # Rolled iterations section (collapsible)
         if is_loop and iterations:
             rolled_items = []
-            for idx, it in enumerate(iterations, start=1):
+            total_iters = len(iterations)
+            head_count = 10
+            tail_count = 10
+
+            if total_iters <= (head_count + tail_count):
+                visible_iters = list(enumerate(iterations, start=1))
+                hidden_count = 0
+            else:
+                visible_iters = (
+                    list(enumerate(iterations[:head_count], start=1)) +
+                    list(enumerate(iterations[-tail_count:], start=total_iters - tail_count + 1))
+                )
+                hidden_count = total_iters - (head_count + tail_count)
+
+            for idx, it in visible_iters:
                 rolled_items.append(
                     html.Details([
                         html.Summary(
@@ -310,6 +324,20 @@ def create_app(graph_files: dict, start: int = 0, end: Optional[int] = None, fil
                         ),
                         html.Div(build_instruction_details(it), style={'paddingLeft': '10px'})
                     ], style={'marginBottom': '8px'})
+                )
+
+            if hidden_count > 0:
+                rolled_items.insert(
+                    head_count,
+                    html.Div(
+                        f"... {hidden_count} iterations hidden ...",
+                        style={
+                            'fontStyle': 'italic',
+                            'color': '#666',
+                            'margin': '8px 0',
+                            'paddingLeft': '4px'
+                        }
+                    )
                 )
 
             details.extend([
